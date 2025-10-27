@@ -69,6 +69,8 @@
 #let directSumB = $plus.circle.big$
 #let subseteq = $subset.eq$
 #let ann = $op("ann")$
+#let le = $<=$
+#let ge = $>=$
 
 // a set of dictionary for completion
 abelian
