@@ -1,0 +1,137 @@
+\documentclass[twoside]{book}
+
+\usepackage[a4paper]{geometry}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+\usepackage{multicol}
+
+% see https://tex.stackexchange.com/a/39755
+% Simulated package file
+\begin{filecontents}{envcode.sty}
+      \newcommand\NewEnvCode[2]{%
+       \expandafter\def\csname code@#1\endcsname{#2}%
+       \expandafter\def\csname change@code@#1\endcsname{%
+        \expandafter\let\expandafter\Code\csname code@#1\endcsname
+       }%
+      }
+      
+      \newcommand\MakeDefault{%
+       \expandafter\let\expandafter\code@@default\csname code@\@currenvir\endcsname
+      }
+      
+      \newcommand\RunEnvCode{%
+       \let\Code=\code@@default
+       \csname change@code@\@currenvir\endcsname
+       \Code
+      }
+      
+      \AtBeginDocument{\MakeDefault}
+\end{filecontents}
+
+\usepackage{envcode}
+
+% for cross reference
+% \usepackage{hyperref}
+
+% for fixed length of cell of tables
+% \usepackage{tabularx}
+% \usepackage{longtable}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\NewEnvCode{document}{default code}
+\NewEnvCode{theorem}{ theorem }
+\NewEnvCode{lemma}{ lemma }
+\NewEnvCode{corollary}{ corollary }
+\NewEnvCode{proposition}{ proposition }
+\NewEnvCode{definition}{ definition }
+
+\title{Topology Note}
+\author{Alex}
+
+\newcommand{\textmathbb}[1]{ $ \mathbb{#1} $ }
+\newcommand{\defineNewWord}[1]{\textit{\textbf{#1}}}
+\newcommand{\omitObviuos}{\footnote{We omit the proof of this \RunEnvCode as it is obvious.}}
+\newcommand{\mt}[1]{ $ #1 $ }
+\newcommand{\tmb}[1]{\textmathbb{#1}}
+\newcommand{\mtb}[1]{\textmathbb{#1}}
+\newcommand{\productSet}[2]{ $ #1 \times #2 $ }
+\newcommand{\closure}[1]{\overline{#1}}
+\newcommand{\mclosure}[1]{ $ \overline{#1} $ }
+\newcommand{\boundary}[1]{\text{Bd}#1}
+\newcommand{\interior}[1]{\text{Int}#1}
+\newcommand{\norm}[1]{||#1||}
+
+% commonly used definitions
+\newcommand{\topology}{topology}
+\newcommand{\basis}{basis}
+\newcommand{\topological}{topological}
+\newcommand{\closed}{closed}
+\newcommand{\hausdorff}{Hausdorff}
+\newcommand{\Hausdorff}{Hausdorff}
+\newcommand{\intersection}{intersection}
+\newcommand{\union}{union}
+\newcommand{\arbitrary}{arbitrary}
+\newcommand{\intersect}{intersect}
+\newcommand{\ioi}{ if and only if }
+\newcommand{\element}{element}
+\newcommand{\neighbourhood}{neighbourhood}
+\newcommand{\converge}{converge}
+\newcommand{\induction}{induction}
+\newcommand{\continuous}{continuous}
+\newcommand{\homeomorphism}{homeomorphism}
+\newcommand{\equivalent}{equivalent}
+\newcommand{\imbedding}{imbedding}
+\newcommand{\diam}{\mathrm{diam}}
+
+\begin{document}
+      \maketitle
+
+      \newpage
+
+      \tableofcontents
+
+      \newpage
+
+      \input{Definitions/definitions.tex}
+
+      \newpage
+
+      \input{Theorems/theorems.tex}
+
+      \newpage
+
+      \chapter{Topology Spaces and Continuous Function}
+
+      \input{01.TopologySpacesAndContinuousFunction/01.BasicDefinition/note.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/02.Basis/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/02.Basis/exercise.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/03.OrderTopology/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/03.OrderTopology/exercise.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/04.ProductTopology/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/04.ProductTopology/exercise.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/05.SubspaceTopology/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/05.SubspaceTopology/exercise.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/06.ClosedSetsAndLimitPoints/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/06.ClosedSetsAndLimitPoints/exercise.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/07.ContinuousFunction/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/07.ContinuousFunction/exercise.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/08.MetricTopology/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/08.MetricTopology/exercise.tex}
+
+\end{document}
