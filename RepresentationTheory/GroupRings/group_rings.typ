@@ -88,3 +88,99 @@ And from now on, we use $g$ to denote both the group element and its image in $R
   the free $k G$-module of rank $1$ in the sense of Proposition
   @kG-module-structure-on-V.
 ]
+
+Since we could transfer the study of group representations
+to the study of modules over group rings,
+all the terminologies in group representation theory
+have their analogues in module theory over group rings.
+And we have some quite interesting results just by looking at the module theory.
+
+#proposition[
+  A homomorphism between two group representations
+  $rho_1: G -> GL(V_1)$ and
+  $rho_2: G -> GL(V_2)$
+  is the same as a homomorphism between the corresponding
+  $k G$-modules $V_1$ and $V_2$.
+]
+#proof[
+  Just unwrap the definitions.
+]
+
+#definition(title: "Simple Module")[
+  Let $R$ be a ring,
+  and a $M$ be a left $R$-module.
+  We say that $M$ is an #highlightIndex("simple module")
+  (or #highlightIndex("irreducible module"))
+  if $M$ has no nontrivial proper submodules,
+  i.e., the only submodules of $M$ are $0$ and $M$ itself.
+]
+
+#definition(title: "Semisimple Module")[
+  Let $R$ be a ring,
+  and a $M$ be a left $R$-module.
+  We say that $M$ is a #highlightIndex("semisimple module")
+  (or #highlightIndex("completely reducible module"))
+  if $M$ is the direct sum of irreducible submodules.
+]
+
+#definition(title: "Semisimple Ring")[
+  Let $R$ be a ring.
+  We say that $R$ is a left #highlightIndex("semisimple ring")
+  if itself is semisimple as a left $R$-module.
+]
+
+And we already have Maschke's theorem about semisimplicity of group rings.
+#theorem(title: "Maschke's Theorem")[
+  Let $k$ be a field, and $G$ a finite group.
+  If the characteristic of $k$ does not divide the order of $G$,
+  then the group ring $k G$ is semisimple.
+]
+
+#definition(title:"Cyclic Module")[
+  Let $R$ be a ring,
+  and $M$ be a left $R$-module.
+  We say that $M$ is a #highlightIndex("cyclic module")
+  if there exists an element $m in M$
+  such that $M = R dot m$.
+]
+
+#definition(title: "Annihilator")[
+  Let $R$ be a ring,
+  and $M$ be a left $R$-module.
+  For any subset $S subseteq M$,
+  the #highlightIndex("annihilator") of $S$ in $R$ is defined as
+  $  ann_R (S) = {
+      r in R | forall s in S, r dot s = 0
+    }
+  $
+  which is a left ideal of $R$.
+  In particular, for any element $m in M$,
+  we define the annihilator of $m$ as
+  $ann_R (m) = ann_R ({m})$.
+]
+
+== Semisimple Rings and Modules
+
+Semisimple rings have very nice structures
+from the viewpoint of module theory,
+and we will just list some important results here.
+The proofs could be found at @AnIntroductionToHomologicalAlgebraRotman[Chapter 4.1].
+
+#proposition[
+  If $R$ is a ring,
+  a left $R$-module $M$ is semisimple
+  iff every submodule of $M$ is a direct summand.
+]
+
+#proposition[
+  Every submodule and quotient module of a semisimple module is semisimple.
+]
+
+#proposition[
+  The following conditions are equivalent for a ring $R$:
+  + $R$ is left semisimple.
+  + Every left $R$-module is semisimple.
+  + Every left $R$-module is injective.
+  + Every SES of left $R$-modules splits.
+  + Every left $R$-module is projective.
+]

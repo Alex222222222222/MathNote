@@ -68,6 +68,7 @@
 #let directSum = $plus.circle$
 #let directSumB = $plus.circle.big$
 #let subseteq = $subset.eq$
+#let ann = $op("ann")$
 
 // a set of dictionary for completion
 abelian
