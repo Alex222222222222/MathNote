@@ -53,6 +53,7 @@
 
 #let Hom = $op("Hom")$
 #let iso = $tilde.equiv$
+#let niso = $tilde.equiv.not$
 #let End = $op("End")$
 #let neq = $eq.not$
 #let circ = $circle.small$

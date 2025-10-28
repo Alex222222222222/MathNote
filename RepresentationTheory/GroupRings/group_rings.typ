@@ -330,7 +330,7 @@ We begin by some preliminary ring theory definitions.
   and we prove that $phi$ is injective.
   Take $z in Z(R)$,
   assume that $phi(z) = 0$ that is $z_(V_i) = 0$ for all $i$.
-  Now note that since $R$ is semisimple, $R$ is iso to is a finite and unique
+  Now note that since $R$ is semisimple, $R$ is iso to a finite and unique
   direct sums
   of simple modules as a left $R$-module, i.e.
   $
@@ -347,4 +347,158 @@ We begin by some preliminary ring theory definitions.
   And thus
   $z = sum_(i in I) z e_(i) = sum_(i in I) z_(V_(r_i)) e_(i)
   = sum_(i in I) 0 = 0$.
+]
+
+#lemma[
+  Let $R$ be a finite-dimensional left semisimple $k$-algebra,
+  s.t. $k$ is a a field.
+  Let ${V_1, dots, V_r}$ be the complete set of non-iso
+  simple ideals of $R$.
+  As $R$ is semisimple, $R$ is iso to a finite and unique
+  direct sums
+  of simple modules as a left $R$-module, i.e. 
+  $
+    R iso directSumB_(i in I) V_(r_i)
+  $
+  where $I$ is a finite index set,
+  and $V_(r_i) in {1,dots,r}$.
+
+  Define $B_j = directSumB_(i in I, r_i = j) V_j$ for all $j in {1,dots,r}$.
+  Then $B_j$ is a double-side ideal of $R$.
+]
+#proof[
+  Since $B_j$ can be treat as a sub left $R$-module of $R$,
+  $B_j$ is already a left $R$ ideal.
+
+  Now if $a in R$,
+  and for $j in {1,dots,r}$,
+  we can identity $V_j$ as a left ideal of $R$.
+  Note there might be different identification,
+  as there might be muiltiple $i in I$, s.t. $r_i = j$,
+  but let assume we have any of the identification.
+
+  Define $phi: V_j to R$ by $phi(v) = v a, forall v in V_j$,
+  it is easy to check that this is a left $R$-module homo.
+
+  Now take $j' in {1,dots,r}$ s.t. $j' neq j$.
+  Then there is a projection $pi: R -> V_(j')$,
+  as $R$ is a direct sum.
+  There might also be many such projection,
+  but let $pi$ be any of it.
+  Then $pi circ phi: V_j -> V_(j')$ is a homo of simple modules.
+  Since $V_j niso V_(j')$, $pi circ phi$ must be $0$.
+  And thus the $Img(phi)$ must be inside $B_j$,
+  and we are done.
+]
+
+#proposition[
+  If $R$ is a $k$-algebra,
+  and $R = B_1 directSum dots directSum B_r$,
+  where $B_i$ are non-zero two sided ideals.
+  Then $dim Z(R) >= r$.
+]
+#proof[
+  Since $R = B_1 directSum dots directSum B_r$,
+  we have $1 = b_1 + dots + b_r$ for $b_i in B_i$.
+  Now non of $b_i = 0$,
+  as if $b_i = 0$.
+  And we take $b in B_i$ s.t. $b neq 0$.
+  Then $b = b b_1 + dots + b b_r$.
+  Now $b in directSumB_(j neq i) B_j$ since $b_i = 0$,
+  a contradiction.
+
+  Also take $a in R$,
+  we have $a = a b_1 + dots + a b_r$,
+  and $a = b_1 a + dots + b_r a$.
+  Now $a b_i = b_i a$,
+  since $R$ is a direct sum,
+  all $B_i$ are disjoint.
+  Thus $b_i in Z(R)$.
+
+  Define a $k$-linear map
+  $phi: k^r -> R$ by
+  $
+    (k_1, dots, k_r) mapsto k_1 e_1 + dots k_r e_r
+  $
+
+  Also by above discussion, 
+  $Img phi in Z(R)$.
+
+  This is also injective since,
+  if $k_1 e_1 + dots k_r e_r = 0 in R$,
+  then $k_i e_i = 0$ for all $i$.
+  If $k_i neq 0$,
+  then $1/ k_i k_i e_i = 0$,
+  then $e_i = 0$, contradiction.
+]
+
+#corollary[
+  Let $R$ be a finite-dimensional $k$ algebra,
+  s.t. $k$ algebraically closed field.
+  Let $r$ be the number of unique simple modules of $R$
+  up to iso.
+  Then $dim Z(R) = r$.
+]
+
+#definition(title: $s(G)$)[
+  For a finite group $G$,
+  let $s(G)$ denote the number of
+  conjugacy classes of $G$.
+]
+
+#proposition[
+  Let $G$ be a finite group,
+  and $k$ a algebraically closed field,
+  s.t. $|G|$ is not divisible by the character of $k$.
+  Let ${G_1, dots, G_(s(G))}$ be the collection of conjugacy classes
+  of $G$.
+  And for each $i$, define $hat(G_i): G -> k in k G$ as 
+  $
+    hat(G_i)(g) = cases(
+      1 &"if" g in G_i,
+      0 &"otherwise"
+    )
+  $
+
+  Then ${hat(G_1), dots, hat(G_(s(G)))}$ forms a basis of $Z(k G)$
+  as $k$-vector space.
+  And $dim Z(k G) = s(G)$.
+]
+#proof[
+  Let $phi: G -> k G$ be the embedding injection.
+
+  First we prove that for each $i$,
+  we have $hat(G_i) in Z(k G)$,
+  since every element in $k G$
+  has a representation of $sum_(g in G) k_g phi(g)$,
+  for $k_g in k$.
+  Thus, we only need to prove that $hat(G_i)$ commute with $phi(g)$
+  for each $g$.
+  And note that $phi(g)^(-1) hat(G_i) phi(g)$ by definition
+  is equal to
+  $
+    phi(g^(-1)) hat(G_i) phi(g) (h) &= sum_(g_1,g_2,g_3 in G, g_1 g_2 g_3 = h)
+    phi(g^(-1))(g_1) hat(G_i)(g_2) phi(g)(g_3) \
+    &= sum_(g_2 in G_i, g^(-1) g_2 g = h)
+    hat(G_i)(g_2)
+  $
+  Since $G_i$ is a finite conjugacy class,
+  $g^(-1) G_i g$ is a simple reordering,
+  and $phi(g^(-1)) hat(G_i) phi(g) (h) = hat(G_i)$.
+
+  Also, it is easy to check that ${hat(G_1), dots, hat(G_(s(G)))}$
+  is linear independent, since each $hat(G_i)$ has disjoint support in $G$.
+
+  The only thing left is to check that ${hat(G_1), dots, hat(G_(s(G)))}$
+  span the whole $Z(k G)$.
+
+  Take $sum_(g in G) k_g phi(g) in k G$,
+  assume that it is inside $Z(k G)$.
+  Then
+  $
+    sum_(g in G) k_g phi(g) &= 1/(|G|) sum_(g' in G)
+      phi(g')^(-1)(sum_(g in G) k_g phi(g))phi(g') \
+    &= 1/(|G|) sum_(i) ((sum_(g in G_i) k_g)(sum_(g in G_i) phi(g))) \
+    &= 1/(|G|) sum_(i) ((sum_(g in G_i) k_g)hat(G_i)) \
+  $
 ]
