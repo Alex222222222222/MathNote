@@ -502,3 +502,10 @@ We begin by some preliminary ring theory definitions.
     &= 1/(|G|) sum_(i) ((sum_(g in G_i) k_g)hat(G_i)) \
   $
 ]
+
+#corollary[
+  Let $G$ be a finite group,
+  and $k$ be an algebraically closed field,
+  s.t. the character of $k$ does not divide $|G|$.
+  Then $r_k (G) = s(G)$.
+]
