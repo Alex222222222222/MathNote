@@ -13,3 +13,5 @@
 
 #include "05.SubspaceTopology/note.typ"
 #include "05.SubspaceTopology/exercise.typ"
+
+#include "06.ClosedSetsAndLimitPoints/note.typ"
