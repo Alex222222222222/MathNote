@@ -160,7 +160,10 @@
 ]<def:Limit>
 
 #definition(title: [$T_1$ axiom])[
-  A space satisfies the #highlightIndex[$T_1$ axiom] if every finite point set is closed.
+  A space satisfies the
+  #index(display: [$T_1$ axiom], [T_1 axiom])
+  #highlight[$T_1$ axiom]
+  if every finite point set is closed.
 ]<def:T1Axiom>
 
 #theorem[

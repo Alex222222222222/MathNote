@@ -77,6 +77,7 @@
 #let directSumB = $plus.circle.big$
 #let subseteq = $subset.eq$
 #let ann = $op("ann")$
+#let diam = $op("diam")$
 #let le = $<=$
 #let ge = $>=$
 

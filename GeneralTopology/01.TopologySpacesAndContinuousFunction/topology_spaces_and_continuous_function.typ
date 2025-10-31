@@ -19,3 +19,5 @@
 
 #include "07.ContinuousFunction/note.typ"
 #include "07.ContinuousFunction/exercise.typ"
+
+#include "08.MetricTopology/note.typ"
