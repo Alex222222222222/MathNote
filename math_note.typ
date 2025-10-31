@@ -21,6 +21,8 @@
 
 #show link: text.with(fill: blue)
 
+#include "GeneralTopology/general_topology.typ"
+
 #include "RepresentationTheory/representation_theory.typ"
 
 #include "HomologicalAlgebra/homological_algebra.typ"
