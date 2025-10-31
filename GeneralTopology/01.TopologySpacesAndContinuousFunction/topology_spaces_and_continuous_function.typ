@@ -8,3 +8,5 @@
 #include "02.Basis/exercise.typ"
 
 #include "03.OrderTopology/note.typ"
+
+#include "04.ProductTopology/note.typ"
