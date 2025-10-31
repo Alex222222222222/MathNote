@@ -16,3 +16,5 @@
 
 #include "06.ClosedSetsAndLimitPoints/note.typ"
 #include "06.ClosedSetsAndLimitPoints/exercise.typ"
+
+#include "07.ContinuousFunction/note.typ"
