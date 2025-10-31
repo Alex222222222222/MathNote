@@ -12,3 +12,4 @@
 #include "04.ProductTopology/note.typ"
 
 #include "05.SubspaceTopology/note.typ"
+#include "05.SubspaceTopology/exercise.typ"
