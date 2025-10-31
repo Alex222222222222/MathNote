@@ -23,9 +23,9 @@ and globalize the property.
   then $S = R - cal(p)$ is multiplicative in $R$.
 ]
 
-#definition(title: "k-algebra")[
+#definition(title: [$k$-algebra])[
   Let $k$ be a commutative ring.
-  Then a ring $R$ is a $k$-#highlightIndex("algebra")
+  Then a ring $R$ is a #index(display: [$k$-algebra], "k-algebra")
   if $R$ is a $k$ module, satisfy:
   $
     a(r s) = (a r) s = r (a s)

@@ -27,9 +27,9 @@
 
 #include "ModuleTheory/module_theory.typ"
 
-#include "Manifold/manifold.typ"
+#include "DifferentialbleManifold/differentialble_manifold.typ"
 
 = Index
-#columns(3)[
+#columns(2)[
   #make-index(title: none)
 ]

@@ -1,7 +1,8 @@
-#import "@preview/in-dexter:0.7.2": index, make-index
+#import "@preview/in-dexter:0.7.2": *
 #import "@preview/commute:0.3.0": *
 #import "@preview/great-theorems:0.1.2": *
 #import "@preview/rich-counters:0.2.2": *
+#import "@preview/xarrow:0.3.1": xarrow
 
 #bibliography("refs.bib")
 
@@ -11,7 +12,7 @@
 
 #let mathcounter = rich-counter(
   identifier: "mathblocks",
-  inherited_levels: 2
+  inherited_levels: 2,
 )
 
 #let theorem = mathblock(
@@ -52,6 +53,8 @@
 #let proof = proofblock()
 
 #let Hom = $op("Hom")$
+#let colim = $op("colim")$
+#let Mod = $op("Mod")$
 #let iso = $tilde.equiv$
 #let niso = $tilde.equiv.not$
 #let End = $op("End")$

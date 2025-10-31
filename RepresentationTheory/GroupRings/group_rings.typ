@@ -2,7 +2,7 @@
 
 == Group Rings
 
-#definition(title:"Group Ring")[
+#definition(title: "Group Ring")[
   Let $R$ be a ring, and $G$ be a group.
   The group ring $R G$ is a ring defined as:
   $
@@ -136,7 +136,7 @@ And we already have Maschke's theorem about semisimplicity of group rings.
   then the group ring $k G$ is semisimple.
 ]
 
-#definition(title:"Cyclic Module")[
+#definition(title: "Cyclic Module")[
   Let $R$ be a ring,
   and $M$ be a left $R$-module.
   We say that $M$ is a #highlightIndex("cyclic module")
@@ -242,7 +242,7 @@ And we could define:
   Let $G$ be a finite group,
   and $k$ a field,
   s.t. the characteristic of $k$ does not divide the order of $G$.
-  The #highlightIndex($r_k (G)$) of $G$ over $k$
+  The #index(display: [$r_k (G)$], "r_k (G)") of $G$ over $k$
   is defined as the number of non-isomorphic irreducible representations of $G$ over $k$.
 ]
 
@@ -260,9 +260,9 @@ We begin by some preliminary ring theory definitions.
   which is a subring of $R$.
 ]
 
-#definition(title: $k"-Algebra"$)[
+#definition(title: [$k$-algebra])[
   Let $k$ be a field.
-  A #highlightIndex($k"-Algebra"$) is a ring $R$
+  A #index(display: [$k$-algebra], "k-algebra") is a ring $R$
   s.t. $k$ is a subring of the center $Z(R)$ of $R$.
 ]
 
