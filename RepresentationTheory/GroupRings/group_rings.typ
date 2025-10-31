@@ -242,7 +242,8 @@ And we could define:
   Let $G$ be a finite group,
   and $k$ a field,
   s.t. the characteristic of $k$ does not divide the order of $G$.
-  The #index(display: [$r_k (G)$], "r_k (G)") of $G$ over $k$
+  The #index(display: [$r_k (G)$], "r_k (G)") #highlight[$r_k (G)$]
+  of $G$ over $k$
   is defined as the number of non-isomorphic irreducible representations of $G$ over $k$.
 ]
 
@@ -262,7 +263,9 @@ We begin by some preliminary ring theory definitions.
 
 #definition(title: [$k$-algebra])[
   Let $k$ be a field.
-  A #index(display: [$k$-algebra], "k-algebra") is a ring $R$
+  A #index(display: [$k$-algebra], "k-algebra")
+  #highlight[$k$-algebra]
+  is a ring $R$
   s.t. $k$ is a subring of the center $Z(R)$ of $R$.
 ]
 

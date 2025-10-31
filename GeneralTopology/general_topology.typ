@@ -20,26 +20,6 @@
 
 \newcommand{\diam}{\mathrm{diam}}
 
-\begin{document}
-      \maketitle
-
-      \newpage
-
-      \tableofcontents
-
-      \newpage
-
-      \input{Definitions/definitions.tex}
-
-      \newpage
-
-      \input{Theorems/theorems.tex}
-
-      \newpage
-
-      \input{01.TopologySpacesAndContinuousFunction/02.Basis/note.tex}
-      \input{01.TopologySpacesAndContinuousFunction/02.Basis/exercise.tex}
-
       \input{01.TopologySpacesAndContinuousFunction/03.OrderTopology/note.tex}
       \input{01.TopologySpacesAndContinuousFunction/03.OrderTopology/exercise.tex}
 
@@ -58,5 +38,4 @@
       \input{01.TopologySpacesAndContinuousFunction/08.MetricTopology/note.tex}
       \input{01.TopologySpacesAndContinuousFunction/08.MetricTopology/exercise.tex}
 
-\end{document}
 */

@@ -171,6 +171,7 @@
 #definition(title: [$C^infinity (X)$])[
   Let $X$ be manifold,
   define #index(display: [$C^infinity (X)$], "C^infinity (X)")
+  #highlight[$C^infinity (X)$]
   to be the set of all smooth functions $X -> RR$.
   Note that $C^infinity (X)$ is naturally a $RR$-algebra,
   under pointwise addition, muiltiplication,

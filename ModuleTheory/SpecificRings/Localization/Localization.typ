@@ -26,6 +26,7 @@ and globalize the property.
 #definition(title: [$k$-algebra])[
   Let $k$ be a commutative ring.
   Then a ring $R$ is a #index(display: [$k$-algebra], "k-algebra")
+  #highlight[$k$-algebra]
   if $R$ is a $k$ module, satisfy:
   $
     a(r s) = (a r) s = r (a s)

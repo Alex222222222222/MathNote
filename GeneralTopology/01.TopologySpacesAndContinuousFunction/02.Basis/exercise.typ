@@ -1,3 +1,5 @@
+
+/*
 \subsection{Exercise}
 
       \begin{enumerate}
@@ -25,3 +27,4 @@
 
 
       \end{enumerate}
+      */
