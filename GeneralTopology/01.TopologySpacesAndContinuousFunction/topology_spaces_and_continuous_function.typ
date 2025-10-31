@@ -18,3 +18,4 @@
 #include "06.ClosedSetsAndLimitPoints/exercise.typ"
 
 #include "07.ContinuousFunction/note.typ"
+#include "07.ContinuousFunction/exercise.typ"
