@@ -53,6 +53,8 @@
 #let proof = proofblock()
 
 #let Hom = $op("Hom")$
+#let notin = $in.not$
+#let Bd = $op("Bd")$
 #let Cl = $op("Cl")$
 #let Int = $op("Int")$
 #let colim = $op("colim")$
