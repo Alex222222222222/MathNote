@@ -23,6 +23,8 @@
 
 #include "RepresentationTheory/representation_theory.typ"
 
+#include "HomologicalAlgebra/homological_algebra.typ"
+
 #include "ModuleTheory/module_theory.typ"
 
 #include "Manifold/manifold.typ"
