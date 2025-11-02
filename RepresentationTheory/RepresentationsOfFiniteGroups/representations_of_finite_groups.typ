@@ -207,7 +207,7 @@ from the representation $rho$ to the quotient representation $rho | _(V \/ W)$.
   A representation $rho: G to G L(V)$ of a finite group $G$ over a field $k$
   is called #highlightIndex("completely reducible")
   if there exists a collection of $G$-stable spaces ${U_1, dots, U_n}$ such that
-  $V = directSumB U_i$,
+  $V = directSum.B U_i$,
   and $rho|_(U_i)$ is irreducible for all $i$.
 ]
 

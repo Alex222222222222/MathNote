@@ -73,8 +73,12 @@
 #let Spm = $op("Spm")$
 #let Img = $op("Im")$
 #let GL = $op("GL")$
-#let directSum = $plus.circle$
-#let directSumB = $plus.circle.big$
+#let directSum = symbol(
+  sym.plus.o,
+  ("b", sym.plus.o.big),
+  ("big", sym.plus.o.big),
+  ("B", sym.plus.o.big)
+)
 #let subseteq = $subset.eq$
 #let ann = $op("ann")$
 #let diam = $op("diam")$

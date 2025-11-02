@@ -318,11 +318,11 @@ The elements in the Jacobson radical can be characterized:
     arr((0, 2), (0, 3), [$phi$]),
   ))
 
-  As $M$ is projective, we may assume that $F = K plus.circle M$.
-  Thus $J F = J K plus.circle J M$, also we have $K subset.eq J F$.
+  As $M$ is projective, we may assume that $F = K directSum M$.
+  Thus $J F = J K directSum J M$, also we have $K subset.eq J F$.
   Thus $J K subset.eq K subset.eq J F$.
   Thus, by knowledge in module theory,
-  we have $K = J K plus.circle (K inter J M)$.
+  we have $K = J K directSum (K inter J M)$.
   However,$K inter M = 0$ by hypothesis,
   thus, $K inter J M = 0$.
   And thus $K = J K$.
@@ -345,9 +345,9 @@ The elements in the Jacobson radical can be characterized:
   Superfluous module is also called
   #highlightIndex("nongenerators"),
   for if $S$ is superfluous submodule of $M$,
-  and $M = angle.l x_1, dots, x_n, s_1, dots, s_k angle.r$
+  and $M = chevron.l x_1, dots, x_n, s_1, dots, s_k chevron.r$
   s.t. $s_1, dots, s_K in S$,
-  then $M = angle.l x_1, dots, x_n angle.r$.
+  then $M = chevron.l x_1, dots, x_n chevron.r$.
 ]
 
 #lemma[
@@ -375,24 +375,24 @@ The elements in the Jacobson radical can be characterized:
 
 #lemma[
   If $S_i$ is superfluous in $M_i$ for $i = 1, dots, n$,
-  then $plus.circle.big S_i$ is superfluous in
-  $plus.circle.big M_i$.
+  then $directSum.B S_i$ is superfluous in
+  $directSum.B M_i$.
 ] <sum-of-superfluous-is-superfluous>
 #proof[
   We prove the case for $n = 2$,
   and all the other cases should follow by induction.
 
-  Take $N subset.eq M_1 plus.circle M_2$ s.t. 
-  $N + S_1 plus.circle S_2 = M_1 plus.circle M_2$.
+  Take $N subset.eq M_1 directSum M_2$ s.t. 
+  $N + S_1 directSum S_2 = M_1 directSum M_2$.
   As now $S_1 inter S_2 = 0$,
-  we have $S_1 plus.circle S_2 = S_1 + S_2$.
-  And $N + S_1 + S_2 = M_1 plus.circle M_2$.
+  we have $S_1 directSum S_2 = S_1 + S_2$.
+  And $N + S_1 + S_2 = M_1 directSum M_2$.
   By previous lemma, $S_2$ is superfluous in
-  $M_1 plus.circle M_2$,
-  thus $N + S_1 = M_1 plus.circle M_2$.
+  $M_1 directSum M_2$,
+  thus $N + S_1 = M_1 directSum M_2$.
   And again by previous lemma,
-  $S_1$ is superfluous in $M_1 plus.circle M_2$,
-  thus $N = M_1 plus.circle M_2$.
+  $S_1$ is superfluous in $M_1 directSum M_2$,
+  thus $N = M_1 directSum M_2$.
 ]
 
 #lemma[
@@ -430,10 +430,10 @@ The elements in the Jacobson radical can be characterized:
   and $II_2 = \{0,1\}$.
   Then take $x in F$ s.t. $phi(x) = 1$.
   Then $phi(x) = phi(3x)$,
-  and it is easy to verify that $F = ker phi + angle.l 3x angle.r$.
+  and it is easy to verify that $F = ker phi + chevron.l 3x chevron.r$.
   As $ker phi$ is now superfluous,
-  $angle.l x angle.r subset.eq F 
-    = angle.l 3x angle.r subset.eq angle.l x angle.r$,
+  $chevron.l x chevron.r subset.eq F 
+    = chevron.l 3x chevron.r subset.eq chevron.l x chevron.r$,
   which is not possible, as $F$ is projective.
 ]
 
@@ -531,7 +531,7 @@ The elements in the Jacobson radical can be characterized:
     arr((0, 3), (0, 4), []),
   ))
   As $P$ is projective,
-  $Q = ker sigma plus.circle P$.
+  $Q = ker sigma directSum P$.
 ]
 #remark[
   By this lemma, we can derive that the projective cover is unique
@@ -546,24 +546,24 @@ The elements in the Jacobson radical can be characterized:
   then $P$ and $Q$ are isomorphism.
 ]
 #proof[
-  Let $P tilde.rev.equiv Q_1 plus.circle A_1$
-  and $Q tilde.rev.equiv P_1 plus.circle B_1$,
+  Let $P tilde.rev.equiv Q_1 directSum A_1$
+  and $Q tilde.rev.equiv P_1 directSum B_1$,
   where $P tilde.rev.equiv P_1$ and 
   $Q tilde.rev.equiv Q_1$.
   Then $
     P
-    &tilde.rev.equiv Q_1 plus.circle A_1 \
-    &tilde.rev.equiv P_1 plus.circle B_1 plus.circle A_1 \
-    &tilde.rev.equiv Q_1 plus.circle A_1 plus.circle B_1 plus.circle A_1 \
-    &tilde.rev.equiv P_1 plus.circle B_1
-    plus.circle A_1 plus.circle B_1 plus.circle A_1
+    &tilde.rev.equiv Q_1 directSum A_1 \
+    &tilde.rev.equiv P_1 directSum B_1 directSum A_1 \
+    &tilde.rev.equiv Q_1 directSum A_1 directSum B_1 directSum A_1 \
+    &tilde.rev.equiv P_1 directSum B_1
+    directSum A_1 directSum B_1 directSum A_1
   $
 
   And through induction, we could get,
   for $n in NN$
   $
-    P tilde.rev.equiv P_n plus.circle.big_(i=1)^n (
-      B_1 plus.circle A_1
+    P tilde.rev.equiv P_n directSum.B_(i=1)^n (
+      B_1 directSum A_1
     )
   $
   where $P_n tilde.rev.equiv P$.
@@ -576,18 +576,18 @@ The elements in the Jacobson radical can be characterized:
   $
   As $P$ have DCC, the sequences must end, which gives
   $P_n = P_{n-1}$ for some $n$,
-  and that applies $B_1 plus.circle A_1 = 0$.
+  and that applies $B_1 directSum A_1 = 0$.
   Thus $P$ is isomorphic to $Q$.
 
   If $P$ has ACC, then
   $
-    0 subset.eq B_1 plus.circle A_1
-    subset.eq plus.circle.big_(i=1)^2 (
-      B_1 plus.circle A_1
+    0 subset.eq B_1 directSum A_1
+    subset.eq directSum.B_(i=1)^2 (
+      B_1 directSum A_1
     ) subset.eq dots subset.eq P
   $
   As $P$ has ACC, the sequence must ends,
-  and that applies $B_1 plus.circle A_1 = 0$.
+  and that applies $B_1 directSum A_1 = 0$.
   Thus $P$ is isomorphic to $Q$.
 ]
 #proposition[
@@ -602,17 +602,17 @@ The elements in the Jacobson radical can be characterized:
   $phi(p_i) = m_i$ for all $i$.
   As $\{p_1,p_2,dots,p_n\}$ is a finite subet of $P$,
   there must be a finite subset $cal(P)_1$ of $cal(P)$
-  s.t. $angle.l cal(P)_1 angle.r supset.eq \{p_1,p_2,dots,p_n\}$.
+  s.t. $chevron.l cal(P)_1 chevron.r supset.eq \{p_1,p_2,dots,p_n\}$.
 
-  We assert that $P = angle.l cal(P)_1 angle.r + ker phi$.
+  We assert that $P = chevron.l cal(P)_1 chevron.r + ker phi$.
   Given any $p in P$,
   then exists $\{r_1,r_2,dots,r_n\}$ s.t.
   $phi(p) = r_1m_1 + r_2m_2 + dots + r_n m_n$.
-  Also $r_1p_1 + r_2p_2 + dots + r_n p_n in angle.l cal(P)_1 angle.r$,
+  Also $r_1p_1 + r_2p_2 + dots + r_n p_n in chevron.l cal(P)_1 chevron.r$,
   and $phi(r_1p_1 + r_2p_2 + dots + r_n p_n) = phi(p)$,
   thus $r_1p_1 + r_2p_2 + dots + r_n p_n - p in ker phi$.
-  Thus $p in angle.l cal(P)_1 angle.r + ker phi$.
-  As $ker phi$ is superfluous $P = angle.l cal(P)_1 angle.r$,
+  Thus $p in chevron.l cal(P)_1 chevron.r + ker phi$.
+  As $ker phi$ is superfluous $P = chevron.l cal(P)_1 chevron.r$,
   which contradicts that $P$ is not finitely generated.
 ]
 #proposition[
@@ -690,7 +690,7 @@ The elements in the Jacobson radical can be characterized:
   then $R e$ is a direct summand of $R$.
 ] <e-idempotent-Re-direct-summand>
 #proof[
-  We have $R = R e plus.circle \{
+  We have $R = R e directSum \{
     r divides r e = 0
   \}$.
   As for any $r in R$,
@@ -716,13 +716,13 @@ The elements in the Jacobson radical can be characterized:
 #proof[
   If $R$ is a semisimple ring,
   then $
-    R = plus.circle.big_(alpha in A) S_alpha
+    R = directSum.B_(alpha in A) S_alpha
   $
   where $S_alpha$ are simple left ideals of $R$.
   Then the maximal ideals of $R$ are
   $
     \{
-      plus.circle.big_(beta in A without \{alpha\}) S_beta
+      directSum.big_(beta in A without \{alpha\}) S_beta
       divides alpha in A
     \},
   $
@@ -740,7 +740,7 @@ The elements in the Jacobson radical can be characterized:
     S_alpha divides alpha in A  
   \}$, to be the collection of all simple submodule.
   It is easy to check that $S_alpha inter S_beta = 0$ if $alpha eq.not beta$.
-  And it is also easy to check that $R = plus.big.circle_(alpha in A) S_alpha$.
+  And it is also easy to check that $R = directSum.b_(alpha in A) S_alpha$.
   Thus $R$ is semisimple.
 ]
 
@@ -800,10 +800,10 @@ The elements in the Jacobson radical can be characterized:
   we have $M \/J M$ semisimple.
   And thus $M \/J M$ is a sum of simple $R \/ J$-modules, i.e.
   $
-    M \/ J M = plus.big.circle_(alpha in A) S_alpha .
+    M \/ J M = directSum.b_(alpha in A) S_alpha .
   $
 
-  Note that $M \/ J M = plus.big.circle_(alpha in A) S_alpha$
+  Note that $M \/ J M = directSum.b_(alpha in A) S_alpha$
   is also true, if we regard $M \/ J M$ and $S_alpha$ as $R$-module,
   since every $R \/ J$ module and homomorphism can be naturally regarded
   as $R$ module and homomorphism.
@@ -813,7 +813,7 @@ The elements in the Jacobson radical can be characterized:
   by @R-artinian-simple-module-of-R-quotient-J-have-projective-cover
   each $S_alpha$ have a projective cover
   $(P_alpha, phi_alpha)$.
-  Define $P = plus.big.circle_(alpha in A) P_alpha$,
+  Define $P = directSum.b_(alpha in A) P_alpha$,
   and $phi: P -> M \/ J M$ by $
     phi(r_1 + r_2 + dots + r_n) =
     phi_(alpha_1)(r_1) + phi_(alpha_2)(r_2) + dots + phi_(alpha_n)(r_n)
@@ -821,9 +821,9 @@ The elements in the Jacobson radical can be characterized:
   where $r_i in P_alpha$ for each $i$.
   It is easy to verify that $phi$ is surjective.
   And easy to verify that
-  $ker phi = plus.big.circle_(alpha in A) ker phi_alpha$
+  $ker phi = directSum.b_(alpha in A) ker phi_alpha$
   and by @sum-of-superfluous-is-superfluous
-  $plus.big.circle_(alpha in A) ker phi_alpha$ is superfluous.
+  $directSum.b_(alpha in A) ker phi_alpha$ is superfluous.
   Thus $(P, phi)$ is a projective.
 
   We also have the following commutative diagram:

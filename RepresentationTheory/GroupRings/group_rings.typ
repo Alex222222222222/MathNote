@@ -186,7 +186,7 @@ Some of the proofs that we omitted here could be found at @AnIntroductionToHomol
 
 #lemma[
   If a ring $R$ is direct sum of left ideals,
-  say, $R = directSumB_(i in I) L_i$,
+  say, $R = directSum.B_(i in I) L_i$,
   then only finitely many $L_i$ are nonzero.
 ]
 #proof[
@@ -337,7 +337,7 @@ We begin by some preliminary ring theory definitions.
   direct sums
   of simple modules as a left $R$-module, i.e.
   $
-    R iso directSumB_(i in I) V_(r_i)
+    R iso directSum.B_(i in I) V_(r_i)
   $
   where $I$ is a finite index set,
   and $V_(r_i) in {1,dots,r}$.
@@ -361,12 +361,12 @@ We begin by some preliminary ring theory definitions.
   direct sums
   of simple modules as a left $R$-module, i.e. 
   $
-    R iso directSumB_(i in I) V_(r_i)
+    R iso directSum.B_(i in I) V_(r_i)
   $
   where $I$ is a finite index set,
   and $V_(r_i) in {1,dots,r}$.
 
-  Define $B_j = directSumB_(i in I, r_i = j) V_j$ for all $j in {1,dots,r}$.
+  Define $B_j = directSum.b_(i in I, r_i = j) V_j$ for all $j in {1,dots,r}$.
   Then $B_j$ is a double-side ideal of $R$.
 ]
 #proof[
@@ -407,7 +407,7 @@ We begin by some preliminary ring theory definitions.
   as if $b_i = 0$.
   And we take $b in B_i$ s.t. $b neq 0$.
   Then $b = b b_1 + dots + b b_r$.
-  Now $b in directSumB_(j neq i) B_j$ since $b_i = 0$,
+  Now $b in directSum.B_(j neq i) B_j$ since $b_i = 0$,
   a contradiction.
 
   Also take $a in R$,
