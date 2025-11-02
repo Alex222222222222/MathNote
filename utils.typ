@@ -71,6 +71,7 @@
 #let radicalIdeal = $frak(r)$
 #let Spec = $op("Spec")$
 #let Spm = $op("Spm")$
+#let infty = symbol(sym.infinity)
 #let Img = $op("Im")$
 #let GL = $op("GL")$
 #let directSum = symbol(
@@ -84,6 +85,8 @@
 #let diam = $op("diam")$
 #let le = $<=$
 #let ge = $>=$
+#let tangentSpace(x, X) = $T_(#x) #X$
+#let cotangentSpace(x, X) = $T^*_(#x) #X$
 
 // a set of dictionary for completion
 abelian
