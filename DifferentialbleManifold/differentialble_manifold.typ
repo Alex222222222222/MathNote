@@ -274,7 +274,7 @@ with desired properties.
   let $u in X$.
   And let $(U,phi)$ be a chart around $u$.
   And $phi(u_1, ..., u_n) = u$.
-  Let $(x_1,...,x_n)= phi: U -> X$ be local coordinates
+  Let $(x_1,...,x_n)= phi^(-1): X -> U$ be local coordinates
   of the chart.
   Then for each tangent vector $v in T_u X$,
   there unique $v_1, ..., v_n$ s.t.
@@ -478,4 +478,75 @@ with desired properties.
   s.t. $pi circ s = id$
   is always called a #highlightIndex[section],
   and the set of all sections is written as $Gamma(X, Y)$.
+]
+
+=== Tangent and Cotangent Bundles
+
+#definition[
+  Let $X$ be manifold with dimension $n$.
+  As sets, define
+  $
+    T X &= {(x,v) | x in X, v in tangentSpace(x, X)}\
+    T^* X &= {(x,v) | x in X, v in cotangentSpace(x,X)}
+  $
+  Also define maps:
+  $
+    &pi: T X -> X, &pi: (x, v) mapsto x, &forall (x, v) in T X\
+    &pi: T^* X -> X, &pi: (x, v) mapsto x, &forall (x, v) in T^* X\
+  $
+
+  Let $(U, phi)$ be a chart on $X$,
+  given local coordinates $(x_1,..., x_n)$ defined by the chart.
+  Then we have basis ${partial/(partial x_1),...,partial/(partial x_n)}$
+  for $tangentSpace(x, X)$
+  and basis ${d x_1, ..., d x_n}$ for $cotangentSpace(x, X)$,
+  for all $x in phi(U)$.
+  Define $T phi: U times RR^n -> T X$,
+  $T^* phi: U times RR^n -> T^* X$ by
+  $
+    &T phi: &((u_1,...,u_n),(v_1,...,v_n)) &mapsto
+      (
+        phi(u_1,...,u_n),
+        v_1 partial/(partial x_1)+...+v_n partial/(partial x_n)
+      ) \
+    &T^* phi: &((u_1,...,u_n),(w_1,...,w_n)) &mapsto
+      (
+        phi(u_1,...,u_n),
+        w_1 d x_1+...+w_n d x_n
+      )
+  $
+  Then all $(U times RR^n, T phi)$ and $(U times RR^n, T^* phi)$
+  defined like this, defines a atlas on $T X$ and $T^* X$,
+  with the topology induced by the atlas.
+  And this defines manifold structures on $T X$ and $T^* X$.
+
+  Clearly $pi: T X -> X$ and $pi: T^* X -> X$
+  are smooth, this makes $T X$ and $T^* X$ into vector bundles.
+  Sections in $Gamma^infty (T X)$ are called #highlightIndex[vector fields].
+  Sections in $Gamma^infty (T^* X)$ are called #highlight[$1$-forms]
+  #index(display: [$1$-forms], "1-forms").
+]
+
+#proposition[
+  Let $f: X -> Y$ be a smooth map of manifold.
+  Then there is induced smooth map $T f: T X -> T Y$
+  by
+  $
+    T f: (x, v) mapsto (f(x), T_x f (v)), forall (x,v) in T X
+  $
+  where $T_x f$ is the induced map
+  $tangentSpace(x, X) -> tangentSpace(f(x), Y)$.
+
+  If there is another smooth map $g: Y -> Z$,
+  then the map $T g circ f = T g circ T f$ is also smooth.
+]
+#remark[
+  If we are given a map $f: X -> Y$, then $f$ does not induce a map
+  $T^* X -> T^* Y$,
+  since if $f$ does induce a map,
+  then the first part on $T^* X$
+  is covariant,
+  but the second part on $T^* X$
+  is contravariant,
+  which is kind of in different direction.
 ]
