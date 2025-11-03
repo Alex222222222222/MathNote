@@ -586,3 +586,77 @@ with desired properties.
   Embeddings are injective immersions,
   but not all injective immersions are embeddings.
 ]
+
+#proposition[
+  If $f: X -> Y$ is a smooth map
+  of manifolds.
+  + If $f$ is a submersion, then $dim X ge dim Y$.
+  + If $f$ is an immersion, then $dim X le dim Y$.
+]
+
+=== Fibres of Submersions are Submanifolds
+
+#theorem[
+  Let $f: X -> Y$ be a submersion of manifolds.
+  Then for each $y in Y$,
+  the #highlightIndex[fibre] $X_y = f^(-1) (y)$
+  has a uniuqe structure of a manifold
+  od dimension $dim X - dim Y$,
+  s.t. the injection
+  $i: X_y -> X$ is an embedding.
+]
+#remark[
+  There is a similar theorem for topological manifold,
+  however, with less condition on the map $f: X -> Y$.
+]
+
+// TODO proof
+
+By investigating the proof,
+we notice that for a fixed $y in Y$,
+the proof only needs $T_x f$ surjective for all $x in X_y$,
+then $X_y -> X$ will become a embedding.
+We do not need for all $x in X$,
+$T_x f$ to be surjective.
+
+#corollary[
+  Suppose $X$ is a manifold with dimension $n$,
+  and $k$ s.t. $n ge k$.
+  Also $(f_1, ...,f_k): X -> RR^k$
+  smooth s.t. ${d_x f_1, ... ,d_x f_2}$
+  linear independent in $cotangentSpace(x, X)$
+  for all $x in X$ with $(f_1, ...,f_k)(x) = (0,...,0)$.
+
+  Then $Y = {x in X | (f_1, ...,f_k)(x) = (0,...,0)}$
+  is an embedded submanifold of $X$
+  with dimension $n - k$.
+]
+
+// TODO proof
+
+This corollary allows us to build examples of manifolds.
+#example[
+  Define $f: RR^(n+1) -> R$ by
+  $
+    f: (x_1, ..., x_(n+1)) mapsto x_1^2 + ... + x_(n+1)^2 - 1
+  $
+  Then $f^(-1) (0)$
+  is the classical example of $S^n$.
+]
+
+#theorem(title: [Sard's Theorem])[
+  Let $f: X -> Y$ be a smooth map,
+  s.t. $dim X ge dim Y$.
+  Then there is a dense subset $S subset.eq Y$
+  (in fact, we have $Y \\ S$ measure zero,
+  if measure is defined properly on $Y$, for instance,
+  $Y$ is a subspace of $RR^n$),
+  s.t. for all $y in Y$,
+  and all $x in X_y$,
+  we have $T_x f: tangentSpace(x, X) -> tangentSpace(y, Y)$
+  surjective.
+  So that $X_y =  f^(-1) (y)$
+  is an embedded submanifold of $X$,
+  of dimension $dim X - dim Y$.
+  #index[Sard's Theorem]
+]
