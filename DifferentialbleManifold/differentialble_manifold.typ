@@ -711,8 +711,10 @@ which we will state as the following proposition.
 ]
 
 #remark[
-  For each $x in X$, $v(x) in tangentSpace(x, X)$,
-  and $v(x)$ varying smoothly with $x$.
+  For each $x in X$, $v(x) in {x} times tangentSpace(x, X)$,
+  we write $v_x$ to be the second part of $v(x)$,
+  and $v_x in tangentSpace(x,X)$.
+  And $v_x$ varying smoothly with $x$.
   We could think the filed as a velocity of partical on the manifold.
   For instance, the wind velocity on the surface of the earth.
 ]
@@ -752,7 +754,7 @@ which we will state as the following proposition.
   satisfies
   $
     delta(a)(x) = v_1(x) (partial a)/(partial x_1) |_x +
-    ... + v_n(x) (partial a)/(partial x_n) |_x,
+    ... + v_n (x) (partial a)/(partial x_n) |_x,
     forall x in phi(U), a in C^infty (X)
   $
   where $v_1, ..., v_n in C^infty (X)$.
@@ -884,4 +886,71 @@ which we will state as the following proposition.
 ]
 #proof[
   This proof is just a short exercise of algebraic manipulation.
+]
+
+=== Flowing Along a Vector Field
+
+#definition(title: [$1$-parameter group of diffeomorphism])[
+  Let $X$ be a manifold.
+  A #highlight[$1$-parameter group of diffeomorphism]
+  #index(
+    display: [$1$-parameter group of diffeomorphism],
+    "1-parameter group of diffeomorphism"
+  )
+  is a smooth map $phi: RR times X -> X$.
+  s.t.
+  #enum(
+    enum.item[
+      $phi_t: X-> X$ and $phi_t(x) = phi(t,x)$
+      for all $t in RR, x in X$.
+    ],
+    enum.item[
+      $phi_t$ is a diffeomorphism for all $t in RR$.
+    ],
+    enum.item[
+      $phi_0 = id$.
+    ],
+    enum.item[
+      $phi_(s+t) = phi_s circ phi_t$ for all $s,t in RR$.
+    ]
+  )
+]
+#remark[
+  $t mapsto phi_t$ now become a group homomorphism of $RR -> op("Diff")(X, X)$,
+  where $op("Diff")(X,X)$ is the group of all diffeomorphism from
+  $X$ to $X$,
+  and the group action is composition.
+
+  Also note that the condition that $phi_0 = id$
+  and the condition that "$phi_(s+t) = phi_s circ phi_t$ for all $s,t in RR$"
+  actually implies "$phi_t$ is a diffeomorphism for all $t in RR$"
+]
+
+#proposition[
+  Given a manifold $X$,
+  and a $1$-parameter group of diffeomorphism
+  $phi: RR times X -> X$,
+  and define $delta: C^infinity (X) -> C^infinity (X)$
+  by
+  $
+    delta(a)(x) = d/(d t) (a circ phi_t (x))|_(t=0),
+    forall a in C^infty (X), x in X
+  $
+  where $a circ phi_t(x)$ is treat as a funciton $RR -> RR$
+  on $t$ for fixed $x$.
+  Then $delta$ is a derivation.
+]
+#remark[
+  Given a manifold $X$,
+  and a $1$-parameter group of diffeomorphism
+  then we have a corresponding derivation
+  $delta: C^infinity (X) -> C^infinity (X)$
+  by past proposition.
+  And $delta$ corresponding to a vector field $v in Gamma_infinity (X)$
+  by @def:vectorFieldCorrespondDerivation,
+  and we have
+  $
+    v_x (a) = d/(d t) (a circ phi_t (x))|_(t=0),
+    forall a in C^infty (X), x in X
+  $
 ]
