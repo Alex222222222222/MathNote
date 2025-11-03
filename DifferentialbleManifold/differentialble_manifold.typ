@@ -660,3 +660,44 @@ This corollary allows us to build examples of manifolds.
   of dimension $dim X - dim Y$.
   #index[Sard's Theorem]
 ]
+
+=== Embeddings and Embedded Submanifolds
+
+A embeding is kind of unique in the categorical sense,
+which we will state as the following proposition.
+
+#proposition[
+  Let $f: X -> Y$ be a embedding between manifolds,
+  if there is another embedding $f': X' -> Y$,
+  s.t. $f(X) = f'(X')$
+  then there exists a unique diffeomorphism between $phi: X -> X'$
+  s.t. the diagram commute.
+  #align(center, commutative-diagram(
+    node((0, 0), [$X$]),
+    node((1, 0), [$X'$]),
+    node((0, 1), [$Y$]),
+    arr((0, 0), (0, 1), [$f$]),
+    arr((1, 0), (0, 1), [$f'$], label-pos: right),
+    arr((0, 0), (1, 0), [$phi$], label-pos: right, "dotted"),
+  ))
+]
+#remark[
+  It is easy to check that the inclusoin $i: f(X) -> X$,
+  is a embedding,
+  and $i$ is uniuqe up to diffeomorphism sense.
+  And thus, from now on we could asuume all embedding $X -> Y$
+  as $X$ be a subset of $Y$.
+
+  However, note that not all subsets of $Y$ is a embedded submanifold
+  of $Y$.
+]
+
+#theorem(title: [Whitney Embedding Theorem])[
+  Let $X$ be a manifold of dimension $n$.
+  Then there exists embeddings $f: X -> RR^(2n+1)$,
+  s.t. $f(X)$ is closed in $RR^(2n+1)$.
+  #index[Whitney Embedding Theorem]
+]
+
+// TODO proof
+
