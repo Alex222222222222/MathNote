@@ -701,3 +701,187 @@ which we will state as the following proposition.
 
 // TODO proof
 
+== Vector Fields
+
+#definition(title:[Vector Field])[
+  Let $X$ be a manifold,
+  with tangent bundle $T X$.
+  A #highlightIndex[vector field]
+  is a section $v in Gamma^infty (T X)$.
+]
+
+#remark[
+  For each $x in X$, $v(x) in tangentSpace(x, X)$,
+  and $v(x)$ varying smoothly with $x$.
+  We could think the filed as a velocity of partical on the manifold.
+  For instance, the wind velocity on the surface of the earth.
+]
+
+=== Vector Fields as Derivations and Lie Bracket
+
+#proposition[
+  Let $X$ be a manifold.
+  Then there is a natural bijection between vector fields
+  $Gamma^infinity (T X)$,
+  and linear maps $delta: C^infty (X) -> C^infty (X)$
+  satisfying
+  $
+    delta(a b) = a delta(b) + delta(a) b, forall a,b in C^infty (X)
+  $ <eqn:vectorFieldLeibnitzRuleDerivation>
+
+  And given $v in Gamma^infinity (T X)$,
+  and a corresponding $delta$ in the above sense,
+  we have
+  $
+    v_x (a) = (delta(a))(x), forall a in C^infty (X), x in X
+  $
+
+  A map $delta: C^infty (X) -> C^infty (X)$
+  that satisfies @eqn:vectorFieldLeibnitzRuleDerivation
+  is called a #highlightIndex[derivation].
+] <def:vectorFieldCorrespondDerivation>
+
+// TODO proof
+
+#proposition[
+  Given a manifold $X$ with dimension $n$,
+  a vector field $v in Gamma^infinity (T X)$,
+  and a chart $(U, phi)$.
+  Let $(x_1,..., x_n)$ be a lcoal coordinate on $phi(U)$,
+  then the corresponding derivation $delta$ of $v$
+  satisfies
+  $
+    delta(a)(x) = v_1(x) (partial a)/(partial x_1) |_x +
+    ... + v_n(x) (partial a)/(partial x_n) |_x,
+    forall x in phi(U), a in C^infty (X)
+  $
+  where $v_1, ..., v_n in C^infty (X)$.
+]
+
+// TODO proof
+
+#lemma[
+  Let $X$ be a manifold,
+  and given derivations $delta, epsilon: C^infty (X) -> C^infty (X)$
+  then $lambda delta + beta epsilon$ where $lambda, beta in RR$
+  is still a derivation.
+]
+
+// TODO proof
+
+#definition(title:[Lie Bracket])[
+  Given a ring $R$,
+  and $a, b in R$,
+  we define $[a,b] = a b - b a$
+  #index(display: [a,b], "[a,b]")
+  to be the #highlightIndex[Lie bracket]
+  or #highlightIndex[commutator]
+]
+
+#proposition[
+  Let $delta, epsilon:  C^infty (X) -> C^infty (X)$
+  be derivations,
+  then $[delta, epsilon]$ is also a derivation.
+]
+#proof[
+  Take
+  $a, b in C^infty (X)$.
+  Then
+  $
+    & delta circ epsilon(a b)
+    = delta(a epsilon(b) + epsilon(a) b)
+    = delta(a) epsilon(b) + a (delta circ epsilon (b))
+      + (delta circ epsilon(a)) b + epsilon(a) delta(b) \
+    & epsilon circ delta(a b)
+    = epsilon(a delta(b) + delta(a) b)
+    = epsilon(a) delta(b) + a (epsilon circ delta (b))
+      + (epsilon circ delta(a)) b + delta(a) epsilon(b)
+  $
+
+  Substracting,
+  we get
+  $
+    [delta,epsilon](a b) = a ([delta, epsilon](b))
+    + ([delta, epsilon](a)) b
+  $
+]
+
+#definition(title:[Lie Bracket])[
+  Let $X$ be a manifold and $v, w in Gamma^infty (T X)$
+  be vector fields.
+  Then $v,w$ corresponds to derivations
+  $delta, epsilon: C^infty (X) -> C^infty (X)$
+  by @def:vectorFieldCorrespondDerivation.
+  Then again by @def:vectorFieldCorrespondDerivation,
+  $[delta, epsilon]$ corresponds to a unique
+  $[v, w] in Gamma^infty (T X)$.
+  And we define the #highlightIndex[Lie bracket]
+  of $v,w$ to be $[v,w]$.
+]
+
+#remark[
+  Given a manifold $X$ with dimension $n$,
+  vector fields $v,w in Gamma^infinity (T X)$,
+  and a chart $(U, phi)$.
+  Let $(x_1,..., x_n)$ be a lcoal coordinate on $phi(U)$,
+  then the corresponding derivation $delta, epsilon$ of $v,w$ 
+  satisfy
+  $
+    delta(a)(x) &= v_1 (partial a)/(partial x_1) |_x +
+    ... + v_n (partial a)/(partial x_n) |_x,
+    forall x in phi(U), a in C^infty (X) \
+    epsilon(a)(x) &= w_1 (partial a)/(partial x_1) |_x +
+    ... + w_n (partial a)/(partial x_n) |_x,
+    forall x in phi(U), a in C^infty (X) \
+  $
+
+  Thus $forall x in phi(U), a in C^infty (X)$
+  $
+    [delta, epsilon](a)
+    &= delta circ epsilon (a) - epsilon circ delta(a) \
+    &= delta(
+      w_1 (partial a)/(partial x_1)+...+w_n (partial a)/(partial x_n)
+    )
+    - epsilon(
+      v_1 (partial a)/(partial x_1)+...+v_n (partial a)/(partial x_n)
+    ) \
+    &= sum_(i,j in {1,...,n})
+      v_i partial/(partial x_i)(w_j (partial a)/(partial x_j))
+    - sum_(i,j in {1,...,n})
+      w_i partial/(partial x_i)(v_j (partial a)/(partial x_j)) \
+    &= sum_(i,j)
+      v_i (
+        (partial w_j)/(partial x_i)(partial a)/(partial x_j)
+        + w_j partial/(partial x_i)(partial a)/(partial x_j)
+      )
+      - sum_(i,j)
+      w_i (
+        (partial v_j)/(partial x_i)(partial a)/(partial x_j)
+        + v_j partial/(partial x_i)(partial a)/(partial x_j)
+      )\
+    & = sum_(i,j)
+      (
+        v_i (partial w_j)/(partial x_i)
+        - w_i (partial v_j)/(partial x_i)
+      )(partial a)/(partial x_j)
+  $
+
+  Note that this is a equivalence definition of derivations,
+  but the more abstract version of the derivation
+  gives us the power to omit the proof of "when we are using
+  different chart, the defition is coherent"
+  and the proof that "we can pasting derivation on charts that
+  is adjacent".
+]
+
+#proposition(title: [Jacobi Identity])[
+  Let $u, v, w$ be vector fields on $X$.
+  Then we have
+  $
+    [u, v, w] + [v, w, u] + [w, u, v] = 0
+  $
+  where $[u,v,w] = [u,[v,w]]$.
+]
+#proof[
+  This proof is just a short exercise of algebraic manipulation.
+]
