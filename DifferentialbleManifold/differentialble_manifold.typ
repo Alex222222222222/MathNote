@@ -550,3 +550,39 @@ with desired properties.
   is contravariant,
   which is kind of in different direction.
 ]
+
+== Submersions, Immersions and Embeddings
+
+#definition(title: "Submersion")[
+  Let $f: X to Y$ be a smooth map
+  of manifolds.
+  We call $f$ a #highlightIndex[submersion]
+  if for all $x in X$,
+  $T_x f: T_x X -> T_(f(x)) Y$
+  is surjective.
+]
+#definition(title:[Immersion])[
+  Let $f: X to Y$ be a smooth map
+  of manifolds.
+  We call $f$ a #highlightIndex[immersion]
+  if for all $x in X$,
+  $T_x f: T_x X -> T_(f(x)) Y$
+  is injective.
+
+  And we call $X$ a #highlightIndex[immersed submanifold]
+  of $Y$.
+]
+#definition(title: [Embedding])[
+  Let $f: X -> Y$ be a smooth map if manifolds.
+  We call $f$ a #highlightIndex[embedding],
+  if $f$ is immersion,
+  and the map $f: X -> f(X)$
+  is a homeomorphism.
+
+  And we call $X$ a #highlightIndex[embedded submanifold]
+  of $Y$.  
+]
+#remark[
+  Embeddings are injective immersions,
+  but not all injective immersions are embeddings.
+]
