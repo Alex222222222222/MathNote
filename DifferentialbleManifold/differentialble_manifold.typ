@@ -953,4 +953,17 @@ which we will state as the following proposition.
     v_x (a) = d/(d t) (a circ phi_t (x))|_(t=0),
     forall a in C^infty (X), x in X
   $
+  
+  Thus, for each $1$-parameter group of diffeomorphism
+  $phi$ of $X$ gives a vector field $v in Gamma^infty (T X)$.
+  We will show that under additional conditions
+  (for instance X compact),
+  each $v$ corresponds to a unique $phi$.
+
+  We can under stand the relationship of $v$ and $phi$
+  as,
+  given a $v$,
+  and a partical at $x$ at time $0$,
+  then $phi_t (x)$ is the position of the partical at time $t$,
+  and $phi_t (x), t in RR$ is the trajectory.
 ]
