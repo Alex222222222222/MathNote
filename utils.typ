@@ -78,14 +78,26 @@
   sym.plus.o,
   ("b", sym.plus.o.big),
   ("big", sym.plus.o.big),
-  ("B", sym.plus.o.big)
+  ("B", sym.plus.o.big),
 )
 #let subseteq = $subset.eq$
 #let ann = $op("ann")$
 #let diam = $op("diam")$
 #let le = $<=$
 #let ge = $>=$
+#let char = $op("char")$
+#let tensor = symbol(
+  sym.times.o,
+  ("b", sym.times.o.big),
+  ("big", sym.times.o.big),
+  ("B", sym.times.o.big),
+)
 #let tangentSpace(x, X) = $T_(#x) #X$
+#let dualSpace(X, bracket: false) = [#if bracket [
+  $(#X)^*$
+] else [
+  $#X^*$
+]]
 #let cotangentSpace(x, X) = $T^*_(#x) #X$
 
 // a set of dictionary for completion
