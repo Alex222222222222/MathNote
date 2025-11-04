@@ -939,7 +939,7 @@ which we will state as the following proposition.
   where $a circ phi_t(x)$ is treat as a funciton $RR -> RR$
   on $t$ for fixed $x$.
   Then $delta$ is a derivation.
-]
+]<prop:defineVectorFieldFrom1ParamGroupOfDiffeomorphism>
 #remark[
   Given a manifold $X$,
   and a $1$-parameter group of diffeomorphism
@@ -967,3 +967,112 @@ which we will state as the following proposition.
   then $phi_t (x)$ is the position of the partical at time $t$,
   and $phi_t (x), t in RR$ is the trajectory.
 ]
+
+If we are given a vector field $v$,
+we now defines a $1$-parameter group of diffeomorphism
+from $v$ by "intergrations".
+
+#definition(title: [Integral Curve])[
+  Let $X$ be a manifold and $v in Gamma^infty (T X)$.
+  And #highlightIndex[integral curve]
+  of $v$ is a smooth map
+  $gamma : I -> X$
+  where $I subset.eq RR$
+  is an open interval,
+  s.t.
+  $
+    (T_t gamma)(partial/(partial t)) = v_(gamma(t)),
+    forall t in I
+  $
+  where $T_t gamma: tangentSpace(t, I) -> tangentSpace(gamma(t), X)$.
+
+  And integral curve is called #highlight[maximal]
+  #index[maximal integral curve]
+  if it cannot be extended to another integral curve
+  $gamma': I' -> X$
+  with $I subset.eq I'$.
+]
+#remark[
+  Note that by the definition of $T_t gamma$,
+  and with a standard choice of chart for $I$,
+  then
+  $
+    v_(gamma(t_0))(a) = (T_(t_0) gamma)(partial/(partial t))(a)
+    = d/(d t) (a circ gamma)|_(t = t_0),
+    forall t_0 in I, a in C^infty (X)
+  $
+  which agrees with the definition in
+  @prop:defineVectorFieldFrom1ParamGroupOfDiffeomorphism.
+]
+
+#theorem[
+  Let $X$ be a manifold,
+  $v in Gamma^infty (T X)$,
+  and $x in X$.
+  Then there exists a unique maximal
+  integral curve $gamma: I -> X$ of $v$
+  with $0 in I$,
+  amd $gamma(0) = x$.
+  If $X$ is compact,
+  then $I = R$.
+]
+#remark[
+  This theorem cam be proved using existence and uniqueness
+  of solotions
+  of ODES.
+
+  It is well know that euqations of the form
+  $
+    &(d) / (d t) x_i= f_i (x_1(t), ..., x_n (t)),& &i in {1,...,n}\
+    &x_i (0) = tilde(x)_i,& &i in {1,...,n}
+  $
+  for $f_1, ..., f_n : RR^n -> RR$ smooth,
+  and $tilde(x)_1,...,tilde(x)_n in RR$
+  have unique solutions
+  for $t in (-epsilon, epsilon), epsilon > 0$.
+
+  In lcoal coordinates on $X$,
+  the equations for an integral curve
+  become ODES of this form.
+
+  The maximal interval $I subset.eq RR$
+  can have $I neq RR$
+  only if the curve "reach the edge of $X$ (for instance $X$ is an interval in $RR$)" or "goes to infinity in $X$ (for instance the function $1/t: (0,infinity) -> (0,infinity)$".
+  If $X$ is compact,
+  then both of the case can not happen.
+]
+
+#definition(title: [Complete])[
+  A vector field $v$ on a manifold $X$
+  is called #highlightIndex[complete]
+  if in the previous theorem,
+  we have $I = RR$
+  for all $x in X$.
+]
+#remark[
+  If $X$ is compact,
+  then any vector field is complete.
+]
+
+#theorem[
+  Let $X$ be a manifold,
+  and $v in Gamma^infty (X)$
+  a complete vector field.
+  Define $phi: RR times X -> X$
+  s.t. for each $x in X$,
+  $t -> phi(t,x)$
+  is the unique maximal integral curve
+  with $phi(0, x) = 0$.
+  Then $phi$ is smooth,
+  and is a $1$-parameter group of diffeomorphism of $X$.
+
+  Also, the vector field defined by $phi$
+  as in @prop:defineVectorFieldFrom1ParamGroupOfDiffeomorphism
+  is exactly $v$.
+
+  This gives a bijection between
+  all complete vector filed in $Gamma^infty (X)$,
+  and $1$-parameter group of diffeomorphisms of $X$.
+]
+
+// TODO proof
