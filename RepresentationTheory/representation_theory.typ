@@ -10,3 +10,4 @@ And in this chapter, we consider $k$ to be a field.
 
 #include "RepresentationsOfFiniteGroups/representations_of_finite_groups.typ"
 #include "GroupRings/group_rings.typ"
+#include "StructureOfSemisimpleAlgebra/structure_of_semisimple_alegrbas.typ"
