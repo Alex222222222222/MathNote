@@ -775,7 +775,7 @@ which we will state as the following proposition.
   Given a ring $R$,
   and $a, b in R$,
   we define $[a,b] = a b - b a$
-  #index(display: [a,b], "[a,b]")
+  #index(display: [$[a,b]$], "[a,b]")
   to be the #highlightIndex[Lie bracket]
   or #highlightIndex[commutator]
 ]

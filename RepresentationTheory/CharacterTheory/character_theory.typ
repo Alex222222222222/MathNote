@@ -215,6 +215,7 @@ Some basis simple facts about characters.
   $
 ]
 #proposition[
+  Let $G$ be a finite group.
   The inner product on class fucntions
   have all the normal inner product properties, i.e.
   for $phi, psi in classFunctionSpace(G)$
@@ -241,4 +242,344 @@ Some basis simple facts about characters.
       $innerProduct(phi,phi) = 0$ iff $phi = 0$.
     ]
   )
+]
+
+We will then study the algebraic structure on $classFunctionSpace(G)$
+more specifically we will study the map:
+$
+  chi: Mod_(CC G) -> classFunctionSpace(G)
+$
+Note that it is easy to check that $classFunctionSpace(G)$
+is a commutative ring with pointwise addition and muitiplication.
+However, since the muitiplication are different, $classFunctionSpace(G)$
+is not a subring of $CC G$,
+though they both contains funcitons $G -> CC$
+
+#proposition[
+  Let $G$ be a finite group,
+  and $V, W$ be finite dimensional $CC G$-modules.
+  Then we have the following euqalities in $classFunctionSpace(G)$:
+  #enum(
+    enum.item[
+      $chi_(dualSpace(V)) = overline(chi_V)$.
+    ],
+    enum.item[
+      $chi_(V directSum W) = chi_V + chi_W$.
+    ],
+    enum.item[
+      $chi_(V tensor W) = chi_V chi_W$.
+    ],
+    enum.item[
+      $chi_(Hom(V,W)) = overline(chi_V) chi_W$.
+    ],
+    enum.item[
+      $chi_(S^2 V) (g) = 1/2 (chi_V (g)^2 + chi_V (g^2))$ for all $g in G$.
+    ],
+    enum.item[
+      $chi_(and^2 V) (g) = 1/2 (chi_V (g)^2 - chi_V (g^2))$ for all $g in G$.
+    ],
+  )
+]
+// TODO proof
+
+#definition(title: [Conjugacy Class])[
+  Let $G$ be a finite group,
+  and let $g in G$.
+  $g^G$ #index(display: [$g^G$], [g^G])
+  denotes the #highlightIndex[conjugacy class]
+  of $g in G$:
+  $
+    g^G = {g^x | x in G} "where" g^x = x^(-1) g x
+  $
+  #index(display: [$g^x$], [g^x])
+]
+#definition(title: [Centraliser])[
+  Let $G$ be a finite group,
+  and let $g in G$.
+  $C_G (g)$ #index(display: [$C_G (g)$], [C_G (g)])
+  denotes the #highlightIndex[centraliser]
+  of $g in G$:
+  $
+    C_G (g) = {x in G | g^x = g}
+  $
+]
+#lemma[
+  For any $g in G$
+  we have $|g^G| |C_G (g)| = |G|$.
+]
+#proof[
+  Short excersice of Orbit-Stabiliser Theorem.
+]
+
+#definition(title: [Invariant Submodule])[
+  Let $V$ be a $CC G$-module.
+  The #highlightIndex[invariant submodule] of $V$ is
+  $
+    V^G := {v ∈ V | g v = v, forall g in G}
+  $
+  #index(display: [$V^G$], [V^G])
+]
+
+#proposition(title: [Fixed Point Formula])[
+  Let $G$ be a finite group.
+  Let $V$ be finite dimensional $CC G$-module.
+  Then
+  $
+    dim V^G = 1/(|G|) sum_(g in G) chi_V (g).
+  $
+  #index[Fixed Point Formula]
+]
+#proof[
+  Note that if given $W_1, W_2$ be $k G$ module,
+  then $(W_1 directSum W_2)^G = W_1^G directSum W_1^G$,
+  if $W_1$ and $W_2$ are $G$-stable.
+  And also,
+  $
+    1/(|G|) sum_(g in G) chi_(W_1 directSum W_2) (g)
+    = 1/(|G|) sum_(g in G) chi_(W_1) (g) + 1/(|G|) sum_(g in G) chi_(W_2) (g)
+  $
+  And since $V$ can be decomposed into finite $G$-stable modules
+  thus we only need to proof the case for $V$ simple.
+
+  Since $V$ simple, $V^G = 0$ or $V$.
+  
+  IF $V^G = V$, then $G$ fixes every thing,
+  which means that $V$ is the trivial representation,
+  and
+  $
+    1/(|G|) sum_(g in G) chi_V (g) = 1/(|G|) sum_(g in G) chi_V (1)
+    = 1/(|G|) sum_(g in G) dim V
+    = dim V = dim V^G
+  $
+
+  If $V^G = 0$ then $dim V^G = 0$.
+  And given the representation $rho: G -> GL(V)$.
+  Let $h = sum_(g in G) rho(g)$, where $h in GL(V)$.
+  Then for any $g in G$,
+  $rho(g) h = h$, since it is just a simple reorder of the sum.
+  And for any $v in V$,
+  we have $h v in V^G$,
+  since for all $g in G$, $rho(g) h v = h v$.
+  Thus $h v = 0$.
+  then $h$ is the $0$ linear map.
+  Thus $tr(h) = 0$.
+  Also since the trace fucntion is linear,
+  we have
+  $
+    1/(|G|) sum_(g in G) chi_V (g) = 1/(|G|) sum_(g in G) tr(rho(g))
+    = 1/(|G|) tr(sum_(g in G) rho( g)) = 1/(|G|) tr(h) = 0
+  $
+]
+
+#proposition[
+  Let $G$ be a finite group.
+  Let $V$ and $W$ be finite dimensional $CC G$-modules.
+  Then
+  + $Hom_(CC G) (V, W) = Hom(V,W)^G$.
+  + $innerProduct(chi_V, chi_W) = dim Hom_(CC G) (V, W)$.
+]
+#proof[
+  #enum(
+    enum.item[
+      Let $f in Hom(V, W)$.
+      Then $f$ is fixed by the $G$-action iff
+      $
+        g f (g^(-1) v) = f(v) forall g in G, v in V
+      $
+      If we replace $v$ with $g v$,
+      we have
+      $
+        g f(v) = f (g v), forall g in G, v in V
+      $
+      And this proves that $f$ is a $k G$ module homo.
+    ],
+    enum.item[
+      By last propesition,
+      we have
+      $
+        innerProduct(chi_V, chi_W) = 1/(|G|) sum_(g in G) chi_(Hom(V,W)) (g)
+      $
+      and by last proposition we hvae the desired result.
+    ],
+  )
+]
+
+#theorem(title:[Row Orthogonality])[
+  Let $G$ be a finite group.
+  Let $phi, psi$ be character of two irreducible complex $G$
+  representation, then
+  $
+    innerProduct(phi,psi) = cases(
+      1 &"if" phi = psi,
+      0 &"otherwise"
+    )
+  $
+]
+#remark[
+  This is called #highlightIndex[row orthogonality],
+  since two rows of the character table are orthogonal.
+]
+#proof[
+  Let $V, W$ be the simple module s.t. $phi = chi_V, psi = chi_w$.
+  Then $innerProduct(phi,psi) = dim Hom_(CC G) (V, W)$
+  since $V, W$ are simple,
+  maps $V -> W$ are either $0$ or iso.
+
+  If $V, W$ are iso,
+  then $phi = psi$,
+  and by Schur's Lemma,
+  $Hom_(CC G) (V, W) iso Hom_(CC G) (V, V) iso k$.
+  Thus, $innerProduct(phi, psi) = 1$.
+
+  If $V, W$ are not iso.
+  then $Hom_(CC G) (V, W) = 0$.
+  Thus $innerProduct(phi,psi) = 0$.
+  And if in this case $phi = psi$,
+  then by the property of inner product,
+  we have $innerProduct(phi, phi) = 0$
+  implies $phi = 0$,
+  and this contradicts that $chi_V = phi$
+  is a character of proper representation.
+]
+
+#corollary[
+  Let $V$ and $W$ be two finite dimensional $CC G$-modules.
+  Then $V$ is isomorphic to $W$
+  iff $chi_V = chi_w$.
+]
+#proof[
+  Let $chi_1, ..., chi_r$ be the complete list of characters
+  of the irreducible $CC G$ modules $V_1, ..., V_n$.
+  We know that $V$ is a direct sum of these simple modules, i.e.
+  $
+    V iso V_1^(a_1) directSum ... directSum V_r^(a_r)
+  $
+  for some integers $a_1,..., a_r$.
+  And by the property of character,
+  we have
+  $
+    chi_V = a_1 chi_1 + ... + a_r chi_r
+  $
+
+  By similar argument,
+  we have
+  $
+    chi_W = b_1 chi_1 + ... + b_r chi_r
+  $
+  for some integers $b_1, ... , b_r$.
+
+  If $V$ and $W$ are iso,
+  then it is easy to check that $chi_V = chi_W$.
+
+  If $chi_V = chi_W$,
+  then
+  $
+    a_i = innerProduct(chi_i, chi_V) = innerProduct(chi_i, chi_W) = b_i
+  $
+  Thus $a_i = b_i, forall i$.
+  And thus
+  $
+    V iso V_1^(a_1) directSum ... directSum V_r^(a_r)
+    = V_1^(b_1) directSum ... directSum V_r^(b_r)
+    iso W
+  $
+]
+
+#corollary[
+  Given a finite group.
+  The irreducible characters of $G$ form an orthonormal basis
+  for $classFunctionSpace(G)$.
+]
+#proof[
+  Let $chi_1, ..., chi_r$ be the complete list of characters.
+  First,
+  we prove that they are independent.
+  If not,
+  then there exits $c_1, ..., c_r in CC$ s.t.
+  $
+    c_1 chi_1 + ... + c_r chi_r = 0
+  $
+  However, for each $i$,
+  $
+    0 = innerProduct(chi_i , 0) = innerProduct(chi_i, c_1 chi_1 + ... + c_r chi_r)
+    = c_i
+  $
+  Thus $c_1 = ... = c_r = 0$.
+
+  Since $G$ now have $r$ conjugacy classes.
+  and function in $classFunctionSpace(G)$
+  is the same on each conjugacy classes.
+  Thus $classFunctionSpace(G)$ is a $CC$ vector space with dimension $r$.
+  However, the subspace generated by $chi_1, ..., chi_r$,
+  also have dimension $n$, since they are linear independent.
+  Thus the subspace generated by $chi_1, ..., chi_r$
+  is just the whole space.
+
+  And $chi_1, ..., chi_r$ become a basis.
+]
+
+#theorem(title:[Column Orthogonality])[
+  Let $G$ be a finite group,
+  let $chi_1, ..., chi_r$
+  be the irreducible characters of $G$
+  and let $g, h in G$.
+  Then
+  $
+    sum_(i=1)^r overline(chi_i (g)) chi_i(h)
+    = cases(
+      |C_G (g)| &"if" g "is conjugate to" "h",
+      0 &"otherwise"
+    )
+  $
+]
+#proof[
+  Let $g_1, ... , g_r$ be a complete list of representatives of conjugacy class
+  of $G$.
+  Let $Q$ be the $r times r$ $CC$ matrix represent by the
+  coordinate table.
+  Then, by the definition of inner product,
+  we have
+  $
+    Q mat(
+      (|g_1^G|)/(|G|),,;
+      ,dots.down,;
+      ,, (|g_r^G|)/(|G|)
+    )
+    Q^* = 1
+  $
+  where $Q^* = overline(Q^T)$.
+  Since $(|g_i^G|)/(|G|)$ is a non-negative real number,
+  we can let $b_i = sqrt((|g_i^G|)/(|G|))$.
+  Then $Q mat(
+    b_1,,;
+    ,dots.down,;
+    ,, b_r
+  )$
+  is now a orthogonal matrix.
+  And thus, we have
+  $
+    (Q mat(
+      b_1,,;
+      ,dots.down,;
+      ,, b_r
+    ))^*
+    Q mat(
+      b_1,,;
+      ,dots.down,;
+      ,, b_r
+    ) &= I\
+    Q^* Q &= mat(
+      1/b_1^2,,;
+      ,dots.down,;
+      ,, 1/b_r^2
+    ) \
+    &=
+    mat(
+      |C_G (g_1)|,,;
+      ,dots.down,;
+      ,, |C_G (g_r)|
+    )
+  $
+  And we are done
+  by just spell out the definition of matrix muitiplication.
 ]

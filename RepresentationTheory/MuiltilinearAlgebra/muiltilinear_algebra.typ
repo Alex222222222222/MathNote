@@ -51,6 +51,9 @@
     v in V.
   $
 ]
+#remark[
+  Note this is $Hom_k (V,W)$ not $Hom_(k G) (V, W)$.
+]
 
 #definition(title: [Dual Representation])[
   Let $G$ be a finite group.
@@ -64,6 +67,28 @@
     (g f) (v) = f (g^(-1) v) forall g in G, f in dualSpace(V),
     v in V
   $
+]
+#remark[
+  The inverse in $g^(-1)$ is to make the $dualSpace(V)$ a left $k G$ module.
+  If $rho: G -> GL(V)$ is the representation,
+  then given $g in G$,
+  $rho(g) in Hom_k (V, V)$.
+  And apply the contravariant $F = Hom_k (square, k)$
+  functor,
+  we get $F rho(g) in Hom_k (Hom_k(V, k), Hom_k(V, k))$
+  by:
+  $
+    F rho(g): f mapsto f circ rho(g), forall f in Hom_k(V, k)
+  $
+  And we have $F rho : G -> GL(Hom_k(V, k))$,
+  however, this is not a left $k G$ module,
+  but a right $k G$ module.
+  since, by verification we have $F rho(g h) = F rho(h) circ F rho(g)$
+  which is in reverse direction that caused by the contravariant of $Hom_k (square, k)$.
+  
+  And to the right $k G$ module is naturally the same
+  with left $k G^"op"$ module.
+  However, $k G^"op"$ is isomorphic with $k G$ by the map $g mapsto g^(-1)$.
 ]
 
 #definition(title: [Tensor Product Representation])[
@@ -87,7 +112,8 @@
   $
 ]
 #proof[
-  Just the Tensor-Hom adjunction.
+  Just the Tensor-Hom adjunction for $k$-module.
+  And push the $k$-module iso to $k G$-module iso in a natural way.
 ]
 
 It turns out that the tensor square $V tensor V$
