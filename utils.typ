@@ -92,6 +92,9 @@
   ("big", sym.times.o.big),
   ("B", sym.times.o.big),
 )
+#let classFunctionSpace(G) = $cal(C)(#G)$
+#let inflatedRepresentation(rho) = $dot(#rho)$
+#let innerProduct(x,y) = $chevron.l #x, #y chevron.r$
 #let tangentSpace(x, X) = $T_(#x) #X$
 #let dualSpace(X, bracket: false) = [#if bracket [
   $(#X)^*$

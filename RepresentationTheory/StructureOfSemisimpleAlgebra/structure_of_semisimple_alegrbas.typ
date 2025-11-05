@@ -264,7 +264,7 @@ We begin by some preliminary ring theory definitions.
   and $k$ be an algebraically closed field,
   s.t. the character of $k$ does not divide $|G|$.
   Then $r_k (G) = s(G)$.
-]
+] <cor:numberOfSimpleMoudlesIsConjugacyClassOfGroupForKG>
 
 #proposition[
   Let $R$ be a semisimple ring,
@@ -408,7 +408,7 @@ We begin by some preliminary ring theory definitions.
       $|G| = sum_(i=1)^r (dim V_i) ^2$.
     ],
   )
-]
+] <cor:decompositionOfKGAsSimpleModuleVectorSpace>
 #proof[
   $k G$ is a semisimple ring by Maschke's Theorem.
   And by last theorem,
