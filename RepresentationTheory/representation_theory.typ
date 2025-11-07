@@ -13,3 +13,4 @@ And in this chapter, we consider $k$ to be a field.
 #include "StructureOfSemisimpleAlgebra/structure_of_semisimple_alegrbas.typ"
 #include "MuiltilinearAlgebra/muiltilinear_algebra.typ"
 #include "CharacterTheory/character_theory.typ"
+#include "InducedRepresentations/induced_representations.typ"
