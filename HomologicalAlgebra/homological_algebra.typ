@@ -347,3 +347,272 @@ this is injective as product of injective
 is inj.
 and also the canonical map $M -> I(M)$.
 category of $R$-mod have enough injective.
+
+== Chain Complexes
+
+Let $A$ be an abvelina category
+a chain complex is a family of objects
+${C_n | n in ZZ}$ in $A$
+with morphisms $d_n: C_n -> C_(n-1)$
+s.t. $d^2 = 0$
+
+$Z_n = ker d_n$ n-cycles
+$B_n = im d_(n+1)$ n-boundaries
+
+$B_n in Z_n$
+
+$H_n (C) = coker (B_n -> Z_n) = Z_n \/ B_n$
+
+We can construct a category
+of chain complexes,
+where morphism:
+$
+  u: C -> D
+$
+consists of $u_n : C_n -> D_n$ for all $n in Z$,
+and comute
+#align(center, commutative-diagram(
+  node((0, 0), [$C_n$]),
+  node((0, 1), [$C_(n-1)$]),
+  node((1, 0), [$D_n$]),
+  node((1, 1), [$D_(n-1)$]),
+  arr((0, 0), (0, 1), [$d$]),
+  arr((1, 0), (1, 1), [$d$]),
+  arr((0, 0), (1, 0), [$u_n$]),
+  arr((0, 1), (1, 1), [$u_(n-1)$]),
+))
+
+And $u$ induce a morphism $H_n (C) xarrow(u^*) H_n (D)$
+
+$H_n: "Ch" (A) -> A$ a functor,
+where $"Ch" (A)$ is the category of chain complexes
+
+#definition[
+  $u: C ->D$ is called a quasi-iso
+  if the induced-maps $H_n (C) xarrow(u^*) H_n (D)$ are iso 
+]
+
+#remark[
+  Homological Algebra is the study of the category
+  $
+    D(A) = "Ch" (A)["quasi iso"^(-1)]
+  $
+  we are localizing or try do define a inverse of a quasi iso.
+
+  This is called derived category.
+]
+#remark[
+  $f:(X,*) -> (Y, *)$
+  induce $f^*:pi_n (X, *) -> pi_n (Y, *)$
+
+  $f$ is a weak eq. if $f^*$ is an iso,
+  this is homotopy algebra.
+]
+
+Excercise:
+the following are eq:
++ the chain complex $C$ is exact
++ $C$ is cyclic, i.e. $H_n (C) = 0, forall n$
++ chain complex category have a $0$ object, $0 -> C$ is a quasi iso.
+
+The dual concept
+
+cochain complex. is a colelction ${C^n | n in ZZ}$
+$d^n: C^n -> C^(n+1)$, $d circ d =0 $
+
+$Z^n = ker d^n$ cocycles
+$B^n = im d^(n-1)$ coboundaryies
+$H^n (C) = Z^n \/ B^n$
+cochain complex are kind of reindex of chain complex.
+
+Bounded chain or cochain complex
+are chains that is not 0 on only finite place in $ZZ$.
+
+#example[
+  Let $X$ be a top.
+  $R$ ring.
+
+  $S_k (X)$ the free $R$ module on the basis given by continuous maps
+  $Delta^k -> X$.
+
+  The map $S_k xarrow(partial_k) S_(k-1)$
+  is the normal singular boundary map.
+
+  Singualr homology
+
+  Space homotopy $mapsto$ chain homotopy
+]
+#remark[
+  $(S,partial)$ is a simplicial object,
+  we have the Dold-Kan equavalence,
+  $"simplicial objects in A" xarrow(N) "Ch"_(ge 0) (A)$
+]
+
+#definition[
+  A chain map $f: C -> D$
+  is a null homotopic if there are maps
+  $s_n: C_n -> D_(n+1)$
+  s.t. $f - 0 = s d + d s$
+  #align(center, commutative-diagram(
+    node((0, 1), [$C_n$]),
+    node((0, 2), [$C_(n-1)$]),
+    node((1, 1), [$D_n$]),
+    node((1, 2), [$D_(n-1)$]),
+    node((0, 0), [$C_(n+1)$]),
+    node((1, 0), [$D_(n+1)$]),
+    arr((0, 1), (0, 2), [$d$]),
+    arr((1, 1), (1, 2), [$d$]),
+    arr((0, 1), (1, 1), []),
+    arr((0, 2), (1, 2), []),
+    arr((0, 0), (0, 1), [$d$]),
+    arr((1, 0), (1, 1), [$d$]),
+    arr((0, 0), (1, 0), []),
+    arr((0, 1), (1, 0), [$s$], label-pos: right),
+    arr((0, 2), (1, 1), [$s$], label-pos: right),
+  ))
+
+  Two morphism $f, g: C -> D$
+  are chain homotopic if $f-g$ is null homotopic.
+]
+#proposition[
+  If $f: C-> D$ is a null homotopic,
+  then $0 = f^*: H_* (C) -> H_* (D)$,
+  if $f$ is chain homotopic with $g$,
+  then $f_* = g_*: H_* (C) -> H_* (D)$
+]
+// TODO proof
+
+#proposition[
+  $"Ch" (A)$
+  is an abelina category.
+  ker and coker are computed level wise.
+
+  chain complexes $A, B,C$
+  are exact
+  $0 -> A -> B -> C -> 0$
+
+  iff each level exact
+  $0 -> A_n -> B_n -> C_n -> 0$
+]
+// TODO proof
+
+long exact seq.
+
+If we have a SES of chain complex
+$0 -> A -> B -> C -> 0$
+there is a natural map
+connecting homomorphism
+$
+  partial: H_n (C) -> H_(n-1) (A)
+$
+and long exact seq
+$
+  ... -> H_(n+1) (C) xarrow(partial)
+  -> H_n (A) -> H_n (B)
+  -> H_n (C)
+  xarrow(partial) H_(n-1) (A) -> ...
+$
+#proof[
+  Straightforward application of snake lemma.
+
+  Apply snake lemma twice.
+
+  #align(center, commutative-diagram(
+    node((0, 1), [$A_n \/ d A_(n+1)$]),
+    node((0, 2), [$B_n \/ d B_(n+1)$]),
+    node((0, 3), [$C_n \/ d C_(n+1)$]),
+    node((0, 4), [$0$]),
+    node((1, 0), [$0$]),
+    node((1, 1), [$Z_(n-1) (A)$]),
+    node((1, 2), [$Z_(n-1) (B)$]),
+    node((1, 3), [$Z_(n-1) (C)$]),
+    arr((1, 0), (1, 1), []),
+    arr((1, 1), (1, 2), []),
+    arr((1, 2), (1, 3), []),
+    arr((0, 1), (0, 2), []),
+    arr((0, 2), (0, 3), []),
+    arr((0, 3), (0, 4), []),
+    arr((0, 1), (1, 1), [$d$]),
+    arr((0, 2), (1, 2), [$d$]),
+    arr((0, 3), (1, 3), [$d$]),
+  ))
+]
+#remark[
+  we have functor:
+  $
+    "catgegory of SES of chains" -> "category of long SES in A"
+  $
+
+  morphism in catgegory of SES of chains are just morphism
+  in each column that make the diagram commute.
+]
+
+== proj. resolutions
+
+Let $A$ be an abelian category.
+#definition[
+  Let $M$ be an object of $A$.
+  A left resolution of $A$
+  is a complex $P$,
+  which is $P_i = 0$, $i < -1$,
+  with map $epsilon: P_0 -> M$,
+  s.t.
+  $
+    ... -> P_2 -> P_1 -> P_0 xarrow(epsilon) M -> 0
+  $
+
+  if all $P_i$
+  is proj, then it is called projective resolution
+
+  equavatenly, it is said that the diagram commut, and the two chain are quasi-iso
+  #align(center, commutative-diagram(
+    node((0, 0), [$...$]),
+    node((0, 1), [$P_1$]),
+    node((0, 2), [$P_0$]),
+    node((0, 3), [$0$]),
+    node((1, 0), [$...$]),
+    node((1, 1), [$0$]),
+    node((1, 2), [$M$]),
+    node((1, 3), [$0$]),
+    arr((0, 0), (0, 1), []),
+    arr((1, 0), (1, 1), []),
+    arr((0, 1), (0, 2), []),
+    arr((1, 1), (1, 2), []),
+    arr((0, 2), (0, 3), []),
+    arr((1, 2), (1, 3), []),
+    arr((0, 3), (1, 3), [$0$]),
+    arr((0, 2), (1, 2), [$epsilon$]),
+    arr((0, 1), (1, 1), [$0$]),
+  ))
+
+  We have right resolution,
+  injective resolution.
+  Which is duall.
+  #align(center, commutative-diagram(
+    node((0, 0), [$...$]),
+    node((0, 1), [$P_1$]),
+    node((0, 2), [$P_0$]),
+    node((0, 3), [$0$]),
+    node((1, 0), [$...$]),
+    node((1, 1), [$0$]),
+    node((1, 2), [$M$]),
+    node((1, 3), [$0$]),
+    arr((0, 1), (0, 0), []),
+    arr((1, 1), (1, 0), []),
+    arr((0, 2), (0, 1), []),
+    arr((1, 2), (1, 1), []),
+    arr((0, 3), (0, 2), []),
+    arr((1, 3), (1, 2), []),
+    arr((1, 3), (0, 3), [$0$]),
+    arr((1, 2), (0, 2), [$epsilon$]),
+    arr((1, 1), (0, 1), [$0$]),
+  ))
+]
+
+#lemma[
+  If $A$ have enough projective,
+  then every object in $A$ have proj resolution.
+
+  dually enough injective => have injective reslution.
+]
+Note, two different proj resolution have chain homotopic.

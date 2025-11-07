@@ -104,6 +104,7 @@
   $#X^*$
 ]]
 #let cotangentSpace(x, X) = $T^*_(#x) #X$
+#let coker = $op("coker")$
 
 // a set of dictionary for completion
 abelian
