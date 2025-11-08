@@ -14,3 +14,4 @@ And in this chapter, we consider $k$ to be a field.
 #include "MuiltilinearAlgebra/muiltilinear_algebra.typ"
 #include "CharacterTheory/character_theory.typ"
 #include "InducedRepresentations/induced_representations.typ"
+#include "AlgebraicIntegersAndBurnsidePQTheorem/algebraic_integers_and_burnside_pq_theorem.typ"

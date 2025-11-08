@@ -105,6 +105,7 @@
 ]]
 #let cotangentSpace(x, X) = $T^*_(#x) #X$
 #let exntensionByZero(phi) = $#phi ^circ$
+#let algebraicInteger = $AA$
 #let setminus = $\\$
 #let coker = $op("coker")$
 
