@@ -104,6 +104,8 @@
   $#X^*$
 ]]
 #let cotangentSpace(x, X) = $T^*_(#x) #X$
+#let exntensionByZero(phi) = $#phi ^circ$
+#let setminus = $\\$
 #let coker = $op("coker")$
 
 // a set of dictionary for completion
