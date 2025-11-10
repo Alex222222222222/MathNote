@@ -219,7 +219,8 @@ We begin by some preliminary ring theory definitions.
   Then ${hat(G_1), dots, hat(G_(s(G)))}$ forms a basis of $Z(k G)$
   as $k$-vector space.
   And $dim Z(k G) = s(G)$.
-]
+  #index[conjugacy class sum]
+]<def:conjugacyClassSum>
 #proof[
   Let $phi: G -> k G$ be the embedding injection.
 
