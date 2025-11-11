@@ -150,7 +150,7 @@ is reducible whenever $dim V ge 2$.
       The #highlightIndex[alternating square]
       of $V$ is the subspace of $V tensor V$:
       $
-        and^2 V := chevron.l
+        and.big^2 V := chevron.l
           {
             v and w | v,w in V
           }
@@ -168,17 +168,17 @@ is reducible whenever $dim V ge 2$.
   Then
   #enum(
     enum.item[
-      $V tensor V = S^2 V directSum and^2 V$.
+      $V tensor V = S^2 V directSum and.big^2 V$.
     ],
     enum.item[
       $dim S^2 V = (n(n+1))/2$
-      and $dim and^2 V = (n(n-1))/2$.
+      and $dim and.big^2 V = (n(n-1))/2$.
     ],
     enum.item[
       If $V$ is a $G$-representation,
-      then $S^2 V$ and $and^2 V$
+      then $S^2 V$ and $and.big^2 V$
       are $G$-stable,
-      and $S^2 V$ and $and^2 V$ are $G$-representation
+      and $S^2 V$ and $and.big^2 V$ are $G$-representation
       via the subspace representation.
     ]
   )

@@ -1082,14 +1082,14 @@ from $v$ by "intergrations".
 Note by convention,
 if $V$ is a $RR$-vector,
 by convention,
-we write $tensor^0 V = RR$.
+we write $tensor.B^0 V = RR$.
 
 #definition(title:[Tensor Algebra])[
   If given $RR$-vector space,
   we define the #highlightIndex[tensor algebra]
   as
   $
-    T(V) = directSum_(k=1)^infty tensor^k V.
+    T(V) = directSum.B_(k=1)^infty tensor.B^k V.
   $
 
   It is an $R$-algebra,
@@ -1101,44 +1101,44 @@ we write $tensor^0 V = RR$.
     = v_1 tensor ... tensor v_k
     tensor w_1 tensor ... tensor w_l
   $
-  where $v_1 tensor ... tensor v_k in tensor^k V$,
-  $w_1 tensor ... tensor w_l in tensor^l V$,
+  where $v_1 tensor ... tensor v_k in tensor.B^k V$,
+  $w_1 tensor ... tensor w_l in tensor.B^l V$,
   and $v_1 tensor ... tensor v_k tensor
-  w_1 tensor ... tensor w_l in tensor^(k+l) V$.
+  w_1 tensor ... tensor w_l in tensor.B^(k+l) V$.
   And with the identification $RR subset.eq T(V)$
-  by $tensor^0 V = RR$.
+  by $tensor.B^0 V = RR$.
 ]
 
 #definition[
   The symmetric group $S_k$ of permutations
   of ${1,...,k}$
-  acts on $tensor^k V$ by permuting the $k$
+  acts on $tensor.B^k V$ by permuting the $k$
   factors of $V$,
   so that we have a representation
-  $rho: S_k -> GL(tensor^k V)$,
+  $rho: S_k -> GL(tensor.B^k V)$,
   and if we are given
   $sigma in S_k$,
   we have:
   $
-    rho_k (sigma): tensor^k V -> tensor^k V,
+    rho_k (sigma): tensor.B^k V -> tensor.B^k V,
     v_1 tensor ... tensor v_k
     mapsto v_(sigma(1)) tensor ... tensor v_(sigma(k))
   $
   #index(display: [$rho_k$], [rho_k])
 
-  Define $and^k V$ to be the vector subspace
-  of $tensor^k V$
+  Define $and.big^k V$ to be the vector subspace
+  of $tensor.B^k V$
   s.t. $S_k$ acts anti-symmetrically, that is
   $
-    and^k V = {
-      alpha in tensor^k V |
+    and.big^k V = {
+      alpha in tensor.B^k V |
       rho_k (sigma) (alpha) = sign(sigma) alpha,
       forall sigma in S_k
     }
   $
   #index(display: [$and^k V$], [and^k V])
 
-  There is a projection $pi: tensor^k V -> and^k V$
+  There is a projection $pi: tensor.B^k V -> and.big^k V$
   by
   $
     pi: alpha mapsto 1/(k!)
@@ -1148,13 +1148,13 @@ we write $tensor^0 V = RR$.
   and $pi circ pi = pi$.
 
   The #highlightIndex[exterior product]
-  $and: and^k times and^l V -> and^(k+l) V$
+  $and: and.big^k times and.big^l V -> and.big^(k+l) V$
   is the composition:
   #align(center, commutative-diagram(
-    node((0, 0), [$and^k V directSum and^l V$]),
-    node((0, 1), [$and^(k+l) V$]),
-    node((1, 0), [$tensor^k V directSum tensor^l V$]),
-    node((1, 1), [$tensor^(k+l) V$]),
+    node((0, 0), [$and.big^k V directSum and.big^l V$]),
+    node((0, 1), [$and.big^(k+l) V$]),
+    node((1, 0), [$tensor.big^k V directSum tensor.big^l V$]),
+    node((1, 1), [$tensor.big^(k+l) V$]),
     arr((0, 0), (0, 1), [$and$]),
     arr((0, 0), (1, 0), [], "inj"),
     arr((1, 0), (1, 1), [$tensor$], label-pos: right),
@@ -1162,8 +1162,8 @@ we write $tensor^0 V = RR$.
   ))
 ]
 
-We have $and^0 V = RR = tensor^0 V$
-and $and^1 V = V$.
+We have $and.big^0 V = RR = tensor.big^0 V$
+and $and.big^1 V = V$.
 And example of this is given in the representation theory
 @def:alternatingSquare.
 
@@ -1178,36 +1178,36 @@ $
     1 le i_1 < ... < i_k le n
   }
 $
-is a basis for $and^k V$,
-and $dim and^k V = binom(n,k)$.
+is a basis for $and.big^k V$,
+and $dim and.big^k V = binom(n,k)$.
 
 And it is easy to check that
-if $alpha in and^k V$, $beta in and^l V$, then
-$alpha and beta = (-1)^(k l) beta and alpha in and^(k+l) V$.
+if $alpha in and.big^k V$, $beta in and.big^l V$, then
+$alpha and beta = (-1)^(k l) beta and alpha in and.big^(k+l) V$.
 
 #definition(title: [Exterior Algebra])[
   Given $V$ a finite dimensional vector space,
   the #highlightIndex[exterior algebra]
-  is $and^* V = tensor_(k=0)^infty V$.
+  is $and.big^* V = tensor_(k=0)^infty V$.
 ]
 #remark[
-  Note that $and^k V = 0$,
+  Note that $and.big^k V = 0$,
   if $k > dim V$.
   So we also have
-  $and^* V = tensor_(k=0)^(dim V) V$
+  $and.big^* V = tensor.big_(k=0)^(dim V) V$
 
   It is an $RR$-algebra with identification
-  $RR = tensor^0 V = and^0 V$.
+  $RR = tensor.big^0 V = and.big^0 V$.
 
   And it have deimension
   $dim V^* = sum_(k=0)^(n) binom(n,k) = 2^n$.
 ]
 
-Note that the $and^k$ is a functor,
-that is, we have $and^k: Vect -> Vect$,
+Note that the $and.big^k$ is a functor,
+that is, we have $and.big^k: Vect -> Vect$,
 that is if we have $alpha: V -> W$,
 then there is a natural map:
-$and^k alpha: and^k V -> and^k -> and^k W$.
+$and.big^k alpha: and.big^k V -> and.big^k W$.
 
 === Algebraic Operations on Vector Bundles
 
@@ -1221,8 +1221,52 @@ $and^k alpha: and^k V -> and^k -> and^k W$.
   $E^*_x = (E_x)^*$,
   $(E directSum F)_x = E_x directSum F_x$,
   $(E tensor F)_x = E_x tensor F_x$,
-  $(tensor^k E)_x = tensor^k E_x$,
-  and $(and^k E)_x = and^k E_x$,
+  $(tensor.big^k E)_x = tensor.big^k E_x$,
+  and $(and.big^k E)_x = and.big^k E_x$,
   at each $x in X$.
   Where $E^*$ means dual space here.
+]
+
+#example[
+  The dual of the tangent bundle $T X$ is $(T X) = T^* X$,
+  which is the cotangent bundle.
+]
+
+== Differrential Forms
+
+#definition(title: [Tensor, Exterior Form and $k$-form])[
+  Given a manifold $X$,
+  a #highlightIndex[tensor] is a section
+  $T in Gamma^infty (tensor.big^j T X tensor tensor.big^k T^* X)$
+  for $j,k ge 0$.
+  
+  An #highlightIndex[exterior form],
+  or $k$-form
+  #index(display: [$k$-form], [k-form]) 
+  is $alpha in Gamma^infty (and.big^k T^* X)$.
+  And we denote it by $Omega^k (X) = Gamma^infty (and^k T^* X)$.
+  #index(display: [$Omega^k (X)$], [Omega^k (X)])
+]
+#remark[
+  Exterior forms are examples of tensors.
+  Tensors are very general,
+  for instance functions are the case $j = k =0$,
+  vector fields are the case $j=1,k=0$,
+  Riemannian metrics are the case $j=0,k=2$.
+
+  Note that when $k=1$,
+  this is consistent with our previous definition of $1$-forms.
+]
+
+#definition(title: [Wedge Product])[
+  Given a manifold $X$,
+  a #highlightIndex[wedge product]
+  is $and: Omega^k (X) times Omega^l (X)-> Omega^(k+l) (X)$.
+  That satisfies:
+  $
+    (u and v)_x = u_x and v_x \
+    u and v = (-1)^(k l) (v and u) \
+    u and (v and w) = (u and v) and w
+  $
+  for all $u in Omega^k (X), v in Omega^l (X), w in Omega^m (X)$.
 ]
