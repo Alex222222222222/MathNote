@@ -1076,3 +1076,153 @@ from $v$ by "intergrations".
 ]
 
 // TODO proof
+
+== Tensor Products and Exterior Algebras
+
+Note by convention,
+if $V$ is a $RR$-vector,
+by convention,
+we write $tensor^0 V = RR$.
+
+#definition(title:[Tensor Algebra])[
+  If given $RR$-vector space,
+  we define the #highlightIndex[tensor algebra]
+  as
+  $
+    T(V) = directSum_(k=1)^infty tensor^k V.
+  $
+
+  It is an $R$-algebra,
+  with product $tensor$:
+  $
+    (v_1 tensor ... tensor v_k)
+    tensor
+    (w_1 tensor ... tensor w_l)
+    = v_1 tensor ... tensor v_k
+    tensor w_1 tensor ... tensor w_l
+  $
+  where $v_1 tensor ... tensor v_k in tensor^k V$,
+  $w_1 tensor ... tensor w_l in tensor^l V$,
+  and $v_1 tensor ... tensor v_k tensor
+  w_1 tensor ... tensor w_l in tensor^(k+l) V$.
+  And with the identification $RR subset.eq T(V)$
+  by $tensor^0 V = RR$.
+]
+
+#definition[
+  The symmetric group $S_k$ of permutations
+  of ${1,...,k}$
+  acts on $tensor^k V$ by permuting the $k$
+  factors of $V$,
+  so that we have a representation
+  $rho: S_k -> GL(tensor^k V)$,
+  and if we are given
+  $sigma in S_k$,
+  we have:
+  $
+    rho_k (sigma): tensor^k V -> tensor^k V,
+    v_1 tensor ... tensor v_k
+    mapsto v_(sigma(1)) tensor ... tensor v_(sigma(k))
+  $
+  #index(display: [$rho_k$], [rho_k])
+
+  Define $and^k V$ to be the vector subspace
+  of $tensor^k V$
+  s.t. $S_k$ acts anti-symmetrically, that is
+  $
+    and^k V = {
+      alpha in tensor^k V |
+      rho_k (sigma) (alpha) = sign(sigma) alpha,
+      forall sigma in S_k
+    }
+  $
+  #index(display: [$and^k V$], [and^k V])
+
+  There is a projection $pi: tensor^k V -> and^k V$
+  by
+  $
+    pi: alpha mapsto 1/(k!)
+    sum_(sigma in S_k) (sign(sigma)) rho_k (sigma)(alpha)
+  $
+  It is easy to check that it is surjective,
+  and $pi circ pi = pi$.
+
+  The #highlightIndex[exterior product]
+  $and: and^k times and^l V -> and^(k+l) V$
+  is the composition:
+  #align(center, commutative-diagram(
+    node((0, 0), [$and^k V directSum and^l V$]),
+    node((0, 1), [$and^(k+l) V$]),
+    node((1, 0), [$tensor^k V directSum tensor^l V$]),
+    node((1, 1), [$tensor^(k+l) V$]),
+    arr((0, 0), (0, 1), [$and$]),
+    arr((0, 0), (1, 0), [], "inj"),
+    arr((1, 0), (1, 1), [$tensor$], label-pos: right),
+    arr((1, 1), (0, 1), [$pi$]),
+  ))
+]
+
+We have $and^0 V = RR = tensor^0 V$
+and $and^1 V = V$.
+And example of this is given in the representation theory
+@def:alternatingSquare.
+
+If ${v_1, ..., v_n}$
+is a basis for $V$.
+then
+we have:
+$
+  {
+    v_(i_1) and ... and v_(i_k)
+    = pi(v_(i_1) tensor ... tensor v_(i_k)) |
+    1 le i_1 < ... < i_k le n
+  }
+$
+is a basis for $and^k V$,
+and $dim and^k V = binom(n,k)$.
+
+And it is easy to check that
+if $alpha in and^k V$, $beta in and^l V$, then
+$alpha and beta = (-1)^(k l) beta and alpha in and^(k+l) V$.
+
+#definition(title: [Exterior Algebra])[
+  Given $V$ a finite dimensional vector space,
+  the #highlightIndex[exterior algebra]
+  is $and^* V = tensor_(k=0)^infty V$.
+]
+#remark[
+  Note that $and^k V = 0$,
+  if $k > dim V$.
+  So we also have
+  $and^* V = tensor_(k=0)^(dim V) V$
+
+  It is an $RR$-algebra with identification
+  $RR = tensor^0 V = and^0 V$.
+
+  And it have deimension
+  $dim V^* = sum_(k=0)^(n) binom(n,k) = 2^n$.
+]
+
+Note that the $and^k$ is a functor,
+that is, we have $and^k: Vect -> Vect$,
+that is if we have $alpha: V -> W$,
+then there is a natural map:
+$and^k alpha: and^k V -> and^k -> and^k W$.
+
+=== Algebraic Operations on Vector Bundles
+
+#definition[
+  Let $E -> X$, $F -> X$ be vector bundles on a manifold $X$.
+  Then there are natural vector bundles $E^*$,
+  $E directSum F$, $E tensor F$,
+  $tensor^k E$,
+  $and^k E$ on $X$ where the fibres
+  satisfy
+  $E^*_x = (E_x)^*$,
+  $(E directSum F)_x = E_x directSum F_x$,
+  $(E tensor F)_x = E_x tensor F_x$,
+  $(tensor^k E)_x = tensor^k E_x$,
+  and $(and^k E)_x = and^k E_x$,
+  at each $x in X$.
+  Where $E^*$ means dual space here.
+]

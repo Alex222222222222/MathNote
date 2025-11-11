@@ -160,7 +160,7 @@ is reducible whenever $dim V ge 2$.
       geneated by the set ${v and w | v,w in V }$.
     ],
   )
-]
+] <def:alternatingSquare>
 
 #lemma[
   Let $dim V = n$

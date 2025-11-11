@@ -67,7 +67,8 @@
 #let supp = $op("supp")$
 #let to = $->$
 #let realProjectiveSpace(n) = $RR PP^(#n)$
-#let catFiniteDimVectorSpace(k) = $op("Vect")^(op("fd"))_k$
+#let Vect = $op("Vect")$
+#let catFiniteDimVectorSpace(k) = $Vect^(op("fd"))_k$
 #let radicalIdeal = $frak(r)$
 #let Spec = $op("Spec")$
 #let Spm = $op("Spm")$
@@ -86,6 +87,7 @@
 #let le = $<=$
 #let ge = $>=$
 #let char = $op("char")$
+#let sign = $op("sign")$
 #let tensor = symbol(
   sym.times.o,
   ("b", sym.times.o.big),
