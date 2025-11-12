@@ -616,3 +616,160 @@ Let $A$ be an abelian category.
   dually enough injective => have injective reslution.
 ]
 Note, two different proj resolution have chain homotopic.
+
+#theorem[
+  Comparison theorem
+
+  Let $P xarrow(ellipse) M$ be a proj. resolution of $M$ 
+  (enough that $... -> P_1 -> P_2 -> M -> )$ is a complex with $P_i$ proj).
+  And suppose that we have $f': M -> N$.
+  Then for every resolution $Q xarrow(eta) N$,
+  there is a chain map:
+  $f: P -> Q$ lifting $f'$,
+  which is unique up to chain homotopic eq.
+  #align(center, commutative-diagram(
+    node((0, 3), [$M$]),
+    node((1, 3), [$N$]),
+    node((0, 2), [$P_0$]),
+    node((1, 2), [$Q_0$]),
+    node((0, 1), [$P_1$]),
+    node((1, 1), [$Q_1$]),
+    node((0, 0), [$...$]),
+    node((1, 0), [$...$]),
+    arr((0, 0), (0, 1), []),
+    arr((1, 0), (1, 1), []),
+    arr((0, 1), (0, 2), []),
+    arr((1, 1), (1, 2), []),
+    arr((0, 2), (0, 3), []),
+    arr((1, 2), (1, 3), []),
+    arr((0, 3), (1, 3), [$f'$]),
+    arr((0, 2), (1, 2), [$f_0$]),
+    arr((0, 1), (1, 1), [$f_1$]),
+  ))
+]
+#proof[
+  Construct using proj properties.
+]
+
+#lemma[
+  Horseshoe lemma:
+
+  Suppose $0 -> A' -> A -> A'' -> 0$ is a SES
+  and $p' xarrow(epsilon') A'$, $p'' xarrow(epsilon'') A''$
+  are proj resolution,
+  then there is a proj resolution $P -> A$,
+  s.t. $P_n = P'_n directSum P''_n$
+  s.t. $0 -> P' xarrow(i) P xarrow(pi) P'' -> 0$ is a ses of complexes.
+  where $i$ is inlcusion and $pi$ is the porjection.
+]
+#proof[
+  Construct using proj properties.
+]
+
+=== $delta$-functors
+
+Let $A, B$ be abelian cat.
+
+#definition[
+  A homological or cohomological $delta$-functor
+  betweens A and B,
+  is a collection of $T_n: A -> B$ (homological),
+  $T^n: A ->B$ (cohomological),
+  if additive functors for $n ge 0$.
+  which morphisms
+  $delta_n T_n (A) -> T_(n-1)A$ (homological),
+  $delta^n T^n (A) -> T^(n+1)A$ (cohomological),
+
+  s.t. for each ses $0 -> A -> B -> C -> 0$
+  in $A$,
+  s.t.
+  $
+    ... -> T_(n+1) (C) xarrow(delta) T_n (A) -> T_n (B)
+    -> T_n (C) -> xarrow(delta) -> T_(n-1) (A) -> ...
+  $
+
+    $
+    ... -> T^(n-1) (C) xarrow(delta) T^n (A) -> T^n (B)
+    -> T^n (C) -> xarrow(delta) -> T^(n+1) (A) -> ...
+  $
+
+  So $T_0$ are right exact and $T^0$ are left exact.
+
+  For each morphism ofr SES, this introduce a morphism of LES:
+  $0 -> A' -> B' -> C' -> 0$ to $0 -> A -> B -> C -> 0$.
+]
+#example[
+  homology is a homological $delta$-functor
+  $H_x: "Ch"_(n ge 0) (A) -> A$
+
+  cohomology is a cohomological $delta$-functor
+  $H^x: "Ch"^(n ge 0) (A) -> A$
+]
+#example[
+  for any integer $p$,
+  define
+  $T_0 (A) = A \/ p A$,
+  $T_ (A) = p A = {a in a | p a = 0}$.
+
+  Then this is a homological functor
+  or cohomological if ($T^1 = T_0, T^0 = T_1$).
+
+  This would define a $delta$-functor for any ring $R$
+  and any $r in Z(R)$.
+
+  In general this is not a universal $delta$-functor.
+]
+#definition[
+  universal delta functor.
+
+  A morphism of a $delta$-functors
+  is a collection of natural transformations
+  $S_n -> T_n$ or ($S^n -> T^n$)
+  commuting with the connecting morphism $delta$.
+]
+#definition[
+  A homological delta-functor $T = {T_n}$ is universal if 
+  given any other delta-functor $S$ and natural trnas:
+  $f_0: S_0 -> T_n$,
+  then there exists a unique morphism $f_n: S_n -> T_n$
+  of delta-functor extendeding $f_0$.
+
+  A cohomological is universal $T = {T^n}$
+  if given any delta-functor $S$,
+  and $f^0: T^0 -> S^0$,
+  then we can extended to ${f^n: T^n -> S^n}$.
+]
+ex: if $F: A -> B$ is exact,
+then $T_0 = F$, $T_n = 0$ othereise
+is a universal delta-functor,
+also define similar things for cohomological functor.
+
+=== Derived functors
+derived functors is a construction of universal delta-functor,
+starting with right or left exact $F$.
+
+Let $F: A -> B$ be a right exact functor.
+Asssume that $A$ have enough projective.
+For any object $A in A$,
+pick a proj res $P^A -> A$, this use AC.
+
+#definition[
+  $L_i F (A) := H_i (F(P^A))$, 
+  Note that $F(P^A)$ is not exact, and may have interesting results.
+
+  For proj resolution $... -> P_1 -> P_0 -> A -> 0$,
+  we apply $F$ to get $... -> F(P_1) -> F(P_0) -> 0$
+  And $L_i F(A) = H_i (... -> F(P_1) -> F(P_0) -> 0)$.
+]
+
+Note $F(P_1) -> F(P_0) -> F(A) -> 0$ is exact,
+since $F$ is right exact.
+So $L_0 F(A) = F(A)$.
+
+#lemma[
+  If $P -> A$ and $Q -> A$ are two proj res of $A$,
+  then there is a canonical iso
+  $H_i (F(P)) = H_i (F(Q))$.
+  These means that our choice in definition of derived functors
+  does not affect the result.
+]
