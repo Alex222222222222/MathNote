@@ -730,7 +730,7 @@ Let $A, B$ be abelian cat.
 #definition[
   A homological delta-functor $T = {T_n}$ is universal if 
   given any other delta-functor $S$ and natural trnas:
-  $f_0: S_0 -> T_n$,
+  $f_0: S_0 -> T_0$,
   then there exists a unique morphism $f_n: S_n -> T_n$
   of delta-functor extendeding $f_0$.
 
@@ -766,6 +766,8 @@ Note $F(P_1) -> F(P_0) -> F(A) -> 0$ is exact,
 since $F$ is right exact.
 So $L_0 F(A) = F(A)$.
 
+Kind of measures how far the $F$ functor away from left exact.
+
 #lemma[
   If $P -> A$ and $Q -> A$ are two proj res of $A$,
   then there is a canonical iso
@@ -773,3 +775,189 @@ So $L_0 F(A) = F(A)$.
   These means that our choice in definition of derived functors
   does not affect the result.
 ]
+#proof[
+  Aply the comparision theory,
+  there is a chain map
+  $f: P -> Q$,
+  which lifts the Identity on $id_A : A -> A$
+
+  this induces $f_x: H_i (F(P)) -> H_i (F(Q))$.
+
+  Any other lifting $f'$ hace a chain homotopic with $f$
+  on $P -> Q$, thus this also induces a chain homotopic on
+  $H_i (F(P)) -> H_i (F(Q))$
+  so $f'_* = f_*$.
+
+  There is also another lifting $g: Q -> P$,
+  so $g f: P -> P$
+  is also a lifting,
+  thus, the identity lifting must be homotopic with $g f$,
+  thus $g_* f_* = (g f)_* = id _*$,
+  similalry $f_* g_* = (f g)_* = id _*$.
+
+  So $f_*$ and $g_*$ are iso.
+]
+
+#corollary[
+  If A is proj.
+  Then $L_i F(A) = 0, forall i neq 0$.
+]
+
+We also need to show that $L_i$ is a functor,
+#lemma[
+  if $f : A -> A'$ is a morphism in A,
+  then there is a natural map
+  $
+    L_i F f: L_i F A to L_i F A'
+  $
+]
+#proof[
+  P' -> A' , P -> A be resolution,
+  and f: A -> A' lift to a map between resolution $tilde(f)$.
+
+  This induces a map
+  $
+    tilde(f)_*: H_i F P to H_i F P'
+  $
+  and this map does not depend on the lifting.
+]
+#proposition[
+  $L_i F$ is an additive functor from A to B.
+]
+#proof[
+  L_i F sends identity to identity.
+
+  And if we have $A' xarrow(f) A xarrow(g) A''$.
+  And lifts $tilde(f), tilde(g)$ of $f, g$,
+  And also $tilde(g) circ tilde(f)$ is a lift of $g f$.
+
+  And by definition of induced map of homology,
+  $L_i F$ is a functor.
+]
+
+If $f_1, f_2: A' -> A$,
+and two lifts $tilde(f)_1, tilde(f)_2$,
+then $tilde(f)_1 + tilde(f)_2$ is a lifting of $f_1 + f_2$.
+
+ALso homology functor is additive,
+thus $L_i F$ is additive.
+
+#theorem[
+  L_i F form a homological delta functor (and is a universal).
+]
+#proof[
+  Given a SES in $A$: $0 -> A' -> A -> A'' -> 0$.
+  And proj resolution $P' -> A'$ $P'' -> A$,
+  we could use Horseshoe lemma to produce a projective resolution 
+  $P -> A$
+  s.t. we have a ses of complexes $0 -> P' -> P -P'' -> 0$
+
+  For each $n$,
+  by Horseshoe,
+  $0 -> P'_n -> P_(n) -> P''_n -> 0$ is split.
+  As $F$ is additve, it send split ses to split ses,
+  thus $0-> F P'_n -> F P_(n) -> F P''_n -> 0$ is ses and split.
+
+  And the resulting LES is defined by snake lemma.
+
+  We should check this is functorial,
+  if we have map between ses,
+  then it induces a map between the resulting LES.
+  But it is easy and we omit.
+]
+
+Derived functor
+
+D(A) = Ch (A) [q.i^(-1)] q.i. means quasi iso
+
+D^- (A) = CH^- (A) [q.i^(-1)] bounded above
+
+Ch^- (Proj_A) / (homotopic \~) is equivalent with D^- (A)
+
+but 
+Ch^- (Proj_A) / (homotopic \~) is very simple.
+
+
+If $F: A -> B$, assume A have enough injective.
+is a left exact functor,
+we define its right derived functors
+$R^i F (A) = H^i F (I_A)$,
+where $I_A$ is an injective resolution of $A$.
+
+Note $R^i F(A) = (L_i F^"op")^("op")(A)$.
+And all the proves above work for $R^i F(A)$,
+and R^i F(A) is a cohomological delta functor.
+
+#definition[
+  For any object A of abelian category A,
+  $Hom (A, square): A -> "Ab"$ is left exact.
+
+  We define $"Ext"^i_A (A, B) := R^i Hom(A, square) (B)$
+]
+#remark[
+  We have:
+  $B$ is injective iff $Hom(square,B)$ is exact
+  iff $"Ext"^i_A (A, B) = 0, forall i neq 0$
+  iff $"Ext"^1_A (A, B) = 0$
+
+  A is proj. iff $Hom(A, square)$ is exact
+  iff $"Ext"^i_A (A, B) = 0, forall i neq 0$
+  iff $"Ext"^1_A (A, B) = 0$
+]
+
+#lemma[
+  Balancing of $Hom$
+  $R^i Hom(square, B) (A) iso R^i Hom(A, square) (B)$
+]
+
+#definition[
+  If $R$ is a ring and $B$ a left $R$ module,
+  we have $square tensor_R B$
+  is a functor $Mod-R -> "Ab"$
+  is right exact.
+
+  Define $"Tor"^R_n (A, B)= L_n (square tensor_R B) (A)$
+
+  $L_n (A tensor_R square)(B) iso L_n (square tensor_R B) (A)$
+]
+
+Technital tool: Mapping Cone
+
+
+$f: X-> Y$ continuous map of top,
+Mapping cylinder. useful in topology
+
+
+$f: B -> C$ be map of complexes,
+Define the $"Cone"(f)_n = B_(n+1) directSum C_n$
+
+$d(b,v) = (-d(b), d(c) - f(b))$
+
+is just
+$
+  mat(-d_B , 0; -f , d_c) times mat(B_(n-1); directSum; C_n) to
+  mat(B_(n-2); directSum; C_(n-1))
+$
+
+There is a ses
+$
+  0 -> C -> "Cone"(f) -> B[-1] -> 0 \
+  c mapsto (0,c) \
+  (b,c) mapsto -b
+$
+
+LES
+$
+  H_(n+1) ("Cone"(f)) -> H_n (B) xarrow(partial) H_n (C) -> H_n ("Cone"(f))
+$
+
+#lemma[
+  $partial$ is just $f_*$ induced by $f: B -> C$.
+]
+// TODO proof
+
+#corollary[
+  $f: B -> C$ is a quasi iso
+  if the chain complex $"Cone"(f)$ is exact.
+]
+

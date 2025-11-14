@@ -1148,7 +1148,7 @@ we write $tensor.B^0 V = RR$.
   and $pi circ pi = pi$.
 
   The #highlightIndex[exterior product]
-  $and: and.big^k times and.big^l V -> and.big^(k+l) V$
+  $and: and.big^k V times and.big^l V -> and.big^(k+l) V$
   is the composition:
   #align(center, commutative-diagram(
     node((0, 0), [$and.big^k V directSum and.big^l V$]),
@@ -1340,3 +1340,31 @@ $and.big^k alpha: and.big^k V -> and.big^k W$.
   $
 ]
 // TODO proof
+
+=== The Exterior Derivative
+
+#theorem(title: [Exterior Derivative])[
+  On any manifold $X$,
+  there is a natural linear map
+  $d: Omega^k (X) -> Omega^(k+1) (X)$
+  called the #highlightIndex[exterior derivative],
+  satisfying
+  #enum(
+    enum.item[
+      If $f in Omega^0 (X) = Gamma^infty (X) = C^infty (X)$,
+      then
+      $d f in Omega^1 (X) = Gamma^infty (T^* X)$
+      is the derivative of $f$,
+    ],
+    enum.item[
+      $d^2 = d circ d = 0$.
+    ],
+    enum.item[
+      $d(alpha and beta)
+      = (d alpha) and beta + (-1)^k alpha and (d beta)$.
+    ]
+  )
+]
+#remark[
+  Note that these properties determine $d$ uniquely.
+]
