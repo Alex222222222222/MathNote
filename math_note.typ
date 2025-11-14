@@ -6,13 +6,13 @@
 
 #show: ilm.with(
   title: [Math Note],
-  author: ("Zifan Hua"),
+  author: "Zifan Hua",
   date: datetime.today(),
   abstract: [This is my personal math note, which is a collection of my understanding of math. It is not meant to be a complete reference, but rather a personal study guide.],
   bibliography: bibliography("refs.bib"),
   figure-index: (enabled: true),
   table-index: (enabled: true),
-  listing-index: (enabled: true)
+  listing-index: (enabled: true),
 )
 
 #set heading(numbering: "1.1.")
@@ -22,6 +22,8 @@
 #show link: text.with(fill: blue)
 
 #include "GeneralTopology/general_topology.typ"
+
+#include "RingTheory/ring_theory.typ"
 
 #include "RepresentationTheory/representation_theory.typ"
 
