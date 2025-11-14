@@ -87,6 +87,10 @@
 #let le = $<=$
 #let ge = $>=$
 #let char = $op("char")$
+#let codim = $op("codim")$
+#let nilRadical = $frak(r)$
+#let ManifoldsCat = $op("Mfd")$
+#let ht = $op("ht")$
 #let sign = $op("sign")$
 #let tensor = symbol(
   sym.times.o,

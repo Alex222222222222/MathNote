@@ -1270,3 +1270,73 @@ $and.big^k alpha: and.big^k V -> and.big^k W$.
   $
   for all $u in Omega^k (X), v in Omega^l (X), w in Omega^m (X)$.
 ]
+
+#remark[
+  let $(x_1,...,x_n)$ be local coordinates on an open subset $U subset.eq X$.
+  Then $d x_1, ... , d x_n$ are a local basis of sections of $T^* X |_U$.
+  Hence
+  $(d x_(i_1) and d x_(i_2) and ... and d x_(i_k) |
+  1 le i_1 < i_2 < ... < i_k le n)$
+  is a basis of sections for $and.big^k T^* X |_U$.
+  So if $alpha in Omega^k (X)$,
+  we may write $alpha |_U$ uniquely as
+  $
+    alpha_U = sum_(1 le i_1 < i_2 < ... < i_k le n) alpha_(i_1,...,i_n)
+    d x_(i_1) and d x_(i_2) and ... and d x_(i_k)
+  $
+  For $alpha_(i_1,...,i_n): U -> RR$ smooth.
+]
+
+=== Pullbacks of Exterior Forms
+
+#definition(title: [Pullback])[
+  Let $f: x-> Y$ be a smooth map of manifolds and $x in X$.
+  and this induces a morphism of the cotangent spaces
+  $cotangentSpace(x, f): cotangentSpace(f(x), Y) -> cotangentSpace(x, X)$.
+  As exterior product are functorial under linear maps,
+  $cotangentSpace(x, f)$ then induces
+  $
+    and.big^k cotangentSpace(x,f): and.big^k cotangentSpace(f(x), Y) ->
+    and.big^k cotangentSpace(x, X)
+  $
+
+  And since
+  $Omega^k (X) = Gamma^infty (and.big^k T^* X) = Hom(X, and.big^k T^* Y)$,
+  $and.big^k cotangentSpace(x,f)$ induces a map
+  $Hom(Y, Hom(Y, and.big^k T^* Y)) -> Hom(X, Hom(X, and.big^k T^* X))$,
+  which we will defines as
+  #highlightIndex[pullback]
+  #index(display: [$d^* (alpha)$], [d^\* (alpha)])
+  $f^*:Omega^k (Y) -> Omega^k (X)$, with
+  $
+    f^* (alpha)_x = and.big^k cotangentSpace(x,f)(alpha_(f(x))),
+    forall alpha in Omega^k (Y)
+  $
+]
+#remark[
+  We omit the proof that $f^* (alpha): X -> and.big^k T^* X$ is smooth,
+  while this is easy to show using the coordinate chart.
+
+  It is also easy to show that the pullback maps $f^*$
+  is linear.
+  And $square^*: ManifoldsCat -> Vect$
+  is a contravariant functor
+  by sending a manifold $X$ to $Omega^x (X)$,
+  for a fixed $k$,
+  and a morphism $f$ to $f^*$.
+  That is, if we have $X xarrow(f) Y xarrow(g) Z$ be maps of manifold,
+  then we have $Omega^k (Z) xarrow(g^*) Omega^k (Y) xarrow(f^*) Omega^k (X)$,
+  and $(g circ f)^* = g^* circ f^*$.
+]
+
+#lemma[
+  If given $f: X -> Y$ be smooth map between manifolds,
+  then the pullback map $f^*: Omega^k (Y) -> Omega^k (X), k in NN$
+  commute with the wedge product.
+  That it, if given $alpha in Omega^k (Y), beta in Omega^l (Y)$,
+  then
+  $
+    f^* (alpha and beta) = f^* (alpha) and f^* (beta).
+  $
+]
+// TODO proof
