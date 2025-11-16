@@ -99,10 +99,10 @@
   ("B", sym.times.o.big),
 )
 #let classFunctionSpace(G) = $cal(C)(#G)$
-#let inducedKGModule(H,G, W) = $op("Ind")^(#G)_(#H) #W$
-#let restrictionKGModule(H,G, V) = $op("Res")^(#G)_(#H) #V$
+#let inducedKGModule(H, G, W) = $op("Ind")^(#G)_(#H) #W$
+#let restrictionKGModule(H, G, V) = $op("Res")^(#G)_(#H) #V$
 #let inflatedRepresentation(rho) = $dot(#rho)$
-#let innerProduct(x,y) = $chevron.l #x, #y chevron.r$
+#let innerProduct(x, y) = $chevron.l #x, #y chevron.r$
 #let tangentSpace(x, X) = $T_(#x) #X$
 #let dualSpace(X, bracket: false) = [#if bracket [
   $(#X)^*$
@@ -110,10 +110,13 @@
   $#X^*$
 ]]
 #let cotangentSpace(x, X) = $T^*_(#x) #X$
-#let exntensionByZero(phi) = $#phi ^circ$
+#let exntensionByZero(phi) = $#phi^circ$
 #let algebraicInteger = $AA$
 #let setminus = $\\$
 #let coker = $op("coker")$
+#let cup = symbol(
+  sym.union,
+)
 
 // a set of dictionary for completion
 abelian

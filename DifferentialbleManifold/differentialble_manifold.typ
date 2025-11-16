@@ -442,7 +442,7 @@ with desired properties.
         arr((0, 1), (0, 0), [$"inclusion"$], label-pos: right, "inj"),
         arr((1, 1), (1, 0), [$"inclusion"$], "inj"),
       ))
-    ]
+    ],
   )
 ]
 #example[
@@ -486,13 +486,13 @@ with desired properties.
   Let $X$ be manifold with dimension $n$.
   As sets, define
   $
-    T X &= {(x,v) | x in X, v in tangentSpace(x, X)}\
-    T^* X &= {(x,v) | x in X, v in cotangentSpace(x,X)}
+      T X & = {(x,v) | x in X, v in tangentSpace(x, X)} \
+    T^* X & = {(x,v) | x in X, v in cotangentSpace(x, X)}
   $
   Also define maps:
   $
-    &pi: T X -> X, &pi: (x, v) mapsto x, &forall (x, v) in T X\
-    &pi: T^* X -> X, &pi: (x, v) mapsto x, &forall (x, v) in T^* X\
+    & pi: T X -> X,   & pi: (x, v) mapsto x, & forall (x, v) in T X \
+    & pi: T^* X -> X, & pi: (x, v) mapsto x, & forall (x, v) in T^* X \
   $
 
   Let $(U, phi)$ be a chart on $X$,
@@ -504,16 +504,16 @@ with desired properties.
   Define $T phi: U times RR^n -> T X$,
   $T^* phi: U times RR^n -> T^* X$ by
   $
-    &T phi: &((u_1,...,u_n),(v_1,...,v_n)) &mapsto
-      (
-        phi(u_1,...,u_n),
-        v_1 partial/(partial x_1)+...+v_n partial/(partial x_n)
-      ) \
-    &T^* phi: &((u_1,...,u_n),(w_1,...,w_n)) &mapsto
-      (
-        phi(u_1,...,u_n),
-        w_1 d x_1+...+w_n d x_n
-      )
+    & T phi:   & ((u_1,...,u_n),(v_1,...,v_n)) & mapsto
+                                                 (
+                                                   phi(u_1, ..., u_n),
+                                                   v_1 partial/(partial x_1)+...+v_n partial/(partial x_n)
+                                                 ) \
+    & T^* phi: & ((u_1,...,u_n),(w_1,...,w_n)) & mapsto
+                                                 (
+                                                   phi(u_1, ..., u_n),
+                                                   w_1 d x_1+...+w_n d x_n
+                                                 )
   $
   Then all $(U times RR^n, T phi)$ and $(U times RR^n, T^* phi)$
   defined like this, defines a atlas on $T X$ and $T^* X$,
@@ -561,7 +561,7 @@ with desired properties.
   $T_x f: T_x X -> T_(f(x)) Y$
   is surjective.
 ]
-#definition(title:[Immersion])[
+#definition(title: [Immersion])[
   Let $f: X to Y$ be a smooth map
   of manifolds.
   We call $f$ a #highlightIndex[immersion]
@@ -580,7 +580,7 @@ with desired properties.
   is a homeomorphism.
 
   And we call $X$ a #highlightIndex[embedded submanifold]
-  of $Y$.  
+  of $Y$.
 ]
 #remark[
   Embeddings are injective immersions,
@@ -655,10 +655,10 @@ This corollary allows us to build examples of manifolds.
   and all $x in X_y$,
   we have $T_x f: tangentSpace(x, X) -> tangentSpace(y, Y)$
   surjective.
-  So that $X_y =  f^(-1) (y)$
+  So that $X_y = f^(-1) (y)$
   is an embedded submanifold of $X$,
   of dimension $dim X - dim Y$.
-  #index[Sard's Theorem]
+  #index("Sard's Theorem")
 ]
 
 === Embeddings and Embedded Submanifolds
@@ -703,7 +703,7 @@ which we will state as the following proposition.
 
 == Vector Fields
 
-#definition(title:[Vector Field])[
+#definition(title: [Vector Field])[
   Let $X$ be a manifold,
   with tangent bundle $T X$.
   A #highlightIndex[vector field]
@@ -713,7 +713,7 @@ which we will state as the following proposition.
 #remark[
   For each $x in X$, $v(x) in {x} times tangentSpace(x, X)$,
   we write $v_x$ to be the second part of $v(x)$,
-  and $v_x in tangentSpace(x,X)$.
+  and $v_x in tangentSpace(x, X)$.
   And $v_x$ varying smoothly with $x$.
   We could think the filed as a velocity of partical on the manifold.
   For instance, the wind velocity on the surface of the earth.
@@ -771,7 +771,7 @@ which we will state as the following proposition.
 
 // TODO proof
 
-#definition(title:[Lie Bracket])[
+#definition(title: [Lie Bracket])[
   Given a ring $R$,
   and $a, b in R$,
   we define $[a,b] = a b - b a$
@@ -781,7 +781,7 @@ which we will state as the following proposition.
 ]
 
 #proposition[
-  Let $delta, epsilon:  C^infty (X) -> C^infty (X)$
+  Let $delta, epsilon: C^infty (X) -> C^infty (X)$
   be derivations,
   then $[delta, epsilon]$ is also a derivation.
 ]
@@ -791,12 +791,12 @@ which we will state as the following proposition.
   Then
   $
     & delta circ epsilon(a b)
-    = delta(a epsilon(b) + epsilon(a) b)
-    = delta(a) epsilon(b) + a (delta circ epsilon (b))
+      = delta(a epsilon(b) + epsilon(a) b)
+      = delta(a) epsilon(b) + a (delta circ epsilon (b))
       + (delta circ epsilon(a)) b + epsilon(a) delta(b) \
     & epsilon circ delta(a b)
-    = epsilon(a delta(b) + delta(a) b)
-    = epsilon(a) delta(b) + a (epsilon circ delta (b))
+      = epsilon(a delta(b) + delta(a) b)
+      = epsilon(a) delta(b) + a (epsilon circ delta (b))
       + (epsilon circ delta(a)) b + delta(a) epsilon(b)
   $
 
@@ -808,7 +808,7 @@ which we will state as the following proposition.
   $
 ]
 
-#definition(title:[Lie Bracket])[
+#definition(title: [Lie Bracket])[
   Let $X$ be a manifold and $v, w in Gamma^infty (T X)$
   be vector fields.
   Then $v,w$ corresponds to derivations
@@ -826,46 +826,41 @@ which we will state as the following proposition.
   vector fields $v,w in Gamma^infinity (T X)$,
   and a chart $(U, phi)$.
   Let $(x_1,..., x_n)$ be a lcoal coordinate on $phi(U)$,
-  then the corresponding derivation $delta, epsilon$ of $v,w$ 
+  then the corresponding derivation $delta, epsilon$ of $v,w$
   satisfy
   $
-    delta(a)(x) &= v_1 (partial a)/(partial x_1) |_x +
-    ... + v_n (partial a)/(partial x_n) |_x,
-    forall x in phi(U), a in C^infty (X) \
-    epsilon(a)(x) &= w_1 (partial a)/(partial x_1) |_x +
-    ... + w_n (partial a)/(partial x_n) |_x,
-    forall x in phi(U), a in C^infty (X) \
+      delta(a)(x) & = v_1 (partial a)/(partial x_1) |_x +
+                    ... + v_n (partial a)/(partial x_n) |_x,
+                    forall x in phi(U), a in C^infty (X) \
+    epsilon(a)(x) & = w_1 (partial a)/(partial x_1) |_x +
+                    ... + w_n (partial a)/(partial x_n) |_x,
+                    forall x in phi(U), a in C^infty (X) \
   $
 
   Thus $forall x in phi(U), a in C^infty (X)$
   $
-    [delta, epsilon](a)
-    &= delta circ epsilon (a) - epsilon circ delta(a) \
-    &= delta(
-      w_1 (partial a)/(partial x_1)+...+w_n (partial a)/(partial x_n)
-    )
-    - epsilon(
-      v_1 (partial a)/(partial x_1)+...+v_n (partial a)/(partial x_n)
-    ) \
-    &= sum_(i,j in {1,...,n})
-      v_i partial/(partial x_i)(w_j (partial a)/(partial x_j))
-    - sum_(i,j in {1,...,n})
-      w_i partial/(partial x_i)(v_j (partial a)/(partial x_j)) \
-    &= sum_(i,j)
-      v_i (
-        (partial w_j)/(partial x_i)(partial a)/(partial x_j)
-        + w_j partial/(partial x_i)(partial a)/(partial x_j)
-      )
-      - sum_(i,j)
-      w_i (
-        (partial v_j)/(partial x_i)(partial a)/(partial x_j)
-        + v_j partial/(partial x_i)(partial a)/(partial x_j)
-      )\
-    & = sum_(i,j)
-      (
-        v_i (partial w_j)/(partial x_i)
-        - w_i (partial v_j)/(partial x_i)
-      )(partial a)/(partial x_j)
+    [delta, epsilon](a) & = delta circ epsilon (a) - epsilon circ delta(a) \
+                        & = delta(w_1 (partial a)/(partial x_1)+...+w_n (partial a)/(partial x_n))
+                          - epsilon(v_1 (partial a)/(partial x_1)+...+v_n (partial a)/(partial x_n)) \
+                        & = sum_(i,j in {1,...,n})
+                          v_i partial/(partial x_i)(w_j (partial a)/(partial x_j))
+                          - sum_(i,j in {1,...,n})
+                          w_i partial/(partial x_i)(v_j (partial a)/(partial x_j)) \
+                        & = sum_(i,j)
+                          v_i (
+                            (partial w_j)/(partial x_i)(partial a)/(partial x_j)
+                            + w_j partial/(partial x_i)(partial a)/(partial x_j)
+                          )
+                          - sum_(i,j)
+                          w_i (
+                            (partial v_j)/(partial x_i)(partial a)/(partial x_j)
+                            + v_j partial/(partial x_i)(partial a)/(partial x_j)
+                          ) \
+                        & = sum_(i,j)
+                          (
+                            v_i (partial w_j)/(partial x_i)
+                            - w_i (partial v_j)/(partial x_i)
+                          )(partial a)/(partial x_j)
   $
 
   Note that this is a equivalence definition of derivations,
@@ -895,13 +890,13 @@ which we will state as the following proposition.
   A #highlight[$1$-parameter group of diffeomorphism]
   #index(
     display: [$1$-parameter group of diffeomorphism],
-    "1-parameter group of diffeomorphism"
+    "1-parameter group of diffeomorphism",
   )
   is a smooth map $phi: RR times X -> X$.
   s.t.
   #enum(
     enum.item[
-      $phi_t: X-> X$ and $phi_t(x) = phi(t,x)$
+      $phi_t: X-> X$ and $phi_t(x) = phi(t, x)$
       for all $t in RR, x in X$.
     ],
     enum.item[
@@ -912,7 +907,7 @@ which we will state as the following proposition.
     ],
     enum.item[
       $phi_(s+t) = phi_s circ phi_t$ for all $s,t in RR$.
-    ]
+    ],
   )
 ]
 #remark[
@@ -953,7 +948,7 @@ which we will state as the following proposition.
     v_x (a) = d/(d t) (a circ phi_t (x))|_(t=0),
     forall a in C^infty (X), x in X
   $
-  
+
   Thus, for each $1$-parameter group of diffeomorphism
   $phi$ of $X$ gives a vector field $v in Gamma^infty (T X)$.
   We will show that under additional conditions
@@ -1023,8 +1018,8 @@ from $v$ by "intergrations".
 
   It is well know that euqations of the form
   $
-    &(d) / (d t) x_i= f_i (x_1(t), ..., x_n (t)),& &i in {1,...,n}\
-    &x_i (0) = tilde(x)_i,& &i in {1,...,n}
+    & (d) / (d t) x_i= f_i (x_1(t), ..., x_n (t)), && i in {1,...,n} \
+    & x_i (0) = tilde(x)_i,                        && i in {1,...,n}
   $
   for $f_1, ..., f_n : RR^n -> RR$ smooth,
   and $tilde(x)_1,...,tilde(x)_n in RR$
@@ -1060,7 +1055,7 @@ from $v$ by "intergrations".
   a complete vector field.
   Define $phi: RR times X -> X$
   s.t. for each $x in X$,
-  $t -> phi(t,x)$
+  $t -> phi(t, x)$
   is the unique maximal integral curve
   with $phi(0, x) = 0$.
   Then $phi$ is smooth,
@@ -1084,7 +1079,7 @@ if $V$ is a $RR$-vector,
 by convention,
 we write $tensor.B^0 V = RR$.
 
-#definition(title:[Tensor Algebra])[
+#definition(title: [Tensor Algebra])[
   If given $RR$-vector space,
   we define the #highlightIndex[tensor algebra]
   as
@@ -1179,7 +1174,7 @@ $
   }
 $
 is a basis for $and.big^k V$,
-and $dim and.big^k V = binom(n,k)$.
+and $dim and.big^k V = binom(n, k)$.
 
 And it is easy to check that
 if $alpha in and.big^k V$, $beta in and.big^l V$, then
@@ -1200,7 +1195,7 @@ $alpha and beta = (-1)^(k l) beta and alpha in and.big^(k+l) V$.
   $RR = tensor.big^0 V = and.big^0 V$.
 
   And it have deimension
-  $dim V^* = sum_(k=0)^(n) binom(n,k) = 2^n$.
+  $dim V^* = sum_(k=0)^(n) binom(n, k) = 2^n$.
 ]
 
 Note that the $and.big^k$ is a functor,
@@ -1239,10 +1234,10 @@ $and.big^k alpha: and.big^k V -> and.big^k W$.
   a #highlightIndex[tensor] is a section
   $T in Gamma^infty (tensor.big^j T X tensor tensor.big^k T^* X)$
   for $j,k ge 0$.
-  
+
   An #highlightIndex[exterior form],
   or $k$-form
-  #index(display: [$k$-form], [k-form]) 
+  #index(display: [$k$-form], [k-form])
   is $alpha in Gamma^infty (and.big^k T^* X)$.
   And we denote it by $Omega^k (X) = Gamma^infty (and^k T^* X)$.
   #index(display: [$Omega^k (X)$], [Omega^k (X)])
@@ -1276,7 +1271,7 @@ $and.big^k alpha: and.big^k V -> and.big^k W$.
   Then $d x_1, ... , d x_n$ are a local basis of sections of $T^* X |_U$.
   Hence
   $(d x_(i_1) and d x_(i_2) and ... and d x_(i_k) |
-  1 le i_1 < i_2 < ... < i_k le n)$
+    1 le i_1 < i_2 < ... < i_k le n)$
   is a basis of sections for $and.big^k T^* X |_U$.
   So if $alpha in Omega^k (X)$,
   we may write $alpha |_U$ uniquely as
@@ -1296,20 +1291,20 @@ $and.big^k alpha: and.big^k V -> and.big^k W$.
   As exterior product are functorial under linear maps,
   $cotangentSpace(x, f)$ then induces
   $
-    and.big^k cotangentSpace(x,f): and.big^k cotangentSpace(f(x), Y) ->
+    and.big^k cotangentSpace(x, f): and.big^k cotangentSpace(f(x), Y) ->
     and.big^k cotangentSpace(x, X)
   $
 
   And since
   $Omega^k (X) = Gamma^infty (and.big^k T^* X) = Hom(X, and.big^k T^* Y)$,
-  $and.big^k cotangentSpace(x,f)$ induces a map
+  $and.big^k cotangentSpace(x, f)$ induces a map
   $Hom(Y, Hom(Y, and.big^k T^* Y)) -> Hom(X, Hom(X, and.big^k T^* X))$,
   which we will defines as
   #highlightIndex[pullback]
   #index(display: [$d^* (alpha)$], [d^\* (alpha)])
   $f^*:Omega^k (Y) -> Omega^k (X)$, with
   $
-    f^* (alpha)_x = and.big^k cotangentSpace(x,f)(alpha_(f(x))),
+    f^* (alpha)_x = and.big^k cotangentSpace(x, f)(alpha_(f(x))),
     forall alpha in Omega^k (Y)
   $
 ]
@@ -1361,10 +1356,260 @@ $and.big^k alpha: and.big^k V -> and.big^k W$.
     ],
     enum.item[
       $d(alpha and beta)
-      = (d alpha) and beta + (-1)^k alpha and (d beta)$.
-    ]
+      = (d alpha) and beta + (-1)^k alpha and (d beta)$,
+      with $alpha in Omega^k (X), beta in Omega^l (X)$.
+    ],
   )
 ]
 #remark[
   Note that these properties determine $d$ uniquely.
+]
+#proof[
+  Let $(x_1,...,x_n)$ be local coordinates on an open subset
+  $U subset.eq X$,
+  then by induction,
+  and the above three properties,
+  we have
+  $
+    d(d x_(i_1) and ... and d x_(i_k)) = 0
+  $
+
+  And if $alpha in Omega^k (X)$,
+  and we have a fomulation of $alpha$,
+  as
+  $
+    alpha |_U = sum_(i_1 < ... < i_k) alpha_(i_1,...,i_k)
+    d x_(i_1) and ... and d x_(i_k)
+  $
+  where $alpha_(i_1,...,i_k) -> U -> k$ smooth.
+  By the third property,
+  we have
+  $
+    d alpha |_U = sum_(i_1 < ... < i_k)
+    d alpha_(i_1,...,i_k) and d x_(i_1) and ... and d x_(i_k)
+  $
+  And by the first and third property, we have
+  $
+    d alpha |_U & = sum_(i_1 < ... < i_k)
+                  d alpha_(i_1,...,i_k) and d x_(i_1) and ... and d x_(i_k) \
+                & = sum_(i_1 < ... < i_k)
+                  sum_(j) (partial alpha_(i_1,...,i_k))/(partial x_i)
+                  d x_j and d x_(i_1) and ... and d x_(i_k)
+  $
+
+  The left of the proof is easy.
+]
+
+#lemma[
+  let $f: X -> Y$ be a smooth map of manifolds,
+  and $alpha in Omega^k (Y)$,
+  then the pullback maps $f^*$ commute with the exterior derivative $d$.
+  That is
+  $
+    f^* (d alpha) = d(f^* (alpha))
+  $
+]
+// TODO proof
+
+=== Lie Derivatives of Exterior Forms
+
+#definition[
+  Let $X$ be a manifold, $v$ a complete vector field on $X$,
+  $phi: RR times X -> X$ be the associated 1-parameter group of diffeomorphisms
+  defined by $v$.
+  Then the
+  #highlightIndex[Lie derivative] is
+  $
+    cal(L)_v (alpha) = d/(d t) (phi_t^* (alpha)) |_(t=0)
+  $
+  #index(display: [$cal(L)_v (alpha)$], [cal(L)\_v (alpha)])
+  where $phi_t: X -> X$,
+  and $phi_t^*: Omega^(k) (X) -> Omega^(k) (X)$
+  is the pullback of $phi_t$, forall $t in RR$.
+]
+#remark[
+  We actually have $phi^*: RR times Omega^k (X) -> Omega^k (X)$,
+  that send $(t,alpha) mapsto phi^*_t (alpha)$,
+  the derivative regarding $t=0$,
+  will gives us a element in $Omega^k (X)$,
+  which is another $k$-form.
+
+  The Lie derivative could be think as how the $k$-form $alpha$
+  change when we drag it along the flow $alpha$,
+  that is a $1$-parameter group of diffeomorphism.
+]
+
+We define the interor product in a similar fashion
+with the exterior derivative.
+#definition[
+  On any manifold $X$,
+  given $v in Gamma^infty (T X)$,
+  there is a natural linear map
+  $cal(i)_v: Omega^k (X) -> Omega^(k-1) (X)$
+  called the #highlightIndex[exterior derivative],
+  #index(display: [$cal(i)_v (alpha)$], [cal(i)\_v (alpha)])
+  satisfying
+  #enum(
+    enum.item[
+      If $alpha in Omega^1 (X) = Gamma^infty (T^* X)$,
+      then
+      $cal(i)_v (alpha) in Omega^0 (X) = Gamma^infty (RR) = C^infty (X)$
+      is $cal(i)_v (alpha)(x) = alpha_x (v_x), forall x in X$.
+      This kind of make sense, since $alpha_x in cotangentSpace(x, X)$,
+      and $v_x in tangentSpace(x, X)$,
+      and cotangent space is defined as
+      $cotangentSpace(x, X) = dualSpace((tangentSpace(x, X)))$.
+    ],
+    enum.item[
+      $cal(i)_v (alpha and beta)
+      = (cal(i)_v alpha) and beta + (-1)^k alpha and (cal(i)_v beta)$,
+      with $alpha in Omega^k (X), beta in Omega^l (X)$.
+    ],
+  )
+]
+#proof[
+  If given a local coordinate $(x_1,...,x_n)$ on an open subset
+  $U subset.eq X$.
+  Then $v = sum_(j = 1)^n v^j partial/(partial x_j)$.
+  And for $alpha in Omega^k (X)$,
+  we have
+  $
+    alpha |_U = 1/k! sum_(i_1,...,i_k) alpha_(i_1,...,i_k)
+    d x_(i_1) and ... and d x_(i_k)
+  $
+  where $alpha_(i_1,...,i_k)$ is anti-symmetric, i.e.
+  given $sigma in S_k$,
+  $alpha_(i_(sigma(1)),...,i_(sigma(k))) = sign(sigma) alpha_(i_1,...,i_k)$.
+
+  Since $d x_i v = d x_i sum_(j = 1)^n v^j partial/(partial x_j) = v^i$.
+  And by induction,
+  we have
+  $
+    cal(i)_v (alpha) |_U = 1/(k-1)! sum_(i_1,...,i_k)
+    v^(i_1) alpha_(i_1,...,i_k) d x_(i_2) and ... and d x_(i_k)
+  $
+
+  It is easy to check that the above euqation is unique,
+  and define the desired map.
+]
+
+#theorem(title: [Cartan's Formula])[
+  Given manifold $X$.
+  The Lie derivative $cal(L)_v alpha$ of a $k$-form
+  $alpha in Omega^k (X)$ satisfies
+  $
+    cal(L)_v alpha = d(cal(i)_v alpha) + cal(i)_v (d alpha)
+  $
+  This is called #highlightIndex[Cartan's formula].
+]
+
+=== De Rham Cohomology
+
+#definition(title: [De Rham Cohomology])[
+  Let $X$ be a manifold,
+  then the
+  #highlightIndex[de Rham cohomology group]
+  is the cohomology group
+  of the cochain
+  $
+    0 -> Omega^0 (X) xarrow(d) Omega^1 (X)
+    -> ... -> Omega^k (X) xarrow(d) Omega^(k+1) (X) -> ...
+  $
+  where $d$ is the exterior derivative.
+  And
+  $
+    H^k (X) = (
+    ker(Omega^k (X) xarrow(d) Omega^(k+1))
+    )/(
+    Img(Omega^(k-1) (X) xarrow(d) Omega^(k))
+    )
+  $
+  #index(display: [$H^k (X)$], [H^k (X)])
+]
+#remark[
+  #enum(
+    enum.item[
+      We have
+      $
+        H^0 (X) =
+        ker(Omega^0 (X) xarrow(d) Omega^(1))
+        = {
+          f: X -> RR | f "locally constant"
+        } \
+        = RR^{"connected components of" X}
+      $
+    ],
+    enum.item[
+      $H^k (X)$ are $RR$ linear space.
+    ],
+    enum.item[
+      We call $alpha in Omega^k (X)$
+      #highlightIndex[closed] if $d alpha = 0$,
+      and #highlightIndex[exact] if $alpha = d beta$,
+      with $beta in Omega^(k-1) (X)$.
+    ],
+    enum.item[
+      If $X$ is compact,
+      then $H^k (X)$ is a finite-dimensional
+      vector space.
+      And the #highlightIndex[Betti numbers]
+      are $b^k (X) = dim H^k (X)$.
+    ],
+    enum.item[
+      If $alpha in Omega^k (X)$ with $alpha$ closed,
+      we write $[alpha]$ for the class
+      $alpha + Img d in H^k (X)$.
+    ],
+    enum.item[
+      By definiiton, $H^k (X) = 0$ if $k > dim X$.
+    ]
+  )
+]
+
+#definition(title: [Cup Product])[
+  Let $X$ be a manifold.
+  Define the #highlightIndex[cup product]
+  $
+    cup: H^k (X) times H^l (X) -> H^(k+l) (X)
+  $
+  by
+  $
+    [alpha] cup [beta] = [alpha and beta],
+    forall alpha in H^k (X), beta in H^l (X)
+  $
+]
+#proof[
+  We still need to proof $[alpha] cup [beta]$
+  acturally lands in $H^(k+l) (X)$,
+  that is $d(alpha and beta) = 0$.
+  Also, we nned to prove this is well defined,
+  that is for different representatives of $[alpha]$,
+  and $[beta]$, $[alpha] cup [beta]$ is the same,
+  but this is easy.
+]
+#proposition[
+  Let $X$ be a manifold.
+  The cup product satisfies:
+  #enum(
+    enum.item[
+      $([alpha] cup [beta]) cup [gamma] = [alpha] cup ([beta] cup [gamma])$
+    ],
+    enum.item[
+      $[alpha] cup [beta] = (-1)^(k l) [beta] cup [beta],
+      forall [alpha] in H^k (X), [beta] in H^l (X)$
+    ],
+    enum.item[
+      $cup$ is bilinear.
+    ],
+    enum.item[
+      $1_X in Omega^0 (X)$ with $d 1_x = 0$,
+      so $[1_x] in H^0 (X)$,
+      and $[1_x] cup [alpha] = [alpha] cup [1_X] = [alpha]$,
+      for all $alpha in H^k (X)$.
+      So $(H^* (X), cup, [1_X])$ forms a
+      #highlight[supercommutative graded $RR$-algebra].
+      #index(display: [supercommutative graded $RR$-algebra],
+      [supercommutative graded RR-algebra])
+    ]
+  )
 ]

@@ -64,7 +64,7 @@
   We denote the resulting $k H$-module
   $restrictionKGModule(H, G, V)$.
   #index(
-    display: [restrictionKGModule(H,G,V)],
+    display: [$restrictionKGModule(H,G,V)$],
     [Res_H^G V],
   )
 ]
