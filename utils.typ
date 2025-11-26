@@ -52,6 +52,10 @@
 
 #let proof = proofblock()
 
+#let Fun = $op("Fun")$
+#let Tot = $op("Tot")$
+#let Ext = $op("Ext")$
+#let Tor = $op("Tor")$
 #let Hom = $op("Hom")$
 #let notin = $in.not$
 #let Bd = $op("Bd")$

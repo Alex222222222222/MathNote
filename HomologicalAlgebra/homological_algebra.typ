@@ -5,7 +5,7 @@
 Ab-enriched -> additive -> pre-abelian -> abelian
 
 $cal(A)$ abelian cat,
-$P$ is proj. if $Hom _cal(A)(P, square)$ is exact.
+$P$ is proj. if $Hom_cal(A)(P, square)$ is exact.
 $I$ is inj. if $Hom_cal(A)(square, I)$ is exact.
 
 $cal(A)$ have enough proj.
@@ -261,11 +261,11 @@ $I in A$ inj $Hom_A(square, A)$ is exact.
 
 $P$ proj iff $P$ is a direct summand of a free mod.
 
-#proposition(title:[Baer Criterion])[
-  A right $R$ mod $E$ is injective iff 
+#proposition(title: [Baer Criterion])[
+  A right $R$ mod $E$ is injective iff
   for every righ ideal $J$ of R
   and every $J -> E$ can be extended
-    If $I$ inj iff
+  If $I$ inj iff
   #align(center, commutative-diagram(
     node((0, 0), [$0$]),
     node((0, 1), [$J$]),
@@ -286,7 +286,7 @@ $P$ proj iff $P$ is a direct summand of a free mod.
   $QQ$
 
   $ZZ_(p^infty)$
-  
+
   and $QQ \/ ZZ$ are inj
 
   every injective abelian group have torsion part
@@ -389,7 +389,7 @@ where $"Ch" (A)$ is the category of chain complexes
 
 #definition[
   $u: C ->D$ is called a quasi-iso
-  if the induced-maps $H_n (C) xarrow(u^*) H_n (D)$ are iso 
+  if the induced-maps $H_n (C) xarrow(u^*) H_n (D)$ are iso
 ]
 
 #remark[
@@ -418,7 +418,7 @@ the following are eq:
 The dual concept
 
 cochain complex. is a colelction ${C^n | n in ZZ}$
-$d^n: C^n -> C^(n+1)$, $d circ d =0 $
+$d^n: C^n -> C^(n+1)$, $d circ d =0$
 
 $Z^n = ker d^n$ cocycles
 $B^n = im d^(n-1)$ coboundaryies
@@ -620,7 +620,7 @@ Note, two different proj resolution have chain homotopic.
 #theorem[
   Comparison theorem
 
-  Let $P xarrow(ellipse) M$ be a proj. resolution of $M$ 
+  Let $P xarrow(ellipse) M$ be a proj. resolution of $M$
   (enough that $... -> P_1 -> P_2 -> M -> )$ is a complex with $P_i$ proj).
   And suppose that we have $f': M -> N$.
   Then for every resolution $Q xarrow(eta) N$,
@@ -688,7 +688,7 @@ Let $A, B$ be abelian cat.
     -> T_n (C) -> xarrow(delta) -> T_(n-1) (A) -> ...
   $
 
-    $
+  $
     ... -> T^(n-1) (C) xarrow(delta) T^n (A) -> T^n (B)
     -> T^n (C) -> xarrow(delta) -> T^(n+1) (A) -> ...
   $
@@ -709,7 +709,7 @@ Let $A, B$ be abelian cat.
   for any integer $p$,
   define
   $T_0 (A) = A \/ p A$,
-  $T_ (A) = p A = {a in a | p a = 0}$.
+  $T_(A) = p A = {a in a | p a = 0}$.
 
   Then this is a homological functor
   or cohomological if ($T^1 = T_0, T^0 = T_1$).
@@ -728,7 +728,7 @@ Let $A, B$ be abelian cat.
   commuting with the connecting morphism $delta$.
 ]
 #definition[
-  A homological delta-functor $T = {T_n}$ is universal if 
+  A homological delta-functor $T = {T_n}$ is universal if
   given any other delta-functor $S$ and natural trnas:
   $f_0: S_0 -> T_0$,
   then there exists a unique morphism $f_n: S_n -> T_n$
@@ -754,7 +754,7 @@ For any object $A in A$,
 pick a proj res $P^A -> A$, this use AC.
 
 #definition[
-  $L_i F (A) := H_i (F(P^A))$, 
+  $L_i F (A) := H_i (F(P^A))$,
   Note that $F(P^A)$ is not exact, and may have interesting results.
 
   For proj resolution $... -> P_1 -> P_0 -> A -> 0$,
@@ -792,8 +792,8 @@ Kind of measures how far the $F$ functor away from left exact.
   so $g f: P -> P$
   is also a lifting,
   thus, the identity lifting must be homotopic with $g f$,
-  thus $g_* f_* = (g f)_* = id _*$,
-  similalry $f_* g_* = (f g)_* = id _*$.
+  thus $g_* f_* = (g f)_* = id_*$,
+  similalry $f_* g_* = (f g)_* = id_*$.
 
   So $f_*$ and $g_*$ are iso.
 ]
@@ -848,7 +848,7 @@ thus $L_i F$ is additive.
 #proof[
   Given a SES in $A$: $0 -> A' -> A -> A'' -> 0$.
   And proj resolution $P' -> A'$ $P'' -> A$,
-  we could use Horseshoe lemma to produce a projective resolution 
+  we could use Horseshoe lemma to produce a projective resolution
   $P -> A$
   s.t. we have a ses of complexes $0 -> P' -> P -P'' -> 0$
 
@@ -874,7 +874,7 @@ D^- (A) = CH^- (A) [q.i^(-1)] bounded above
 
 Ch^- (Proj_A) / (homotopic \~) is equivalent with D^- (A)
 
-but 
+but
 Ch^- (Proj_A) / (homotopic \~) is very simple.
 
 
@@ -896,7 +896,7 @@ and R^i F(A) is a cohomological delta functor.
 ]
 #remark[
   We have:
-  $B$ is injective iff $Hom(square,B)$ is exact
+  $B$ is injective iff $Hom(square, B)$ is exact
   iff $"Ext"^i_A (A, B) = 0, forall i neq 0$
   iff $"Ext"^1_A (A, B) = 0$
 
@@ -935,7 +935,7 @@ $d(b,v) = (-d(b), d(c) - f(b))$
 
 is just
 $
-  mat(-d_B , 0; -f , d_c) times mat(B_(n-1); directSum; C_n) to
+  mat(-d_B, 0; -f, d_c) times mat(B_(n-1); directSum; C_n) to
   mat(B_(n-2); directSum; C_(n-1))
 $
 
@@ -960,4 +960,530 @@ $
   $f: B -> C$ is a quasi iso
   if the chain complex $"Cone"(f)$ is exact.
 ]
+#remark[
+  Similar we have cylinder $"Cy"(f) = B_n directSum B_(n-1) directSum C_n$
 
+  $
+    mat(
+      d, id, 0;
+      0, -d, 0;
+      0, -f, d;
+    )
+    mat(
+      B_n;
+      directSum;
+      B_(n-1);
+      directSum;
+      C_n;
+    )
+  $
+
+  SES:
+
+  $
+    0 xarrow(f) C -> xarrow(g) D -> 0
+  $
+
+  #align(center, commutative-diagram(
+    node((0, 0), [$0$]),
+    node((0, 1), [$B$]),
+    node((0, 2), [$"Cyl" (f)$]),
+    node((0, 3), [$"Cone" (f)$]),
+    node((0, 4), [$0$]),
+    node((1, 0), [$0$]),
+    node((1, 1), [$B$]),
+    node((1, 2), [$C$]),
+    node((1, 3), [$D$]),
+    node((1, 4), [$0$]),
+    arr((0, 1), (1, 1), [$id$]),
+    arr((0, 2), (1, 2), [$beta$]),
+    arr((0, 3), (1, 3), [$phi$]),
+    arr((1, 0), (1, 1), []),
+    arr((1, 1), (1, 2), []),
+    arr((1, 2), (1, 3), []),
+    arr((1, 3), (1, 4), []),
+    arr((0, 0), (0, 1), []),
+    arr((0, 1), (0, 2), []),
+    arr((0, 2), (0, 3), []),
+    arr((0, 3), (0, 4), []),
+  ))
+
+  can construct $beta$ naturally and
+  $beta$ is quasi iso
+  by five lemma $phi$ is also quasi
+
+  important to understand $D (A)$
+]
+
+=== Double complexes
+
+A abelian
+
+$A -> "Ch" (A) -> "Ch" ("Ch" (A))$
+
+a doulbe complexes cat is iso to $"Ch" ("Ch" (A))$
+
+#definition[
+  A double complex or bicomplex in $A$
+  is a collection ${C_(p,q)}$
+  of objects.
+  $
+    d^h: C_(p,q) -> C_(p-1,q)
+  $
+  $
+    d^v: C_(p,q) -> C_(p,q-1)
+  $
+
+  and $(d^h)^2 = 0$, $(d^v)^2 = 0$
+
+  $d^v d^h + d^h d^v = 0$
+
+  note the square does not commut,
+  it is anti-commute.
+]
+#remark[
+  if we replace
+  $d^v_(p,q)$
+  with $(-1)^p d^v_(p,q)$
+  htne we get a $"Ch" ("Ch" (A))$
+]
+
+#definition[
+  a total complex
+
+  given a bicomplex
+
+  can define
+
+  $
+    "Tot"^pi (C)_n = product_(p+q = n) C_(p,q) \
+    "Tot"^directSum (C)_n = directSum.big_(p+q = n) C_(p,q)
+  $
+
+  and $d = d^v + d^h$,
+  and $d^2 = 0$ iff bicomplex anti-commute.
+
+  only defines if $A$ have contable sums, product
+]
+#lemma[
+  Acyclic assembly lemma
+  let $C$ be a double complex.
+
+  if "$C$ is an upper half-plane complex.
+  with exact columns."
+
+  or "$C$ is right half plane complex with exact rows"
+
+  then $"Tot"^pi (C)$ is acyclic.
+
+  if "$C$ is an upper half-plane complex.
+  with exact rows."
+
+  or "$C$ is right half plane complex with exact columns"
+
+  then $"Tot"^directSum (C)$ is acyclic.
+]
+#remark[
+  enough to assime diagonals are bounded fomr below or above
+  to have similar results.
+]
+#proof[
+  proof of the first part.
+
+  Let $C$ be a upper-halfplane bicomplex with exact columns.
+  we will show that $H_0 ("Tot"^pi (C)) = 0$.
+  By translation we get $"Tot"^pi (C)$ is acyclic.
+
+  let $c = (..., C_(-1,1), C_(0,0)) in product C_(-p,p) = "Tot"^pi (C)_0$.
+
+  We will use induction to find elements $b_(-p, p+1)$
+  s.t. $d^v (b_(-p, p+1)) + d^h (b_(-p, p+1)) = c_(-p,p)$.
+
+  // TODO finish the proof
+]
+#remark[
+  Spectral sequences
+]
+
+== Balancing Tor and Ext
+
+Suppose P and Q are complexes,
+of right and left R-modules
+we can form double complexs
+of abelian groups $P tensor_R Q$
+with $(p,q)$ terms
+is just
+$P_p tensor_R Q_q$
+and horozontal differential
+is just $d tensor 1$, wehere $d$ is differential of $P$,
+and vertical differential is $(-1)^p tensor d$,
+to make this anti-commute.
+
+#theorem[
+  $L_n (A tensor_R square) (B) iso L_n (square tensor_R B) (A)
+  = "Tor"_n^R (A,B)$
+  and they are iso as functors
+]
+#proof[
+  chosse a proj res $P xarrow(epsilon) A$
+  and proj res $Q xarrow(eta) B$.
+  Vie $A$ and $B$ as complexes concentated in degree $0$.
+
+  Look at the bicomplex
+  $P tensor Q$, $A tensor Q$
+  and $P tensor B$,
+  and we get maps
+  $
+    A tensor Q <- P tensor Q -> P tensor B
+  $
+
+  and we get induced map of total complexes
+  $
+    "Tot"^directSum (A tensor Q) <- "Tot"^directSum (P tensor Q) -> "Tot"^directSum (P tensor B)
+  $ <1>
+
+  By definition $"Tot"^directSum (A tensor Q) iso A tensor Q$,
+  and $"Tot"^directSum (P tensor B) iso P tensor B$.
+
+  this induces morphism of homology
+  $
+    H_* (A tensor Q) <- H_* "Tot"^directSum (P tensor Q) -> H_* (P tensor B)
+  $
+  and $H_* (P tensor B) = L_* (- tensor B)(A)$
+  ad $H_* (A tensor Q) = L_* (A tensor -)(B)$
+
+  we want to show that both map in @1 are quasi-iso.
+  then we need to prove that the cone of these maps is exact.
+
+  Idea: realise the cone as a total complex of a bicomplex,
+  with exact rows or columns.
+
+  And the cone is just the total complex with two rows with adjusted signs
+  to make it anti commute.
+
+  We look at the double complex $C$ obtaiend from $P tensor Q$
+  by adding $A tensor Q [-1]$ in the column
+  $p=-1$ using agmentation,
+  we get that $"Tot" (C) [1]$
+  is the maaping cone of
+  $"Tot" (P tensor Q) xarrow(epsilon tensor id_Q) A tensor Q$
+  note that $- tensor Q_p$ is exact,
+  since $Q_p$ is proj,
+  and $Q_p$ is direct summand of free module. (or just flat).
+  And every row of $C$ is exact.
+
+  And by acyclic assembly lemma,
+  $"Tot"^tensor (C) = "Cone"("something")$
+  is exact.
+
+
+  // TODO show the cone is exact
+]
+
+=== Hom cochain complex
+
+Given a chain complex
+$P$,
+and a cochain complex $I$,
+we can form a bi complex
+$H(P_dot, I^dot) = {Hom(P_p, I^q)}$,
+if $f: P_p -> I^q$,
+$
+  (d^n f)(a) = f(d a) \
+  (d^q f)(a) = (-1)^(p+q + 1) d f (a), forall a in P_p
+$
+
+#definition[
+  $
+    "Tot"^pi (Hom (P_dot, I^dot))
+  $
+  is the hom cochain complex
+]
+#remark[
+  If C, D be chain complexes.
+  We reindex D to be a cohain complex (n term to -n term).
+  then $H^n ("Tot"^pi (Hom (C, D)))$
+  is the gorup chain homotopy eq class of vhain maps
+  $C -> D[-n]$
+]
+
+check
+
+$
+  Hom_("Ab") ("Tot"^pi (Hom (P, Q)), I)
+  = Hom_R (P, "Tot"^pi (Hom (Q, I)))
+$
+
+#theorem[
+  $
+    "Ext"_R^n (A, B) iso R^n Hom_R (A, -)(B) iso
+    R^n Hom_R (-,B)(A)
+  $
+]
+#proof[
+  same as last theorem
+
+  P -> A proj res
+
+  B -> I inj res
+
+  $Hom (A,I) -> "Tot"^pi Hom (P, I) <- Hom (P,B)$
+
+  need to show both maps are quasi-iso
+
+  that the cones are exact
+  $"cone" (Hom(A, I) -> "Tot"^pi (P, I))$
+  is the total comlex of the doule complex
+
+  Hom (P, I) with Hom (A,I)[-1]
+  added rows or columes of the resulting double complex
+  are exact since Hom (P_p, -) is exact of Hom(-, I^q)
+  is exact since P is proj, and I is inj,
+  and the acyclic assembly lemma,
+  gives the theorem.
+]
+#remark[
+  The above proof shows that to calculate $"Ext"_R^n (A, B)$,
+  we only need B -> I to be a reslution,
+  but not inj res.
+]
+
+=== Yoneda product
+
+Given R modules A, B, C,
+and proj res
+
+P -> A
+
+Q -> B
+
+T -> C
+
+Ext^i_R (A,B) = H^i Tot^pi Hom (P,Q)
+\= chain homotopy eq classes of chain maps P -> Q[i].
+
+
+Ext^j_R (B,C) = H^j Tot^pi Hom (Q,T)
+\= chain homotopy eq classes of chain maps Q -> T[j].
+
+Note Hom_R (Q, T[j]) iso Hom_R(Q[i], T[i+j])
+
+I can compose,
+and we have
+
+P -> Q[i] -> T[i+j]
+
+and this composition preserve chain chomotopy
+
+Ext^i_R (A, B) times Ext^j_R (B,C) -> Ext^(i+j)\_R (A,C)
+
+called Yoneda Product
+
+chech this is biadditive and associative
+
+So $directSum.B "Ext"_R^i (A,A)$
+is a graded ring
+$"Ext"_R^* (A,A)$,
+called Yoneda ring.
+
+and $"Ext"_R^* (A,B)$
+will be a graded module over $"Ext"_R^* (A,A)$.
+
+=== Reamrks about flat module
+
+#definition[
+  A left R-mod B is flat if $- tensor_R B$ is exact.
+  A right R-mod A is flat if $A tensor_R -$ is exact.
+]
+
+exercise:
+
+The following R eq for a left R-mod B:
++ B is flat
++ $Tor^R_n (A,B) = 0$ for all n neq 0 and all A
++ $Tor^R_1 (A,B) = 0$ for all $A$.
+
+#lemma[
+  Proj modules are flat.
+]
+#proof[
+  Free module is flat,
+  and direct summand of free are flat.
+]
+
+recall that since tensor product
+is left adjoint with Hom.
+Then tensor product preserve colim.
+
+I small cat.
+
+Then $triangle C -> Fun(I, C)$,
+and $colim "adjoint" triangle$,
+and $triangle "adjoint" lim$
+
+general fact: colim is not exact.
+
+#proposition[
+  Let $I$ be a filtered partially ordered set.
+  For any $i,j in I$,
+  there exists a $k$ s.t. $i le k$ and $j le k$.
+  (Directed in the book by rotman).
+
+  View $I$ as a cat.
+
+  Then the functor $colim: Fun(I, R-mod) -> R-mod$
+  is exact.
+]
+
+// TODO proof
+
+#corollary[
+  Filtered colim of flat modules
+  is flat.
+]
+#proof[
+  Let $A = colim_I A_i$
+  I filtered, and $A_i$ is flat.
+  if SES:
+  $
+    0 to B_1 to B_2 to B_3 to 0
+  $
+
+  Then
+  $
+    A tensor_R B_1 to A tensor B_2 to A tensor B_3
+  $
+  since $A tensor_R B_j iso colim(A_i tensor B_j)$
+  notice that
+  for each
+  we have ses
+  $
+    0 to A_i tensor B_1 to A_i tensor B_2 to A_i tensor B_3 to 0
+  $
+
+  and by colim of filtered, we get exact.
+]
+
+#remark[
+  A filtered colim of projective module may not be proj.
+]
+
+#example[
+  Let $A$ be a torsion free abelian group,
+  then $A = colim A_i = union.big A_i$,
+  where $A_i$ are finitely generated subgroup of $A$.
+  Each $A_i$ is free,
+  so $A$ is a filtered colim of free (thus flat)
+  submodules, so flat.
+]
+#example[
+  Let $R$ be a ring.
+  Let $s in R$ be a central element.
+  Then the localization $R[s^(-1)] = colim(R xarrow(dot s) R xarrow(dot s) R xarrow(dot s) ...)$
+
+  So $R[s^(-1)]$ is flat as a R module.
+
+  Generalises to $R[S^(-1)]$
+  with $S subset R$ a multiplicative central subset.
+
+  If R is commutative,
+  then $R -> R[s_1^(-1), ..., s_n^(-1)]$
+  is called a Zariski top.
+]
+
+#lemma[
+  flat resolution lemma
+
+  Let $F -> A$ be a resolution of A, by flat module.
+  then $Tor_n^R (A,B) = H_n (F tensor_R B)$.
+
+  Similarly for flat resolution for $F' -> B$
+  $Tor_n^R (A,B) = H_n (A tensor_R F')$
+]
+#proof[
+  By induction.
+
+  As $- tensor_R B$ is right exact.
+  We get this is true for $n = 0$.
+
+  let
+  $
+    0 to ker phi to F_0 xarrow(phi) to A to 0
+  $
+  be a ses.
+
+  So $E = (... to F_2 to F_1 to 0)$
+  is a flat res of $k$.
+  For $n=1$.
+  $
+    Tor_1 (A,B) - ker (k tensor B -> F_0 tensor B)
+    = ker((F_1) tensor B \/ Img(F_2 tensor B) to F_0 tensor B) = H_1 (F tensor B)
+  $
+
+  For $n ge 2$,
+  $Tor_n^R (A,B) = Tor_(n-1)^R (k, B)
+  = H_(n-1) (E tensor B) = H_n (F tensor B)$.
+]
+#remark[
+  If $F$ is a right exact functor,
+  provided that we can define left derived functor for $F$.
+  Call $Q$ $F$-acyclic if $L_i F(Q) = 0, forall i$.
+
+  The proof shows that if $Q -> A$
+  is a res of $A$ by $F$-acyclic objects,
+  then
+  $
+    L_i F(A) = H_i (F(Q))
+  $
+]
+
+=== Universal coeficient theorem
+
+How is the Homology of complex $P$
+related to the homology of $P tensor M$?
+
+#theorem[
+  Let $P$ be a chain complex
+  of falt right R-mod,
+  s.t. each submod $d(P_n)$ of $P_(n-1)$
+  is also flat.
+  Then for every $n$
+  and every left $R$-mod $M$,
+  there is a ses.
+  $
+    0 to H_n (P) tensor_R M to H_n (P tensor_R M)
+    to Tor_1^R (H_(n-1) (P), M) to 0
+  $
+]
+#proof[
+  We have a ses
+  $
+    0 to Z_n to P_n to d(P_n) to 0
+  $
+  since $P_n$ and $d(P_n)$,
+  from the long exact sequence of Tor,
+  we see that $Z_n$ is also flat.
+
+  Also
+  that
+  $Tor_1 (d(P_n), M) = 0$
+  gives
+  $
+    0 -> Z_n tensor M to P_n tensor M to d(P_n) tensor M to 0
+  $
+  is ses for any M.
+  We get a les of complexes
+  $
+    0 to Z tensor M to P tensor M to d(P) tensor M to 0
+  $
+
+  Note that the induced diff on $Z$ and $d(P)$
+  is zero.
+  The les
+  $
+    ... H_(n+1) (d P tensor M) xarrow(phi)
+    H_n (Z tensor M) to H_n (P tensor M)
+    to H_n (d P tensor M)
+    to H_(n-1) (Z tensor <)
+  $
+]
