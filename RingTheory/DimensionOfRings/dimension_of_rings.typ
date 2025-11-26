@@ -119,11 +119,11 @@ Note one generalization of the lemma is:
   $
   Thus $ht frak(p)_0 le ht frak(p)$.
   And thus $dim R = sup{
-      ht frak(p) | frak(p) in Spec R
-    } le sup{
-      ht frak(p) | frak(p) in Spm R
-    }$.
-    And we are done.
+    ht frak(p) | frak(p) in Spec R
+  } le sup{
+    ht frak(p) | frak(p) in Spm R
+  }$.
+  And we are done.
 ]
 
 #definition(title: [Codimension and Height])[
@@ -148,7 +148,7 @@ Note one generalization of the lemma is:
 
 === Transcendence Bases
 
-#definition(title:[$k[S]$])[
+#definition(title: [$k[S]$])[
   Let $k$ be a field, and $K$ be another field,
   that contains $k$,
   and let $S subset.eq K$ be a finite subset.
@@ -156,7 +156,7 @@ Note one generalization of the lemma is:
   to the smallest $k$-algebra that contains $k$ and $S$.
   #index(display: [$k[S]$], [k[S]])
 ]
-#definition(title:[$k(S)$])[
+#definition(title: [$k(S)$])[
   Let $k$ be a field, and $K$ be another field,
   that contains $k$,
   and let $S subset.eq K$ be a finite subset.
@@ -169,14 +169,14 @@ Note one generalization of the lemma is:
   of fractions of the $k$-algebra $k[S]$,
 ]
 
-#definition(title:[Algebraic])[
+#definition(title: [Algebraic])[
   If given $k$ a field,
   and any ring $R$ that is a $k$-algebra,
   then $r in R$ is called #highlightIndex[algebraic]
   if there exists a polynomial $P(t) in k[t]$,
   s.t. $P(r) = 0 in R$.
 ]
-#definition(title:[Algebraic])[
+#definition(title: [Algebraic])[
   If given $k$ a field,
   and any ring $R$ that is a $k$-algebra,
   then $R$ is called #highlightIndex[algebraic]
@@ -192,7 +192,7 @@ Note one generalization of the lemma is:
 ]
 // TODO proof.
 
-#definition(title:[Finitely Generated])[
+#definition(title: [Finitely Generated])[
   Let $k$ be a field, and $K$ be another field,
   that contains $k$,
   and let $S subset.eq K$ be a finite subset.
@@ -206,7 +206,7 @@ Note one generalization of the lemma is:
   there is subtle difference.
 ]
 
-#definition(title:[Finite Transcendence Basis])[
+#definition(title: [Finite Transcendence Basis])[
   Let $k$ be a field, and $K$ be another field,
   that contains $k$.
   We say that $S subset.eq K$ is a
@@ -214,4 +214,160 @@ Note one generalization of the lemma is:
   + $S$ is finite.
   + the elements of $S$ are algebraically independent over $k$.
   + $K$ is algebraic over the field $k(S)$.
+]
+
+#proposition[
+  Let $K$ be a field and $k subset.eq K$ a subfield.
+  Suppose that $K$ is finitely generated over $k$
+  as a field.
+  Let $S$ and $T$ be two finite transcendence bases of $K$
+  over $k$.
+  Then $abs(S) = abs(T)$.
+]
+// TODO proof by induction on $min(abs(S), abs(T))$
+
+#definition(title: [Transcendence Degree $tr(K | k)$])[
+  Let $K$ be a field and $k subset.eq K$ a subfield.
+  Suppose that $K$ is finitely generated over $k$
+  as a field.
+  Then by last proposition,
+  we could define the
+  #highlightIndex[transcendence degree] $tr(K | k)$
+  #index(display: [$tr(K | k)$], [tr(K | k)])
+  as the cardinality of any transcendence basis of $K$ over $k$.
+]
+
+=== The Lemma of Artin-Rees and Krull's Theorem
+
+#definition(title: [Ring Grading])[
+  Let $R$ be a ring.
+  A #highlightIndex[ring grading]
+  on $R$ is the datum of sequence ${R_i}_(i in NN)$
+  of additive subgroup of $R$,
+  s.t.
+  #enum(
+    enum.item[
+      $R = directSum.B_(i in NN) R_i$.
+    ],
+    enum.item[
+      $R_i R_j subset.eq R_(i+j)$,
+      that is if $a in R_i, b in R_j$, then $a b in R_(i+j)$.
+    ],
+  )
+]
+#remark[
+  #enum(
+    enum.item[
+      It is easy to check that $R_0$ carries a subring structure of $R$.
+      And $1_(R_0) = 1_R$.
+    ],
+    enum.item[
+      $directSum.B_(i ge i_0) R_i$ is an ideal of $R$, for all $i_0 in NN$.
+    ],
+    enum.item[
+      Each $R_i$ is naturally a $R_0$ module.
+    ],
+    enum.item[
+      $R_0 -> R \/ (directSum.B_(i ge 1) R_i)$
+      is a ring iso.
+    ],
+    enum.item[
+      $R_(i_0) -> R \/ (directSum.B_(i ge 1) R_(i_0 + 1))$
+      is a $R_0$ module iso.
+    ],
+    enum.item[
+      If $r in R$,
+      we write $[r]_i$ #index(display: [$[r]_i$], [[r]\_i])
+      fir the projection of $r$ to $R_i$,
+      and we call it the
+      #highlight[$i$-th graded componnent of $r$].
+      #index(
+        display: [$i$-th graded componnent of $r$],
+        [i-th graded componnent of r],
+      )
+    ],
+  )
+]
+#example[
+  #enum(
+    enum.item[
+      If $R$ is a ring,
+      then the ring $R[x]$
+      has a natural grading given by
+      $(R[x])_i = {a x^i | a in R}$.
+    ],
+    enum.item[
+      Any ring $R$ have a #highlightIndex[trivial grading],
+      that is $R_0 = R$,
+      and $R_i = 0, forall i > 0$.
+    ],
+  )
+]
+
+#definition[
+  Let $R$ be a graded ring.
+  Let $M$ be a $R$-module.
+  Then we call $M$ a #highlight[graded $R$-module]
+  #index(display: [graded $R$-module], [graded R-moudle])
+  if there is
+  a grading on $M$ (relative to the grading on $R$)
+  is the datum of a sequence $M_0, M_1, ...$ if additive
+  subgroups of $M$,
+  s.t.
+  #enum(
+    enum.item[
+      $M = directSum.B_(i ge 0) M_i$.
+    ],
+    enum.item[
+      $R_i M_j subset.eq M_(i+j)$.
+      That is $r m subset.eq M_(i+j), forall r in R_i, m in M_j$.
+    ],
+  )
+]
+
+#lemma[
+  Let $R$ be a graded ring with grading ${R_i}_(i in NN)$.
+  The following are equivalent:
+  #enum(
+    enum.item[
+      The ring $R$ is noetherian.
+    ],
+    enum.item[
+      The ring $R_0$ is noetherian
+      and $R$ is finitely generated as a $R_0$-algebra.
+    ],
+  )
+]
+// TODO proof
+
+#definition(title: [Descending Filtration])[
+  let $R$ be a ring and let $M$ be a $R$ mod.
+  A #highlightIndex[descending filtration] or just #highlightIndex[filtration]
+  $M_*$ of $M$ is a sequence of $R$ mod
+  $
+    M = M_0 supset.eq M_1 supset.eq M_2 ...
+  $
+  If $I$ is an ideal of $R$,
+  then $M_*$ is said to be a $I$-filtration
+  #index(display: [$I$-filtration], [I-filtration])
+  if $I M_i subset.eq M_(i+1)$.
+  A $I$-filtration is said to be #highlightIndex[stable]
+  if $I M_i = M_(i+1)$
+  for all $i$ larger than some fixed natural numbering.
+]
+
+#definition[
+  Let $R$ be a ring,
+  and $I$ be an ideal.
+  Let ${M_i}_(i in NN)$ be a $I$-filtration of $M$.
+  Then $R^\# = directSum.B_(i in NN) I^i$,
+  with $I^0 = R$
+  has a natural $R$-algebra structure,
+  and $R^\#$ is called the #highlightIndex[blow up algebra]
+  associated with $R$ and $I$.
+
+  Then $M^\# = directSum.big_(i in NN) M_i$
+  carries a natural graded $R^\#$ module structure.
+  #index(display: [$R^\#$],[R^\#])
+  #index(display: [$M^\#$],[M^\#])
 ]
