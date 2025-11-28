@@ -52,6 +52,8 @@
 
 #let proof = proofblock()
 
+#let opposite = $op("op")$
+#let Ab = $op("Ab")$
 #let Fun = $op("Fun")$
 #let Tot = $op("Tot")$
 #let Ext = $op("Ext")$
@@ -101,6 +103,9 @@
   ("b", sym.times.o.big),
   ("big", sym.times.o.big),
   ("B", sym.times.o.big),
+)
+#let adjoint = symbol(
+  sym.tack.l,
 )
 #let classFunctionSpace(G) = $cal(C)(#G)$
 #let inducedKGModule(H, G, W) = $op("Ind")^(#G)_(#H) #W$

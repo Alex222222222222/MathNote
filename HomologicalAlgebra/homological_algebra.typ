@@ -197,7 +197,7 @@ we could calculate this.
 If $R$ is not commutative,
 we still have functor $square tensor_R M$
 from right $R$ module to abelian group
-this is left adjoint to $Hom_("Ab")(M, square)$
+this is left adjoint to $Hom_(Ab)(M, square)$
 which is a functor from abelian group to right $R$ module.
 
 #proposition[
@@ -282,7 +282,7 @@ $P$ proj iff $P$ is a direct summand of a free mod.
   and $R$ mod is inj iff it is divsible.
 ]
 #example[
-  in $"Ab" = ZZ$-mod
+  in $Ab = ZZ$-mod
   $QQ$
 
   $ZZ_(p^infty)$
@@ -332,16 +332,16 @@ using the fact that $QQ \/ ZZ$ is injective.
 
 by adjunction
 $
-  Hom_"Ab" (M, A) = Hom_(mod-R) (M, Hom_"Ab" (R, A))
+  Hom_Ab (M, A) = Hom_(mod-R) (M, Hom_Ab (R, A))
 $
 
 if $I$ is an inj abelian group,
-then $Hom_"Ab" (R, I)$
+then $Hom_Ab (R, I)$
 is an injective $R$-module.
 
 Let $M$ be an $R$-mod,
 $
-  I (M) = product_(Hom_R (M, Hom_("Ab") (R, QQ \/ ZZ))) Hom_("Ab") (R, QQ \/ ZZ)
+  I (M) = product_(Hom_R (M, Hom_(Ab) (R, QQ \/ ZZ))) Hom_(Ab) (R, QQ \/ ZZ)
 $
 this is injective as product of injective
 is inj.
@@ -890,19 +890,19 @@ and R^i F(A) is a cohomological delta functor.
 
 #definition[
   For any object A of abelian category A,
-  $Hom (A, square): A -> "Ab"$ is left exact.
+  $Hom (A, square): A -> Ab$ is left exact.
 
-  We define $"Ext"^i_A (A, B) := R^i Hom(A, square) (B)$
+  We define $Ext^i_A (A, B) := R^i Hom(A, square) (B)$
 ]
 #remark[
   We have:
   $B$ is injective iff $Hom(square, B)$ is exact
-  iff $"Ext"^i_A (A, B) = 0, forall i neq 0$
-  iff $"Ext"^1_A (A, B) = 0$
+  iff $Ext^i_A (A, B) = 0, forall i neq 0$
+  iff $Ext^1_A (A, B) = 0$
 
   A is proj. iff $Hom(A, square)$ is exact
-  iff $"Ext"^i_A (A, B) = 0, forall i neq 0$
-  iff $"Ext"^1_A (A, B) = 0$
+  iff $Ext^i_A (A, B) = 0, forall i neq 0$
+  iff $Ext^1_A (A, B) = 0$
 ]
 
 #lemma[
@@ -913,7 +913,7 @@ and R^i F(A) is a cohomological delta functor.
 #definition[
   If $R$ is a ring and $B$ a left $R$ module,
   we have $square tensor_R B$
-  is a functor $Mod-R -> "Ab"$
+  is a functor $Mod-R -> Ab$
   is right exact.
 
   Define $"Tor"^R_n (A, B)= L_n (square tensor_R B) (A)$
@@ -1210,13 +1210,13 @@ $
 check
 
 $
-  Hom_("Ab") ("Tot"^pi (Hom (P, Q)), I)
+  Hom_(Ab) ("Tot"^pi (Hom (P, Q)), I)
   = Hom_R (P, "Tot"^pi (Hom (Q, I)))
 $
 
 #theorem[
   $
-    "Ext"_R^n (A, B) iso R^n Hom_R (A, -)(B) iso
+    Ext_R^n (A, B) iso R^n Hom_R (A, -)(B) iso
     R^n Hom_R (-,B)(A)
   $
 ]
@@ -1243,7 +1243,7 @@ $
   gives the theorem.
 ]
 #remark[
-  The above proof shows that to calculate $"Ext"_R^n (A, B)$,
+  The above proof shows that to calculate $Ext_R^n (A, B)$,
   we only need B -> I to be a reslution,
   but not inj res.
 ]
@@ -1281,13 +1281,13 @@ called Yoneda Product
 
 chech this is biadditive and associative
 
-So $directSum.B "Ext"_R^i (A,A)$
+So $directSum.B Ext_R^i (A,A)$
 is a graded ring
-$"Ext"_R^* (A,A)$,
+$Ext_R^* (A,A)$,
 called Yoneda ring.
 
-and $"Ext"_R^* (A,B)$
-will be a graded module over $"Ext"_R^* (A,A)$.
+and $Ext_R^* (A,B)$
+will be a graded module over $Ext_R^* (A,A)$.
 
 === Reamrks about flat module
 
@@ -1444,7 +1444,7 @@ related to the homology of $P tensor M$?
 
 #theorem[
   Let $P$ be a chain complex
-  of falt right R-mod,
+  of flat right R-mod,
   s.t. each submod $d(P_n)$ of $P_(n-1)$
   is also flat.
   Then for every $n$
@@ -1454,13 +1454,17 @@ related to the homology of $P tensor M$?
     0 to H_n (P) tensor_R M to H_n (P tensor_R M)
     to Tor_1^R (H_(n-1) (P), M) to 0
   $
+
+  often called Künneth short exact sequence.
 ]
 #proof[
   We have a ses
   $
     0 to Z_n to P_n to d(P_n) to 0
   $
-  since $P_n$ and $d(P_n)$,
+  where $Z_n = ker d$.
+
+  Since $P_n$ and $d(P_n)$ are flat,
   from the long exact sequence of Tor,
   we see that $Z_n$ is also flat.
 
@@ -1472,7 +1476,7 @@ related to the homology of $P tensor M$?
     0 -> Z_n tensor M to P_n tensor M to d(P_n) tensor M to 0
   $
   is ses for any M.
-  We get a les of complexes
+  We get a ses of complexes
   $
     0 to Z tensor M to P tensor M to d(P) tensor M to 0
   $
@@ -1481,9 +1485,191 @@ related to the homology of $P tensor M$?
   is zero.
   The les
   $
-    ... H_(n+1) (d P tensor M) xarrow(phi)
-    H_n (Z tensor M) to H_n (P tensor M)
+    ... H_(n+1) (d P tensor M) xarrow(partial)
+    H_n (Z tensor M) to H_n (P tensor M) \
     to H_n (d P tensor M)
-    to H_(n-1) (Z tensor <)
+    xarrow(partial) H_(n-1) (Z tensor M) ...
   $
+
+  Note by definition:
+  $
+    H_(n+1) (d P tensor M) = d(P_(n+1) tensor M) \
+    H_n (Z tensor M) = Z_n tensor M \
+    H_n (d P tensor M) = d(P_n) tensor M \
+    H_(n-1) (Z tensor M) = Z_(n-1) tensor M \
+  $
+
+  And we have
+  $
+    d(P_(n+1) tensor M) xarrow(i tensor id_M) Z_n tensor M \
+    d(P_(n) tensor M) xarrow(i tensor id_M) Z_(n-1) tensor M
+  $
+
+  And we can cut the above les into short exact:
+  $
+    0 -> coker(partial) -> H_n (P tensor M) -> ker(partial) -> 0
+  $
+
+  Note that
+  $
+    0 -> d(P_(n+1)) -> Z_n -> H_n (P) -> 0
+  $
+  gives the flat resolution of $H_n P$, i.e.
+  $d(P_(n+1)) -> Z_n$.
+  We can calculate $Tor_* (H_n (P), M)$ as the homology:
+  $
+    0 -> d(P_(n+1)) tensor M xarrow(i tensor id_M) Z_n tensor M -> 0
+  $
+
+  So $ker i tensor id_M = Tor_1 (H_n (P), M)$,
+  and $coker i tensor id_M = Tor_0 (H_n (P), M) = H_n (P) tensor M$.
+
+  And we have ses
+  $
+    0 -> H_n (P) tensor M -> H_n (P, M) -> Tor_1 (H_(n-1) (P), M) -> 0
+  $
+]
+
+#theorem[
+  Let $P$ be a chain complex of free abelian group,
+  then for every n and every M,
+  the Künneth ses splits.
+]
+#proof[
+  $d(P_n)$ is a subgroup of free abelian group $P_(n-1)$,
+  so it is free.
+  So the ses splits:
+  $
+    0 -> Z_n -> P_n -> d(P_n) -> 0
+  $
+]
+
+Recall if P and Q are complexes
+of right, left R module,
+we can define tensor Product
+$(P tensor_R Q)_n = directSum.B_(i+j = n) P_i tensor Q_i$.
+To satisfies the lebnitz rule, we have differential
+$
+  d(a tensor b) = (d a) tensor b + (-1)^i a tensor (d b), a in P_i
+$
+
+Künneth formula.
+If $P_n$ and $d(P_n)$ are flat for each n,
+there is an exact ses:
+$
+  0 -> (P tensor Q)_n -> H_n (P tensor Q)
+  -> directSum.B_(i+j = n -1) Tor_1 (H_i (P), H_j (Q))
+$
+
+If $R = ZZ$,
+and P is a complex of free abelian groups,
+then the ses splits.
+
+Application:
+
+$
+  H_n (X times Y) iso (directSum.big_(i+j = n) (H_i (X) tensor H_j (Y)))
+  directSum (
+    directSum.B_(i+j = n-1) Tor_1^ZZ (H_i (X), H_j (Y))
+  )
+$
+
+Some statement that $X times Y$,
+tensor of chain complexes of $X$ and $Y$, is quasi-iso with the chain complexes
+of $X times Y$.
+
+=== Kosznl Complexes
+
+Let $x in R$ be a central element,
+define a complex:
+
+$
+  K(x): 0 -> R xarrow(dot x) R -> 0
+$
+in deg $0$ and $1$.
+
+Is a complex of free R module.
+
+We call the generator in deg 1 $d (e_x)$,
+and we have $d( e_x ) = x$.
+
+If $underline(x) = (x_1,...,x_n)$,
+be a finite sequence of central elements.
+
+Define
+$
+  K(underline(x)) = K(x_1) tensor K(x_2) tensor ... tensor K(x_n)
+$
+
+Define:
+$
+  H_q (underline(x), A) = H_q (K(underline(x)) tensor A) \
+  H^q (underline(x), A) = H^q (Hom(K(underline(x)), A))
+$
+
+Ex:
+$
+  K(x,y): 0 -> R xarrow(dot (y -x)) R^2 xarrow((a,b) mapsto a x + b y) R -> 0
+$
+
+The dimension of the chain complexes:
+
+$K_p (underline(x))$ is a free module
+of rank $binom(n, p)$,
+iso to $and.big_p R^n$,
+with generator $e_(i_1) and e_(i_2) and ... and e_(i_p)$
+with $i_1 < ... < i_p$
+
+with differential:
+$
+  d (e_(i_1) and e_(i_2) and ... and e_(i_p))
+  = sum (-1)^(k+1) e_(i_1) and e_(i_2) and ... and hat(e_(i_p)) and ...and e_(i_p)
+$
+
+Note that
+$
+  H_0 (underline(x), A) = A \/ (x_1,...,x_n) A \
+  H^0 (underline(x), A) = Hom (A \/ (x_1,...,x_n) R, A)
+$
+
+Dueality:
+$
+  H_p (underline(x), A) = H^(n-p) (underline(x), A)
+$
+
+Künneth formula:
+
+#lemma[
+  Suppose $C$ is a chain complex of R-mod
+  and $x in R$ central,
+  then there are ses:
+  $
+    0 -> H_0 (x, H_q (C)) -> H_q (K(x) tensor C)
+    -> H_1 (x, H_(q-1) (C)) -> 0
+  $
+]
+#proof[
+  One way is to use Künneth formula,
+  since $K(x)$ is of free module, thus flat.
+
+  We have a ses of complexes:
+  $
+    0 -> K(x) tensor C -> C[-1] -> 0
+  $
+  associate les:
+  $
+    H_(q+1)(C[-1]) xarrow(partial)
+    H_q (C) -> H_q (K(x) tensor C)
+    -> H_q (C[-1]) xarrow(partial) H_(q-1) (C)
+  $
+
+  Note that $H_(q+1)(C[-1]) = H_q (C)$,
+  and $H_(q+1)(C[-1]) xarrow(partial)
+  H_q (C)$
+  is just $H_(q)(C) xarrow(dot x)
+  H_q (C)$
+
+
+  So $coker partial = H_0 (x, H_q (C))$,
+  and $ker partial = H_1 (x, H_(q-1) (C))$.
 ]
