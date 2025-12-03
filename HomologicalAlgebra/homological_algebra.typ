@@ -1654,7 +1654,7 @@ Künneth formula:
 
   We have a ses of complexes:
   $
-    0 -> K(x) tensor C -> C[-1] -> 0
+    0 -> C -> K(x) tensor C -> C[-1] -> 0
   $
   associate les:
   $
@@ -1673,3 +1673,266 @@ Künneth formula:
   So $coker partial = H_0 (x, H_q (C))$,
   and $ker partial = H_1 (x, H_(q-1) (C))$.
 ]
+
+#definition[
+  If A is an R-mod,
+  then a regualar seq on A
+  is a seq of elements
+  $(x_1,...,x_n)$, $x_1 in R$,
+  s.t. $x_1$ is a non-zero divisor on $A$,
+  and $x_i$ is a non-zero divisor on $A \/ (x_1,...,x_(i-1)) A$
+]
+
+#corollary[
+  if $underline(x) = (x_1,...,x_n)$ is a reg seq on R-mod A.
+  Then $H_1 (underline(x), A) = 0$
+  for $q neq 0$ and $H_0 (underline(x), A) = A \/ (x_1,...,x_(n)) A$
+]
+#proof[
+  An easy induction using the last lemma.
+]
+
+#corollary[
+  If $underline(x) = (x_1,...,x_n)$ is a req seq on R itself,
+  then $K(underline(x))$ is a free resolution of $R \/ I$.
+  And
+  $
+    Tor_p (T \/ I, A) = H_p (underline(x), A) \
+    Ext^p (R \/ I, A) = H^p (underline(x), A)
+  $
+]
+
+#remark[
+  local cohomology for some ideal I,
+  $H_I^p (M) = colim_n Ext_R^p (R \/ I^n , M)$.
+
+  $
+    H^0_I (M) = colim Hom_R (R \/ I, M)
+    = {
+      m in M | exists n, I^n m = 0
+    }
+  $
+
+  even if I is not geneated by regualar seq.
+  $H_I^p (M)$ can still be calculated using colim.
+  $
+    H_I^p (M) = colim_n (H_R^p (underline(x)^n), M)
+  $
+]
+
+== Ext and extensions
+
+And exrension of A by B
+is just an ses
+$
+  0 -> B -> X -> A -> 0
+$
+
+Two extension are eq, if there is a commutative diagram:
+#align(center, commutative-diagram(
+  node((0, 0), [$0$]),
+  node((0, 1), [$B$]),
+  node((0, 2), [$X$]),
+  node((0, 3), [$A$]),
+  node((0, 4), [$0$]),
+  node((1, 0), [$0$]),
+  node((1, 1), [$B$]),
+  node((1, 2), [$X'$]),
+  node((1, 3), [$A$]),
+  node((1, 4), [$0$]),
+  arr((0, 1), (1, 1), [$=$]),
+  arr((0, 2), (1, 2), [$iso$]),
+  arr((0, 3), (1, 3), [$=$]),
+  arr((0, 0), (0, 1), []),
+  arr((0, 1), (0, 2), []),
+  arr((0, 2), (0, 3), []),
+  arr((0, 3), (0, 4), []),
+  arr((1, 0), (1, 1), []),
+  arr((1, 1), (1, 2), []),
+  arr((1, 2), (1, 3), []),
+  arr((1, 3), (1, 4), []),
+))
+
+#lemma[
+  If $Ext^1 (A, B) = 0$, then every exrension of A by B splits.
+]
+#proof[
+  From the les associated to $Ext^* (A, -)$.
+  we get a exact seq:
+
+  $
+    Hom(A, X) xarrow(alpha) Hom(A, A) xarrow(partial) Ext^1 (A,B)
+  $
+
+  if $Ext^1 (A,B)$, then alpha is epic,
+  then there is a element in $Hom(A, X)$, that is mapped to $id in Hom (A,A)$,
+  which results in split.
+
+  We see that the $partial(id) in Ext^1 (A,B)$
+  is the obstruction to being split.
+]
+
+#theorem[
+  Given R-mod A and B,
+  then the map:
+  $
+    Theta: {"eq classes of extension of A by B"} to Ext^1 (A,B) \
+    {0 -> A -> X -> B -> 0} mapsto partial(id_A)
+  $
+  where
+  $
+    Hom(A, X) xarrow(alpha) Hom(A, A) xarrow(partial) Ext^1 (A,B)
+  $
+  is the les, associated with $0 -> A -> X -> B -> 0$.
+
+  Then $Theta$ is a bijection.
+]
+#proof[
+  Fix an exact seq
+  $
+    0 -> M xarrow(j) P -> A -> 0
+  $
+  where $P$ proj.
+
+  Applying $Hom(-, B)$
+  gives
+  $
+    Hom(P, B) -> Hom(M, B) xarrow(partial) Ext^1 (A,B) -> Ext(P, B) = 0
+  $
+
+  give $x in Ext^1 (A,B)$
+  pick $beta in Hom(M, B)$
+  s.t. $partial(beta) = x$.
+  Let $X$ be the pushout of $j$ and $beta$:
+  #align(center, commutative-diagram(
+    node((0, 0), [$M$]),
+    node((0, 1), [$P$]),
+    node((1, 0), [$B$]),
+    node((1, 1), [$X$]),
+    arr((0, 0), (0, 1), []),
+    arr((0, 0), (1, 0), []),
+    arr((1, 0), (1, 1), []),
+    arr((0, 1), (1, 1), []),
+  ))
+  $
+    X = coker(M -> P directSum B)
+  $
+
+  We have the diagram:
+  #align(center, commutative-diagram(
+    node((0, 0), [$0$]),
+    node((0, 1), [$M$]),
+    node((0, 2), [$P$]),
+    node((0, 3), [$A$]),
+    node((0, 4), [$0$]),
+    node((1, 0), [$0$]),
+    node((1, 1), [$B$]),
+    node((1, 2), [$X$]),
+    node((1, 3), [$A$]),
+    node((1, 4), [$0$]),
+    arr((0, 0), (0, 1), []),
+    arr((0, 1), (0, 2), []),
+    arr((0, 2), (0, 3), []),
+    arr((0, 3), (0, 4), []),
+    arr((1, 0), (1, 1), []),
+    arr((1, 1), (1, 2), [$i$]),
+    arr((1, 2), (1, 3), []),
+    arr((1, 3), (1, 4), []),
+    arr((0, 3), (1, 3), [$=$]),
+    arr((0, 2), (1, 2), [$partial$]),
+    arr((0, 1), (1, 1), [$beta$]),
+  ))
+
+  $X -> A$ is induced by $B xarrow(0) A$
+
+  and $P -> A$.
+
+  By the naturally of the connecting homo.
+  we see that $Theta(0 -> B -> X -> A -> 0) = x$.
+
+  So $Theta$ is surj.
+  We construct $phi: Ext^1 (A,B) to {"eq class of extensiions"}$
+  since if $beta' in Hom(M, B)$
+  is another lift,
+  there exists $f in Hom(P, B)$
+  s.t. $beta' = beta + f j$
+  using this we can see that $x' ("the pushout of" j "and" beta)$
+  the maps $i: beta to x$ and $partial + i f$ induce $x' = x$.
+
+  If we have a extension,
+  $0 -> B -> X -> A -> 0$,
+  the lifting property of P gives an map
+  #align(center, commutative-diagram(
+    node((0, 0), [$0$]),
+    node((0, 1), [$M$]),
+    node((0, 2), [$P$]),
+    node((0, 3), [$A$]),
+    node((0, 4), [$0$]),
+    node((1, 0), [$0$]),
+    node((1, 1), [$B$]),
+    node((1, 2), [$X$]),
+    node((1, 3), [$A$]),
+    node((1, 4), [$0$]),
+    arr((0, 0), (0, 1), []),
+    arr((0, 1), (0, 2), []),
+    arr((0, 2), (0, 3), []),
+    arr((0, 3), (0, 4), []),
+    arr((1, 0), (1, 1), []),
+    arr((1, 1), (1, 2), [$i$]),
+    arr((1, 2), (1, 3), []),
+    arr((1, 3), (1, 4), []),
+    arr((0, 3), (1, 3), [$=$]),
+    arr((0, 2), (1, 2), [$tau$]),
+    arr((0, 1), (1, 1), [$gamma$]),
+  ))
+
+  So $X$ is the pushout of $j$ and $gamma$.
+  And we get a bijection
+]
+#remark[
+  $Ext^1 (A,B)$ is an abelian group,
+  so there is an addtive structure on eq claases of extensions,
+  called the Baer sum.
+  We can take pull back to get $X''$
+    #align(center, commutative-diagram(
+    node((0, 0), [$X''$]),
+    node((0, 1), [$X'$]),
+    node((1, 0), [$X$]),
+    node((1, 1), [$A$]),
+    arr((0, 0), (0, 1), []),
+    arr((0, 0), (1, 0), []),
+    arr((1, 0), (1, 1), []),
+    arr((0, 1), (1, 1), []),
+  ))
+
+  And since there is two copy of B in $X''$,
+  we take identify $Y = X'' \/ {(b,-b)}$,
+  and prove $0 -> B -> Y -> A -> 0$
+
+  And $Theta(Y) = Theta(X) + Theta(X')$
+
+]
+#remark[
+  If we have two extensions:
+  $
+    0 -> B -> X -> A -> 0 \
+    0 -> C -> Y -> B -> 0
+  $
+  we can put them together
+  $
+    0 -> C -> Y -> X -> A -> 0
+  $
+
+  this is kind of length $2$ extension,
+  and we also have length $n$ extension,
+  it can be proved that the eq class of length $n$ extension,
+  have a bijection with $Ext^n (A,B)$.
+
+  Since we have a multiplicative structure on $Ext^* (A,B)$,
+  called Yoneda product,
+  and we have similal structure on length $*$ extensions.
+  The could be defined on categories that do not have enough proj.
+  While the definiiton using $Ext^*$ require enough projective.
+  And this is how yoneda originally defined thie yoneda product.
+]
+
