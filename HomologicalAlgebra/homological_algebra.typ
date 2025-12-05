@@ -1894,7 +1894,7 @@ Two extension are eq, if there is a commutative diagram:
   so there is an addtive structure on eq claases of extensions,
   called the Baer sum.
   We can take pull back to get $X''$
-    #align(center, commutative-diagram(
+  #align(center, commutative-diagram(
     node((0, 0), [$X''$]),
     node((0, 1), [$X'$]),
     node((1, 0), [$X$]),
@@ -1936,3 +1936,280 @@ Two extension are eq, if there is a commutative diagram:
   And this is how yoneda originally defined thie yoneda product.
 ]
 
+== Group homology and cohomology
+
+G group
+
+G module is an abelian group A with an action of G by additive maps.
+
+Define the group ring $ZZ G = {
+  sum_(g in G) a_g g | a_g in ZZ, a_g = 0 "for almost all" g in GG
+}$
+
+has multiplicative $a g dot b h = a b g h$, $a, b in ZZ$, $g, h in G$.
+
+The category of G module is isomorphism with category of $ZZ G$ mod.
+
+A trivial G mod is an abelian group A with trivial G action
+so $g a = a, forall g in G, a in A$.
+
+#definition[
+  Let $A$ be a G-mod,
+  $
+    A^G = {a in A | g a = a, forall g in G}
+  $
+
+  The invariance, which is the maximum subgroup that is trivial.
+
+  $
+    A_G = A \/ <g a -a | g in G, a in A>
+  $
+
+  co-invarinace
+]
+#remark[
+  $"triv": Ab -> G-mod$
+
+  $-^G$ is right adjoint to triv
+
+  $-_G$ is left adjoint to triv
+
+  So $-^G$ is left exact, and $-_G$ is right exact.
+
+  Then
+  $
+    A^G = Hom_(ZZ G) (ZZ, A) \
+    A_G = ZZ tensor_(ZZ G) A
+  $
+]
+
+#definition[
+  Let $A$ be a G mod
+
+  $
+    H_* (G, A) := L_* (-_G) (A) = Tor^ZZ_* (ZZ, A) \
+    H^* (G, A) := R^* (-^G) (A) = Ext_ZZ^* (ZZ, A) \
+  $
+]
+
+#example[
+  If $G = <t>$ be inifinte cyclic group.
+  $
+    ZZ G = ZZ [t, t^(-1)]
+  $
+
+  $
+    0 -> ZZ G xarrow(t -1) ZZ G to ZZ to 0
+  $
+  is a proj resolution for $Z$ in $ZZ G$.
+
+  $H_n (G, A) = H^n (G, A) = 0$, if $n neq 0 ,1$
+
+  $H_1 (G, A) = H^0 (G, A) = A^G$
+
+  $H_0 (G, A) = H^1 (G, A) = A_G$
+
+  This is an example of Kosznl homology
+]
+
+#remark[
+  For any commutative ring k,
+  we can talk about G action on k-mod
+  is then $k G$-mod.
+
+  And the theory will be similalar.
+]
+
+#definition[
+  Let $ZZ G$ is an example of augmented algebra.
+
+  Let
+  $
+    ZZ G xarrow(epsilon) ZZ
+  $
+  be the augmentation
+  $
+    epsilon (sum n_g g ) = sum n_g
+  $
+
+  Let $J = ker epsilon$ augmentation ideal
+]
+#remark[
+  J is a free abelian group on the basis
+  $
+    g - 1 | g in G, g neq 1
+  $
+]
+
+$
+  Theta: G -> J \/ J^2\
+  g mapsto g - 1
+$
+
+And $Theta([G,G]) = 0$
+
+get an induced map:
+$
+  G \/ [G,G] to J \/ J^2
+$
+
+And there is a map from another direction
+
+$
+  sigma: J to G \/ [G,G] \
+  g - 1 mapsto g [G,G]
+$
+
+$sigma J^2 = 1$,
+so $G \/ [G,G] iso T \/ J^2$
+
+#theorem[
+  $H_1 (G, ZZ) iso J \/ J^2 iso G \/ [G,G]$
+]
+#proof[
+  We have ses:
+  $
+    0 to J to ZZ G to ZZ to 0
+  $
+
+  we will have a les for homology:
+  $
+    H_1 (G, ZZ G) to H_1 (G, ZZ) to J_G to (ZZ G)_G to ZZ to 0
+  $
+
+  $ZZ G$ is proj as $ZZ G$ mod, so $H_1 (G, ZZ G) = 0$.
+
+  And $(ZZ G)_G = ZZ G \/ J = ZZ$
+
+  So $H_1 (G, ZZ) to J_G$ is an iso.
+  And $J_G = J \/ J^2$.
+]
+
+It turns out we can view it topologically
+
+$
+  pi_1 (B G, *) = G
+$
+
+$
+  H_1 (G ,ZZ) = H_1 (B G, ZZ) = pi_1^Ab (B G, *) = G \/ [G,G]
+$
+
+Let $G$ be a finite group,
+then we can define the $N = sum_(g in G) g in ZZ G$,
+and $N in ZZ G^G$.
+
+=== cyclic groups
+
+We have a cyclic group of order $n$, $C_m$. with generator $sigma$.
+
+$
+  N = 1 + sigma + ... + sigma^(m-1) \
+  0 = sigma^m - 1 = (sigma - 1)N
+$
+
+And proj resolution
+$
+  ... to ZZ C_m xarrow(sigma -1) ZZ C_m xarrow(N)
+  ZZ C_m xarrow(sigma-1) ZZ C_m xarrow(epsilon) to ZZ to 0
+$
+#theorem[
+  $
+    H_n (C_m, A) = cases(
+      A \/ (sigma-1) A &"if" n=0,
+      A^(C_m) \/ N A &"if" n=1\,3\,...,
+      {n in A | N n = 0} &"if" n=2\,4\,...,
+    )
+  $
+
+  $
+    H^n (C_m, A) = cases(
+      A^(C_m) &"if" n=0,
+      A^(C_m) \/ N A &"if" n=2\,4\,...,
+      {n in A | N n = 0} &"if" n=1\,3\,...,
+    )
+  $
+]
+
+Tatte cohomoly, glue homology and cohomology together.
+
+#example[
+    $
+    H_n (C_m, ZZ) = cases(
+      ZZ &"if" n=0,
+      ZZ \/ m &"if" n=1\,3\,...,
+      0 &"if" n=2\,4\,...,
+    )
+  $
+
+  $
+    H^n (C_m, A) = cases(
+      ZZ &"if" n=0,
+      ZZ \/ m \/ N A &"if" n=2\,4\,...,
+      0 &"if" n=1\,3\,...,
+    )
+  $
+
+  contains a lot of number theoretic info,
+  see galais cohomology,
+
+  Doing homological algebra over topological group with some module.
+]
+
+=== Free groups
+
+#proposition[
+  Let $G$ be a free group on the set $X$.
+  Then the augmentation ideal $J$ is a free $ZZ G$-mod,
+  with basis ${x -1 | x in X}$. Thus proj.
+]
+#proof[
+  As a $ZZ$ module, it is free, with basis ${g - 1 | g in G}$.
+
+  We want to show that
+  $
+    {
+      g (x-1) | g in G, x in X
+    }
+  $
+  is also a basis by a change of basis or something.
+
+  $
+    g x - 1 = g (x-1) + (g - 1) \
+    g x^(-1) - 1 = - g x^(-1) (x- 1) + (g-1)
+  $
+
+  by induction it is a basis.
+]
+
+#corollary[
+  IF G is a free group on X,
+  then $ZZ$ has a free resolution
+  $
+    0 to J to ZZ \/ G xarrow(epsilon) ZZ to 0
+  $
+
+  so
+  $
+    H_n (G, A) = H^n (G, A) = 0, n neq 0,1\
+    H_0 (G,ZZ) = H^0 (G, ZZ) = ZZ \
+    H_1 (G, ZZ) = directSum.big_X ZZ \
+    H^1 (G, ZZ) = product_X ZZ
+  $
+]
+
+=== Bar resolution
+
+intorduce bar resolution,
+calculate this things
+
+give a canonical free resolution, 
+by a simplicial set relatyed to classifying Space
+that is a G space.
+
+Bar resolution and classifying space are almost same,
+and could define concrete cycles and cocycles in the classifying
+space,
+and kind of related to Brouwer group.
+
+Tao cohomology of a field is exactly the 
