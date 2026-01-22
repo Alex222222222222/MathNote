@@ -126,6 +126,7 @@
 #let cup = symbol(
   sym.union,
 )
+#let int = $op("int")$
 
 // a set of dictionary for completion
 abelian

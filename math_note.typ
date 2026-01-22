@@ -33,6 +33,8 @@
 
 #include "DifferentialbleManifold/differentialble_manifold.typ"
 
+#include "LowDimensionalTopology/low_dim_topology.typ"
+
 = Index
 #columns(2)[
   #make-index(title: none)
