@@ -127,6 +127,7 @@
   sym.union,
 )
 #let int = $op("int")$
+#let lie = $op("lie")$
 
 // a set of dictionary for completion
 abelian
