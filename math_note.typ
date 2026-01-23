@@ -35,6 +35,8 @@
 
 #include "LowDimensionalTopology/low_dim_topology.typ"
 
+#include "Schemes/schemes.typ"
+
 = Index
 #columns(2)[
   #make-index(title: none)
