@@ -259,3 +259,153 @@ And $ad$ is also a lie algebra homomorphism.
   $SL_2 (RR)$ is connected,
   but $exp: lie (SL_2 (RR)) to SL_2 (RR)$ is not surjective.
 ]
+
+#lemma[
+  Let $f: G -> H$ be a lie group hom.
+  Then for all $X in g = T_e G$ then
+  $f(exp(X_e)) = exp (d f_e (X_e))$
+]
+#proof[
+  $alpha_e$: integral curve of $X$ starting at $e$.
+  Then $f$ being a lie group hom implies that $f circ alpha_e$
+  is the integral curve of $d f_e (X)$ starting at $e$.
+  Thus we have the result.
+]
+
+#proposition[
+  $G$ is a connected lie group.
+  Then $forall V$ open set in $G$ containing $e$
+  adn $forall g in G$,
+  there exists $v_1, ..., v_k in V$ s.t. $g = v_1^plus.minus v_2^plus.minus ... v_k^plus.minus$.
+  Here $plus.minus$ means either multiplication or its inverse for each $v_i$.
+]
+#proof[
+  Consider $F = {
+    g in G | exists v_1, ..., v_k in V s.t. g = v_1^plus.minus v_2^plus.minus ... v_k^plus.minus
+  }$.
+  Goal: show that $F = G$.
+
+  Since $G$ is connected, it suffices to show that $F$ is non-empty, open and closed in $G$.
+
+  $F$ is non-empty since $e in F$ by taking $k = 0$.
+
+  $F$ is open:
+
+  Take $g in F$, s.t. $g = v_1^plus.minus v_2^plus.minus ... v_k^plus.minus$.
+  Consider $L_g (V)$ is a open neighborhood of $g$.
+  For any $h in L_g (V)$, we have $h = g v$ for some $v in V$.
+  Thus $h = v_1^plus.minus v_2^plus.minus ... v_k^plus.minus v$.
+  So $h in F$.
+  Thus $F$ is open.
+
+  $F$ is closed:
+
+  Take $g in overline(F)$. Consider $L_g (V)$ is an open neighborhood of $g$.
+  As $g$ is in the closure of $F$, then there exists $h in F inter L_g (V)$.
+  So $h = g v$ for some $v in V$.
+  Thus $g = h v^(-1)$.
+  As $h in F$ and $v in V$, we have $g in F$.
+]
+
+#proposition[
+  Let $G$ and $H$ be lie groups.
+  Assume that $G$ is connected,
+  then if $f_1, f_2: G to H$ both be lie grouo hom,
+  s.t. $(d f_1)_e = (d f_2)_e$. Then $f_1 = f_2$.
+]
+#proof[
+  Since $exp: g to G$ is a local diffeomorphism around $e$,
+  then there exists an open set $U$ in $g$, $V$ open neighborhood of $e$ in $G$,
+  s.t. $exp: U to V$ is a diffeomorphism.
+
+  Then for any $g in V$,
+  exists $X in U$ s.t. $g = exp (X)$.
+  Thus
+  $    f_1 (g) = f_1 (exp (X)) = exp ((d f_1)_e (X)) \
+       f_2 (g) = f_2 (exp (X)) = exp ((d f_2)_e (X))
+  $
+  So $f_1 (g) = f_2 (g)$ for all $g in V$.
+
+  Then by the previous proposition, we have $f_1 = f_2$.
+]
+
+#remark[
+  This proposition shows that homomorphism between connected lie groups are completely determined by their differentials at the identity elements.
+  Which is just the local property around the identity elements.
+  And by left translations, we can extend this local information to the whole lie groups.
+]
+
+#theorem[
+  Let $G$ be a connected lie group. Then the following conditions are equivalent:
+  #enum(
+    enum.item[
+      $exp: g to G$ is a group hom.
+      That is $forall X, Y in g$, we have
+      $exp (X + Y) = exp (X) exp (Y)$.
+    ],
+    enum.item[
+      $G$ is abelian.
+    ],
+    enum.item[
+      There exists a integer $k$ s.t. $G$ is isomorphic to
+      $T^k times RR^(n-k)$,
+      where $T^k$ is the $k$-dimensional torus: $T^k = (S^1)^k$.
+    ]
+  )
+]
+#proof[
+  (1) implies (2):
+  $exp$ is a local diffeomorphism around $e$.
+  So there exists an open set $U$ in $g$,
+  $V$ open neighborhood of $e$ in $G$,
+  s.t. $exp: U to V$ is a diffeomorphism.
+  For any $v in V$, exists $X in U$ s.t. $v = exp (X)$.
+  Then for any $g_1, g_2 in V$,
+  we have $g_1 = exp (X_1), g_2 = exp (X_2)$ for some $X_1, X_2 in U$.
+  Thus
+  $
+    g_1 g_2 &= exp (X_1) exp (X_2) = exp (X_1 + X_2) \
+    &= exp (X_2 + X_1) = exp (X_2) exp (X_1) = g_2 g_1
+  $
+
+  Since $G$ is connected, again by the previous proposition, we have $G$ is abelian.
+
+  (2) implies (1):
+  Consider the multiplication map $m: G times G to G$.
+  VIew $G times G$ as a lie group in a natural way, and $m$ is a smooth map.
+  And $m$ is a lie group hom since
+  $
+    m((g_1,g_2) (h_1, h_2)) &= m (g_1 h_1, g_2 h_2) 
+    = g_1 h_1 g_2 h_2 \
+    &= g_1 g_2 h_1 h_2
+    = m (g_1, g_2) m (h_1, h_2)
+  $
+
+  Claim $(d m)_e (X, Y) = X + Y$.
+
+  Then
+  $
+    exp(X) exp(Y) &= m (exp(X), exp(Y)) \
+    &= m (exp(X,Y)) \
+    &= exp ((d m)_e (X, Y)) \
+    &= exp (X + Y)
+  $
+
+  (3) implies (2):
+  It is easy since $RR$ and $S^1$ are abelian and connected.
+
+  (2) implies (3):
+  $exp: g to G$ is surjective by the proof of (2) implies (1).
+  Then $ker (exp) subseteq g$ is a discrete subgroup of $g$.
+  And by (1), it is a group hom.
+  Then $G iso g \/ ker exp$.
+
+  We have $g iso RR^n$ since $g$ is a vector space of dimension $n$.
+  Since $exp$ is a local diffeomorphism around $0$,
+  which implies that $ker (exp)$ is discrete subgroup of $RR^n$.
+  Then by the classification of discrete subgroup of $RR^n$,
+  there exists integer $k$ s.t.
+  $ker (exp) iso ZZ^k subseteq RR^n$.
+  Thus we have
+  $G iso RR^n \/ ZZ^k iso T^k times RR^(n-k)$
+]

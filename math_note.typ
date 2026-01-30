@@ -37,6 +37,8 @@
 
 #include "Schemes/schemes.typ"
 
+#include "LieGroups/lie_groups.typ"
+
 = Index
 #columns(2)[
   #make-index(title: none)
