@@ -128,6 +128,9 @@
 )
 #let int = $op("int")$
 #let lie = $op("lie")$
+#let Ad = $op("Ad")$
+#let ad = $op("ad")$
+#let SL = $op("SL")$
 
 // a set of dictionary for completion
 abelian

@@ -77,3 +77,185 @@ Then $phi$ is called the flow of $X$.
   And every lie group homomorphism $phi: RR -> G$ arises in this way from a unique left-invariant vector field $X in g$,
   such that $phi(t) = alpha_e (t)$ for all $t in RR$.
 ]
+
+#definition[
+  A lie algebra is a vector psace $V$
+  endowed with a map $[-,-]: V times V to V$ s.t.
+  #enum(
+    enum.item[
+      $[-,-]$ is bilinear,
+    ],
+    enum.item[
+      $forall x, y in V$, we have $[x, y] = - [y, x]$ (antisymmetry),
+    ],
+    enum.item[
+      $forall x, y, z in V$, we have $[x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0$ (Jacobi identity),
+    ]
+  )
+]
+
+#example[
+  $M$ a manifold.
+  Let $C^infty (T M)$ be the vector space of vector fields on $M$.
+  Then we can define a lie bracket on $C^infty (T M)$ as follows:
+  For any $X, Y in C^infty (T M)$, define $[X, Y]$ by
+  $forall f in C^infty (M)$,
+  $[X, Y] (f) = X (Y (f)) - Y (X (f))$.
+]
+
+#theorem[
+  $[X,Y]_p = lim_(t to 0) ((phi_(-t)_* Y_(phi_t (p)))-Y_p)/t$
+
+  If $f: M -> N$ diffeomorphisms, then $f_* [X, Y] = [f_* X, f_* Y]$.
+]
+
+$G$ be a lie group. Let $g$ be the set of left left-invariant vector field.
+
+#proposition[
+  For any $X, Y in g$, we have $[X, Y] in g$.
+  Thus the lie bracket restricts to a map $[-,-]: g times g to g$.
+  With this lie bracket, $g$ is a lie algebra.
+]
+
+So $(g,[-,-])$ is a lie algebra, called the lie algebra of the lie group $G$.
+
+#example[
+  #enum(
+    enum.item[
+      $G= RR^n$,
+      then $g = RR^n$,
+      and $[X,Y] = 0$.
+    ],
+    enum.item[
+      $G = GL_n (RR)$,
+      then $g = M_n (RR)$.
+      For $X,Y in g$.
+      $phi_t$ flow of $X$.
+
+      integral curves $alpha_A (t)$:
+      $
+        d/ (d t) alpha_A (t) = X_(alpha_A (t)) = alpha_A (t) X_I \
+        alpha_A (0) = A
+      $
+
+      $alpha_t (A) = alpha_A (t) = A e^(t X_I)$.
+
+      $Y_(phi_t (I )) = phi_t (I) Y_I = e^(t X_I) Y_I$.
+
+      $
+        (phi_(-t))_* Y_(phi_t (I )) = e^(t X_I) Y_I e^(-t X_I)\
+        = Y_I + t (X_I Y_I - Y_I X_I) + O(t^2)
+      $
+
+      Thus we have $[X, Y]_I = X_I Y_I - Y_I X_I$.
+
+      This is also true for any lie group that the under lying manifold is an open subset of $M_n (RR)$.
+    ]
+  )
+]
+
+=== Adjoint Representation
+
+#definition[
+  A Representation of a lie group $G$ on a finite dim real vector space $V$
+  is a lie group homomorphism $phi: G to GL(V)$.
+]
+
+Any lie group have a natural Representation on its own lie algebra, called the Adjoint Representation.
+
+#definition[
+  The Adjoint Representation of $G$ is the Representation of $G$ on $g$:
+  $
+    Ad : G to GL(g), g mapsto (C_g)_*
+  $
+
+  where $C_g: G to G, x mapsto g x g^{-1}$ is the conjugation by $g$,
+  and $(C_g)_*$ is the pushforward of $C_g$.
+]
+#remark[
+  If $G$ is commutative, then $Ad$ is the trivial Representation.
+]
+
+#lemma[
+  for all $h in G$, we have $Ad (h): g -> g$ is a lie algebra homomorphism.
+  That is $forall X, Y in g$, we have
+  $
+    Ad (h) [X, Y] = [Ad (h) X, Ad (h) Y]
+  $
+]
+
+#example[
+  $G = GL_n (RR)$.
+  Then $g = M_n (RR)$.
+  For any $h in G$, $Ad (h): g to g$ is given by
+  $
+    Ad (h) X = h X h^{-1}
+  $
+  for all $X in g$.
+]
+
+$Ad: G to GL (g)$ is a map between lie groups.
+Taking the differential at the identity element, we obtain a lie algebra homomorphism:
+$
+ (d Ad)_e: T_E G = g to T_I GL (g) = End (g) \
+X mapsto (Y mapsto [X, Y])
+$
+
+And we denote $(d Ad)_e$ by $ad$.
+And $ad$ is also a lie algebra homomorphism.
+
+#lemma[
+  Let $f: G -> H$ be a lie group hom, then $(d f)_e$ is a lie algebra homomorphism from $lie(G)$ to $lie(H)$.
+]
+
+=== Exponential Map
+
+#definition[
+  The Exponential map is:
+  $
+    exp: g iso T_e G to G \
+    X mapsto alpha_e (1)
+  $
+  where $alpha_e: R to G$ is the integral curve of $X$ starting at the identity element $e$.
+
+  And $exp$ is a smooth map.
+]
+#example[
+  $G = GL_n (RR)$.
+  Then $g = M_n (RR)$.
+  For any $X in g$, the integral curve $alpha_e: R to G$ of $X$ starting at $e$ is given by
+  $
+    alpha_e (t) = e^(t X_I)
+  $
+  Thus we have $exp (X) = e^(X_I)$.
+]
+#example[
+  $G = S^1$:
+  Then $g = RR$.
+  Then $exp: RR to S^1, t mapsto e^(i t)$.
+  surjective but not injective.
+]
+
+#proposition[
+  $
+    (d exp)_0: g to T_e G = g
+  $
+  is the identity map.
+  So by inverse function theorem $exp$ is a local diffeomorphism around $0$.
+]
+#proof[
+  $exp (X_e) = alpha_e (1)$.
+
+  $exp(s X_e) = alpha_e (s)$.
+  $
+    d / (d s) |_(s = 0): (d exp)_0 (X_e) = X_e
+  $
+]
+#remark[
+  $g$ is connected, so $exp(g) subseteq G$ is connected.
+  So $exp$ is not surjective if $G$ is not connected.
+]
+#example[
+  $SL_2 (RR)$ is connected,
+  but $exp: lie (SL_2 (RR)) to SL_2 (RR)$ is not surjective.
+]
