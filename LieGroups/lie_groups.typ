@@ -409,3 +409,86 @@ And $ad$ is also a lie algebra homomorphism.
   Thus we have
   $G iso RR^n \/ ZZ^k iso T^k times RR^(n-k)$
 ]
+
+#definition[
+  A lie subgroup of $G$ is a subgroup $H subseteq G$,
+  such that $H$ has a lie grou pstructure and the inlcusion $H -> G$ is a lie group hom.
+]
+#remark[
+  The topology on $H$ may not induced by the subspace topology of $G$.
+]
+#example[
+  $forall alpha in RR$, define $f_alpha: RR to T^2, t mapsto (e^(2pi i t, e^(2 pi i alpha t)))$
+  is a lie group hom.
+
+  Then if $alpha in QQ$, then $f_alpha (RR)$ is a torus knot.
+  
+  If $alpha notin QQ$, then $f_alpha (RR)$ is dense in $T^2$.
+  And $f_alpha (RR) iso RR -> T^2$ is a lie group hom.
+  But the topology on $f_alpha (RR)$ is clearly not the subspace topology.
+  And typically $f_alpha$ is an injective immersion and not an embedding.
+]
+
+#definition[
+  A lie subgroup $H subset G$ is called embedded if the inlcusion map $H to G$ is an embedding of manifolds.
+]
+
+#theorem[
+  If $H$ is a subgroup of a lie group $G$. Then $H$ is an embedded lie subgroup
+  of $G$ iff $H$ is closed in $G$.
+]
+#remark[
+  This is not true for general manifolds, since closed is only a topological property,
+  but embedded ask for smooth structure.
+
+  And this is true for lie group since lie group naturally carry a smooth structure.
+]
+#proof[
+  $=>$ is easy. From manifold theory, we know that $H subset G$ is locally closed.
+  We proof that if $p in overline(H)$, then $p in H$.
+  There exists an nonempty open neighborhood of $e$ that $U subset G$ s.t. $H inter U = overline(H) inter U$.
+
+  And we know that $U^(-1)$ is still open in $G$.
+  And thus $L_y (U^(-1))$ open in G containing $y$.
+  $y in overline(H)$ implies that $L_y (U^(-1)) inter H neq emptyset$.
+  Take $x in L_y (U^(-1)) inter H$. Let $u = x^(-1) y$, and ti is eay to check that
+  $u in overline(H)$.
+  So $u in U inter overline(H) = U inter H$. Thus $y in H$.
+
+  <=. It is enough to show that $H$ is embedded in $G$ near $e$. Then we can perform left translation.
+
+  We know $exp: T_e G -> G$ is a locally diffeomorphism around $0$.
+  Then take a small open neighborhood $V$ of $0$ in $T_e G$,
+  s.t. $exp: V to exp(V)$ is a diffeomorphism onto its image.
+  Consider $U = exp (V)$ is an open neighborhood of $e$ in $G$.
+  Also consider $log: U -> V$ to be the local inverse of $exp: V to U$.
+
+  Consider $S = {X in T_e G bar exp(t X) in H,  forall t in RR}$.
+  The ideal is to construct a tangent space $T_e H$ from $T_e G$, and that
+  if we apply $exp$ for all elements in $T_e H$, we get all elements in $H$ near $e$.
+
+  It is easy to check that $0 in S$, and $forall X in S$, and $lambda in RR$,
+  we have $lambda X in S$.
+
+  Now we show that $S$ is closed under addition.
+  Goal: $forall s$ sufficiently small.
+  we have $exp(s X) exp(s Y) = exp (s (X + Y) + cal(O)(s^2))$.
+  This is generally not true if $G$ is non-abelian.
+  This can be proved using Taylor theorem for $gamma(s) = log (exp (s X) exp (s Y))$.
+
+  Now for a large enough integer $n$,
+  we have $(exp(t/n X) exp (t/n Y))^n in H$.
+  And $(exp(t/n X) exp (t/n Y))^n = (exp (t/n (X + Y) + cal(O)((t/n)^2)))^n
+  = exp (t (X + Y) + cal(O)(t^2/n))$.
+  Take $n to infinity$, we have $exp (t (X + Y)) in overline(H) = H$.
+
+  So $S$ is a vector subspace of $T_e G$.
+  Fix a inner product $<,>$ on $T_e G = RR^n$, decompose $T_e G = S directSum S^perp$.
+  Consider $psi: T_e G = S directSum S^perp to G, (x,z) mapsto exp(X) exp(Z)$,
+  is a local diffeomorphism.
+  Consider $F: U to S^perp$ smooth, s.t. $F(phi(X,Z)) = Z$.
+
+  If can prove $F^(-1) (0) = H inter U$, then done, by a theorem in manifold theory.
+
+  TODO proof of this claim.
+]
