@@ -131,6 +131,7 @@
 #let Ad = $op("Ad")$
 #let ad = $op("ad")$
 #let SL = $op("SL")$
+#let Aut = $op("Aut")$
 
 // a set of dictionary for completion
 abelian
