@@ -648,3 +648,173 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
     ]
   )
 ]
+
+
+Rcall that:
+#theorem[
+  For any connected manifold $M$, there is a simply connected manifold $tilde(M)$
+  admitting a covering map $pi: tilde(M) to M$,
+  s.t. $tilde(M)$ is a universal cover of $M$.
+  And this covering is unique up to diffeomorphism.
+
+  $
+    tilde(M) = {
+      [gamma] "homotopy class of paths" gamma: [0,1] to M "with" gamma(0) = e
+    }
+  $
+
+  Where $e$ is a preferred a basepoint.
+  And $pi([gamma]) = gamma(1)$
+]
+
+If $M$ is a lie group $G$, then there is a natural lie group structure on $tilde(G) = tilde(M)$.
+
+Identity: $gamma_0$ is the identity path on $e$.
+
+multiplication: $[gamma_1 (t)][gamma_2 (t)] = [gamma_1 (t) gamma_2 (t)]$.
+
+inverse: $[gamma(t)]^(-1) = [gamma(t)^(-1)]$.
+
+And then $pi$ become a lie group hom.
+
+#example[
+  $G = S^1 iso S O(2) iso U(1)$ we have $tilde(G) = RR$
+]
+#example[
+  $G = S O(3)$ we have $tilde(G) = (S U (2) iso S^3$
+]
+#example[
+  for $n ge 3$, $G = S O (n)$, we have $pi_1 (S O(n)) = ZZ \/ 2 ZZ$, and $tilde(G) = "Spin"(G)$, the spin group.
+]
+#remark[
+  The universla cover have the universal property, that if $G, H$ be lie group.
+  And $H xarrow(f) G$, be a lie group hom and covering.
+  Then there exists a $tilde(G) xarrow(F) H$ s.t. 
+  $
+    tilde(G) xarrow(pi) G = tilde(G) xarrow(F) H xarrow(f) G
+  $
+
+  Then $H = tilde(G) \/ ker F$.
+
+  In particular $G = tilde(G) \/ ker pi$, where $ker pi$ is a discrete subgroup contained in $tilde(G)$.
+]
+
+#theorem[
+  Let $G,H$ lie groups with $G$ simply connected. Then
+  #enum(
+    enum.item[
+      there is a 1:1 correspondence:
+      $
+        {"lie algebra hom" cal(g) to cal(h)} iso {"lie group hom" G to H}
+      $
+    ],
+    enum.item[
+      If $H$ is also a simply connected and if $cal(g) iso cal(h)$, then $G iso H$.
+    ],
+  )
+]
+#remark[
+  Note that 2 in general will not be true, consider the universal cover $RR to S^1$,
+  the lie algerba will be the same, as the covering is a local diffeomorphism.
+  Lift a lie group to its universal covering is like ignore the local property,
+  what we have is only the global property.
+]
+#proof[
+  (2) is a direct result of (1).
+
+  Given a lie group hom, constructing a lie algebra hom is easy.
+
+  Given a $F: cal(g) to cal(h)$ be a lie algebra hom.
+  Let $k = {(X, F(X)) bar X in cal(g)} subset cal(g) directSum cal(h)$.
+  $F$ is a lie algerba hom, implies that $k$ be a lie subalgebra of $cal(g) directSum cal(h) iso lie (G times H)$.
+  Then there exists a $K subset G times H$, s.t. $lie (K) = k$.
+
+  TODO finish the proof
+]
+
+Mention without proof:
+#theorem(title:[Ado's Theorem])[
+  Let $cal(g)$ be a finite dimensional lie algebra over $RR$.
+  Then $exists$ an injective lie algerba hom from $cal(g) to lie(GL(N, RR))$ for some $N$.
+  Then there will exists a connected lie group $G subset GL(N,RR)$, s.t. $cal(g) = lie (G)$.
+]
+#remark[
+  Not true that every lie group $G$ is a lie subgroup of $GL(N, RR)$.
+  A typical example is the universal cover of $S L(2, RR)$, where $pi_1 (SL(2,RR))= ZZ$.
+]
+#theorem(title: [Lie Third Theorem])[
+  there exists $1:1$ correspondence:
+  $
+    ({"finite dim lie algebra over" RR} \/ "iso" )
+    iso
+    ({"simply connected lie groups"} \/ "iso")
+  $
+]
+
+== Representation Theory of Compact Lie Groups
+
+#definition[
+  A representatiion of a lie group $G$ on a finite dim vector space $V$
+  is a lie group hom $rho: G to Aut(V)$.
+]
+#remark[
+  if we have $rho$ a representatiion of $G$.
+  Then exists an action $phi$ of $G$ on functions on $V$:
+  $
+    phi(g) (f) = f circ rho(g^(-1))
+  $
+]
+
+#example[
+  $G = U(1) = S^1$, for every $n in ZZ$, there is a representatiion $U_n$ of $G$ on $CC$:
+  $rho_n (e^(i theta)) (z) = e^(i n theta) z$.
+]
+#example[
+  $G = S U(2)$.
+  $V_n = CC^(n+1) = "Span"(z_1^n, z_1^(n-1)z_2, ..., z_1 z_2^(n-1), z_2^n) subset "functions on" CC$.
+
+  Theore is a obvious representatiion $S U(2) to Aut(CC^2)$.
+  And by above discussion, $S U(2)$ act on the functions on $C^2$, and is invariant on $V_n$,
+  thus become a representatiion on $V_n$.
+]
+#remark[
+  $rho$ representatiion of $G$ on $V$.
+  Then:
+  $
+    rho: G to Aut(V) \
+    d rho_e: cal(g) to End(V) "lie algerba hom"
+  $
+  we called lie alegra representatiion of $cal(g)$.
+]
+
+#lemma[
+  If $G$ os a simply connected lie group.
+  Then $forall sigma: cal(g) to End(V)$ is a lie alegra hom.
+  Then $exists rho: G to Aut(V)$ be a lie group representatiion, s.t. $d rho_e = sigma$.
+]
+#lemma[
+  if we have representatiion $rho_v, rho_w$ representatiions of $G$ on $V$ and $W$,
+  then we can build $rho_v directSum rho_w$ on $V directSum W$.
+  also $tensor$, dual space, and $Hom$.
+  This is similar for representatiion of finite group.
+]
+
+#definition[
+  If we have $rho$ representatiion of $G$ on $V$ s.t. $V neq {0}$.
+  #enum(
+    enum.item[
+      $V$ is irreducilbe if forall $W subset V$ $G$-invariant subspace then $W = {0}$ or $W = V$
+    ],
+    enum.item[
+      $V$ is reducible if it is not irreducilbe.
+    ],
+    enum.item[
+      $V$ is completely reducilbe if $V$ is a directSum of irreducilbe representatiion.
+    ]
+  )
+]
+#remark[
+  For finite group representatiion, we can always found a irreducilbe decomposition, but for lie group,
+  this is not true.
+  For instance $rho(t) = mat(1,t;0,1)$, where $rho: RR to GL(2, RR)$ is reducible but not completely reducible.
+]
