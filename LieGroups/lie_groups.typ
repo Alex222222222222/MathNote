@@ -764,6 +764,12 @@ Mention without proof:
     phi(g) (f) = f circ rho(g^(-1))
   $
 ]
+#remark[
+  If $V$ is a real vector space, then the representatiion is a real representatiion,
+  and if $V$ is a complex vector space, then the representatiion is a complex representatiion.
+
+  As complex number is algebraic closed, it a lot of times is simpler then the real represenration theory.
+]
 
 #example[
   $G = U(1) = S^1$, for every $n in ZZ$, there is a representatiion $U_n$ of $G$ on $CC$:
@@ -817,4 +823,178 @@ Mention without proof:
   For finite group representatiion, we can always found a irreducilbe decomposition, but for lie group,
   this is not true.
   For instance $rho(t) = mat(1,t;0,1)$, where $rho: RR to GL(2, RR)$ is reducible but not completely reducible.
+]
+
+#example[
+  $1$-dimensional represenration are irreducilbe.
+]
+#example[
+  $V_n$, $(n+1)$-dim represenration of $S U(2)$, and this represenration are irreducilbe.
+]
+#example[
+  tensor product of irreducilbe is not irreducilbe in general.
+]
+#example[
+  A irreducilbe represenration might become reducible for a subgroup.
+  $U(1) subset S U (2), e^(i theta) mapsto mat(e^(i theta), 0; 0, e^(-i theta))$.
+  $V_n$ as a represenration of $U(1)$ is completely reducible.
+  $
+    V_n iso U_n directSum U_(n-2) directSum ... directSum U_(-n) 
+  $
+]
+
+#theorem(title: [Schur's Lemma])[
+  $V, W$ irreducilbe represenration of $G$.
+  If $f: V to W$ $G$-invariant hom. Then
+  #enum(
+    enum.item[
+      Either $f = 0$ or $f$ is an isomorphism.
+    ],
+    enum.item[
+      If $V$ are complex represenration,
+      and if $f: V -> V$ $G$-invariant,
+      then $f = lambda id$ for some $lambda in CC$.
+    ]
+  )
+]
+#proof[
+  #enum(
+    enum.item[
+      $f: V to W$, then $ker f subset V$, is a $G$-invariant subspace.
+      By $V$ irreducilbe, we have $ker f = 0$ or $ker f = V$.
+      If $ker f = V$, then $f = 0$, we are done.
+      If $ker f = 0$, then $f$ is injective.
+      Consider $Img f subset W$, again by $W$ irreducilbe, 
+      we have $Img f = W$ or $Img f = 0$.
+      If $Img f = W$, then it is surjective.
+      If $Img f = 0$, then it is $0$.
+    ],
+    enum.item[
+      There exists a eigenvalue $lambda in CC$, s.t.
+      $ker (f - lambda I) subset V$ is a $G$-invariant subspace.
+      As $lambda$ is a eigenvalue, the kernel of $f - lambda I$ must not be $0$,
+      thus $f - lambda I = V$, and we are done.
+    ]
+  )
+]
+
+#lemma[
+  If $G$ os an abelian lie group, and if $V$ is a reducible complex represenration.
+  Then $dim V = 1$.
+]
+#proof[
+  $rho: G to Aut(V)$.
+  Fix $g in G$.
+  Define $A_g: V to V, v mapsto rho(g) v$.
+  
+  Claim: If $G$ is abelian then $A$ is a $G$-invariant homomorphism.
+
+  By Schur's Lemma, there exists $lambda_g in CC$, s.t. $A_g = lambda_g id$.
+
+  Consider $v in V setminus {0}$. Then $forall g in G$,
+  $rho(g) v = lambda_g v$.
+  So the line $CC v$ is $G$-invariant.
+  As $V$ is irreducilbe, so $V= CC v$, and $V$ is one-dimensional.
+]
+
+A analogue for real represenration is:
+
+#lemma[
+  Let $G$ be an abelian compact connnected lie group.
+  Let $V$ be a real irreducilbe represenration, then:
+  $V = RR$ a trivial represenration.
+  or $V= RR^2$ a standard represenration of $U(1) = S O (2)$, which is the action by rotation.
+]
+#remark[
+  By classification of abelian lie group,
+  we have compact connected lie group is just $T^n$, for some $n$.
+]
+
+For finite represenration theory, then every represenration is completely reducible,
+but this cannot be true for general lie group, but for compact lie group,
+things become nice again.
+
+#theorem[
+  If $G$ is a compact lie group, then every represenration (real or complex)
+  is completely reducible.
+]
+#proof[
+  Sketch of proof:
+
+  The proof kind of iminitae the proof fore finite group.
+  What we do is to cook up a $G$-invariant inner product,
+  and the represenration split as a represenration and its orthogonal represenration.
+
+  #definition[
+    $V$ represenration of $G$, $rho: G to Aut(V)$.
+    An inner product $< -, - >$ is $G$-invariant if $forall g in G$,
+    and $forall , v in V$,
+    we have
+    $
+      chevron.l rho(g) u, rho(g) v chevron.r = chevron.l u, v chevron.r
+    $
+  ]
+
+  #remark[
+    $V$ real, if exists $G$-invariant $chevron.l -,- chevron.r$ then $V$ is orthogonal.
+    If $V$ complex, if exists $G$-invariant $chevron.l -,- chevron.r$ then $V$ is unitary.
+  ]
+
+  #proposition[
+    If $V$ admit a $G$-invariant inner product, then $V$ is completly reducible.
+  ]
+  #proof[
+    Induction on $dim V$.
+    $dim V = 1$, done.
+
+    $dim V > 1$, if $V$ irreducilbe, done.
+    If $V$ reducible, then exists $G$-invariant subspace, $W subset V$,
+    s.t. $W neq V$ and $W neq 0$.
+    Consider $V = W directSum W^perp$,
+    because the inner product is $G$-invariant,
+    we have $W^perp$ is also $G$-invariant, and we can then apply the induction hypothesis.
+  ]
+
+  Then, we cook up a $G$-invariant inner product for compact lie group represenration $V$.
+
+  Recall: If $G$ if $G$ is finite, pick any inner product $chevron.l -,- chevron.r$ on $V$,
+  to modify into $G$-invariant, we deine a new inner product:
+  $chevron.l u,v chevron.r_G = 1/ (abs(G)) sum_(g in G) chevron.l rho(g) u, rho(g) v chevron.r$.
+
+  For compact lie group, we will do this by a integration.
+  To do this, we need a volume form.
+
+  #theorem[
+    $G$ compact lie group.
+    $exists !$ map $C^0 (G) to RR, f mapsto integral_G f$, note hte integral here is purely notational.
+    s.t.
+    #enum(
+      enum.item[
+            $integral_G 1 = 1$
+      ],
+      enum.item[
+        if $f > 0$, then $integral_G f > 0$.
+      ],
+      enum.item[
+        $forall lambda_1, lambda_2 in RR$,
+        then $integral_G (lambda_1 f + lambda_2 f) = lambda_1 integral_G f_1 + lambda_2 integral_G f_2$.
+      ],
+      enum.item[
+        $integral_G f circ L_h = integral_G f$
+      ],
+      enum.item[
+        $integral_G f circ R_h = integral_G f$
+      ],
+      enum.item[
+        $integral_G f circ i = integral_G f$,
+        where $i: G to G$ is the inverse of the lie group.
+      ]
+    )
+
+    This is called the Haur mearsure.
+  ]
+
+  We pick any inner product $chevron.l -,- chevron.r$ on $V$.
+  Define $chevron.l u,v chevron.r_G = integral_G chevron.l rho(g) u, rho(g) v chevron.r_G$.
+  And we could check this is a $G$-invariant inner product, and we are done,
 ]
