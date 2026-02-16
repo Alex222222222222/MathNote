@@ -90,7 +90,7 @@ Then $phi$ is called the flow of $X$.
     ],
     enum.item[
       $forall x, y, z in V$, we have $[x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0$ (Jacobi identity),
-    ]
+    ],
   )
 ]
 
@@ -150,7 +150,7 @@ So $(g,[-,-])$ is a lie algebra, called the lie algebra of the lie group $G$.
       Thus we have $[X, Y]_I = X_I Y_I - Y_I X_I$.
 
       This is also true for any lie group that the under lying manifold is an open subset of $M_n (RR)$.
-    ]
+    ],
   )
 ]
 
@@ -197,8 +197,8 @@ Any lie group have a natural Representation on its own lie algebra, called the A
 $Ad: G to GL (g)$ is a map between lie groups.
 Taking the differential at the identity element, we obtain a lie algebra homomorphism:
 $
- (d Ad)_e: T_E G = g to T_I GL (g) = End (g) \
-X mapsto (Y mapsto [X, Y])
+  (d Ad)_e: T_E G = g to T_I GL (g) = End (g) \
+  X mapsto (Y mapsto [X, Y])
 $
 
 And we denote $(d Ad)_e$ by $ad$.
@@ -321,8 +321,9 @@ And $ad$ is also a lie algebra homomorphism.
   Then for any $g in V$,
   exists $X in U$ s.t. $g = exp (X)$.
   Thus
-  $    f_1 (g) = f_1 (exp (X)) = exp ((d f_1)_e (X)) \
-       f_2 (g) = f_2 (exp (X)) = exp ((d f_2)_e (X))
+  $
+    f_1 (g) = f_1 (exp (X)) = exp ((d f_1)_e (X)) \
+    f_2 (g) = f_2 (exp (X)) = exp ((d f_2)_e (X))
   $
   So $f_1 (g) = f_2 (g)$ for all $g in V$.
 
@@ -350,7 +351,7 @@ And $ad$ is also a lie algebra homomorphism.
       There exists a integer $k$ s.t. $G$ is isomorphic to
       $T^k times RR^(n-k)$,
       where $T^k$ is the $k$-dimensional torus: $T^k = (S^1)^k$.
-    ]
+    ],
   )
 ]
 #proof[
@@ -364,8 +365,8 @@ And $ad$ is also a lie algebra homomorphism.
   we have $g_1 = exp (X_1), g_2 = exp (X_2)$ for some $X_1, X_2 in U$.
   Thus
   $
-    g_1 g_2 &= exp (X_1) exp (X_2) = exp (X_1 + X_2) \
-    &= exp (X_2 + X_1) = exp (X_2) exp (X_1) = g_2 g_1
+    g_1 g_2 & = exp (X_1) exp (X_2) = exp (X_1 + X_2) \
+            & = exp (X_2 + X_1) = exp (X_2) exp (X_1) = g_2 g_1
   $
 
   Since $G$ is connected, again by the previous proposition, we have $G$ is abelian.
@@ -375,20 +376,20 @@ And $ad$ is also a lie algebra homomorphism.
   VIew $G times G$ as a lie group in a natural way, and $m$ is a smooth map.
   And $m$ is a lie group hom since
   $
-    m((g_1,g_2) (h_1, h_2)) &= m (g_1 h_1, g_2 h_2) 
-    = g_1 h_1 g_2 h_2 \
-    &= g_1 g_2 h_1 h_2
-    = m (g_1, g_2) m (h_1, h_2)
+    m((g_1,g_2) (h_1, h_2)) & = m (g_1 h_1, g_2 h_2)
+                              = g_1 h_1 g_2 h_2 \
+                            & = g_1 g_2 h_1 h_2
+                              = m (g_1, g_2) m (h_1, h_2)
   $
 
   Claim $(d m)_e (X, Y) = X + Y$.
 
   Then
   $
-    exp(X) exp(Y) &= m (exp(X), exp(Y)) \
-    &= m (exp(X,Y)) \
-    &= exp ((d m)_e (X, Y)) \
-    &= exp (X + Y)
+    exp(X) exp(Y) & = m (exp(X), exp(Y)) \
+                  & = m (exp(X, Y)) \
+                  & = exp ((d m)_e (X, Y)) \
+                  & = exp (X + Y)
   $
 
   (3) implies (2):
@@ -422,7 +423,7 @@ And $ad$ is also a lie algebra homomorphism.
   is a lie group hom.
 
   Then if $alpha in QQ$, then $f_alpha (RR)$ is a torus knot.
-  
+
   If $alpha notin QQ$, then $f_alpha (RR)$ is dense in $T^2$.
   And $f_alpha (RR) iso RR -> T^2$ is a lie group hom.
   But the topology on $f_alpha (RR)$ is clearly not the subspace topology.
@@ -463,7 +464,7 @@ And $ad$ is also a lie algebra homomorphism.
   Consider $U = exp (V)$ is an open neighborhood of $e$ in $G$.
   Also consider $log: U -> V$ to be the local inverse of $exp: V to U$.
 
-  Consider $S = {X in T_e G bar exp(t X) in H,  forall t in RR}$.
+  Consider $S = {X in T_e G bar exp(t X) in H, forall t in RR}$.
   The ideal is to construct a tangent space $T_e H$ from $T_e G$, and that
   if we apply $exp$ for all elements in $T_e H$, we get all elements in $H$ near $e$.
 
@@ -486,7 +487,7 @@ And $ad$ is also a lie algebra homomorphism.
   Fix a inner product $<,>$ on $T_e G = RR^n$, decompose $T_e G = S directSum S^perp$.
   Consider $psi: T_e G = S directSum S^perp to G, (x,z) mapsto exp(X) exp(Z)$,
   is a local diffeomorphism.
-  Consider $F: U to S^perp$ smooth, s.t. $F(phi(X,Z)) = Z$.
+  Consider $F: U to S^perp$ smooth, s.t. $F(phi(X, Z)) = Z$.
 
   If can prove $F^(-1) (0) = H inter U$, then done, by a theorem in manifold theory.
 
@@ -525,7 +526,7 @@ And $ad$ is also a lie algebra homomorphism.
   Let $Y_1,..., Y_m$ be left left-invariant vector field on $G$,
   and form a basis of $cal(h)$.
   $
-    E = union.big_(g in G) Spm((Y_1)_g,..., (Y_m)_g) subset T G
+    E = union.big_(g in G) Spm((Y_1)_g, ..., (Y_m)_g) subset T G
   $
   And $E$ is a sub bundle of $T G$. Does it exists an "integral submanifold" $H subset G$
   s.t. $forall g in G, T_g H = E_g$
@@ -571,7 +572,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
 #example[
   Fix $p, q$ integer subch that $p + q = n$.
   And $I_(p,q) = mat(
-    + I_q,  ;
+    + I_q, ;
     , - I_q
   )$
 
@@ -586,7 +587,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
 #definition[
   A smoth map $f: M -> N$ between manifolds is a #highlightIndex[Convering]
   if $f$ is surjective and $forall q in N$, $exists U subset N$ open s.t. $q in U$
-  and $f^(-1) (U) = union.sq.big_i V_i $ where $V_i$ open in $M$,
+  and $f^(-1) (U) = union.sq.big_i V_i$ where $V_i$ open in $M$,
   and $f bar_(V_i): V_i to V$ is a diffeomorphism.
 ]
 #remark[
@@ -634,7 +635,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
   If $g_1 in L_k(V) inter V$.
   $g_1 in V$ and $g_1 = k g_2$, $g_2 in V$.
   So $g_1 g_2^(-1) = k in W$.
-  Since $pi bar_W$ is diffeo, thus $g_1 g_2^(-1)  = e$, and $k = e$.
+  Since $pi bar_W$ is diffeo, thus $g_1 g_2^(-1) = e$, and $k = e$.
 ]
 
 #corollary[
@@ -645,7 +646,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
     ],
     enum.item[
       If $G$ is connected, then $ker pi$ is a subgroup of $Z(G)$.
-    ]
+    ],
   )
 ]
 
@@ -689,7 +690,7 @@ And then $pi$ become a lie group hom.
 #remark[
   The universla cover have the universal property, that if $G, H$ be lie group.
   And $H xarrow(f) G$, be a lie group hom and covering.
-  Then there exists a $tilde(G) xarrow(F) H$ s.t. 
+  Then there exists a $tilde(G) xarrow(F) H$ s.t.
   $
     tilde(G) xarrow(pi) G = tilde(G) xarrow(F) H xarrow(f) G
   $
@@ -733,14 +734,14 @@ And then $pi$ become a lie group hom.
 ]
 
 Mention without proof:
-#theorem(title:[Ado's Theorem])[
+#theorem(title: [Ado's Theorem])[
   Let $cal(g)$ be a finite dimensional lie algebra over $RR$.
   Then $exists$ an injective lie algerba hom from $cal(g) to lie(GL(N, RR))$ for some $N$.
-  Then there will exists a connected lie group $G subset GL(N,RR)$, s.t. $cal(g) = lie (G)$.
+  Then there will exists a connected lie group $G subset GL(N, RR)$, s.t. $cal(g) = lie (G)$.
 ]
 #remark[
   Not true that every lie group $G$ is a lie subgroup of $GL(N, RR)$.
-  A typical example is the universal cover of $S L(2, RR)$, where $pi_1 (SL(2,RR))= ZZ$.
+  A typical example is the universal cover of $S L(2, RR)$, where $pi_1 (SL(2, RR))= ZZ$.
 ]
 #theorem(title: [Lie Third Theorem])[
   there exists $1:1$ correspondence:
@@ -816,13 +817,13 @@ Mention without proof:
     ],
     enum.item[
       $V$ is completely reducilbe if $V$ is a directSum of irreducilbe representatiion.
-    ]
+    ],
   )
 ]
 #remark[
   For finite group representatiion, we can always found a irreducilbe decomposition, but for lie group,
   this is not true.
-  For instance $rho(t) = mat(1,t;0,1)$, where $rho: RR to GL(2, RR)$ is reducible but not completely reducible.
+  For instance $rho(t) = mat(1, t; 0, 1)$, where $rho: RR to GL(2, RR)$ is reducible but not completely reducible.
 ]
 
 #example[
@@ -839,7 +840,7 @@ Mention without proof:
   $U(1) subset S U (2), e^(i theta) mapsto mat(e^(i theta), 0; 0, e^(-i theta))$.
   $V_n$ as a represenration of $U(1)$ is completely reducible.
   $
-    V_n iso U_n directSum U_(n-2) directSum ... directSum U_(-n) 
+    V_n iso U_n directSum U_(n-2) directSum ... directSum U_(-n)
   $
 ]
 
@@ -854,7 +855,7 @@ Mention without proof:
       If $V$ are complex represenration,
       and if $f: V -> V$ $G$-invariant,
       then $f = lambda id$ for some $lambda in CC$.
-    ]
+    ],
   )
 ]
 #proof[
@@ -864,7 +865,7 @@ Mention without proof:
       By $V$ irreducilbe, we have $ker f = 0$ or $ker f = V$.
       If $ker f = V$, then $f = 0$, we are done.
       If $ker f = 0$, then $f$ is injective.
-      Consider $Img f subset W$, again by $W$ irreducilbe, 
+      Consider $Img f subset W$, again by $W$ irreducilbe,
       we have $Img f = W$ or $Img f = 0$.
       If $Img f = W$, then it is surjective.
       If $Img f = 0$, then it is $0$.
@@ -874,7 +875,7 @@ Mention without proof:
       $ker (f - lambda I) subset V$ is a $G$-invariant subspace.
       As $lambda$ is a eigenvalue, the kernel of $f - lambda I$ must not be $0$,
       thus $f - lambda I = V$, and we are done.
-    ]
+    ],
   )
 ]
 
@@ -886,7 +887,7 @@ Mention without proof:
   $rho: G to Aut(V)$.
   Fix $g in G$.
   Define $A_g: V to V, v mapsto rho(g) v$.
-  
+
   Claim: If $G$ is abelian then $A$ is a $G$-invariant homomorphism.
 
   By Schur's Lemma, there exists $lambda_g in CC$, s.t. $A_g = lambda_g id$.
@@ -970,7 +971,7 @@ things become nice again.
     s.t.
     #enum(
       enum.item[
-            $integral_G 1 = 1$
+        $integral_G 1 = 1$
       ],
       enum.item[
         if $f > 0$, then $integral_G f > 0$.
@@ -988,7 +989,7 @@ things become nice again.
       enum.item[
         $integral_G f circ i = integral_G f$,
         where $i: G to G$ is the inverse of the lie group.
-      ]
+      ],
     )
 
     This is called the Haur mearsure.
@@ -997,4 +998,220 @@ things become nice again.
   We pick any inner product $chevron.l -,- chevron.r$ on $V$.
   Define $chevron.l u,v chevron.r_G = integral_G chevron.l rho(g) u, rho(g) v chevron.r_G$.
   And we could check this is a $G$-invariant inner product, and we are done,
+]
+
+=== Characters of represenration of lie group
+
+#definition[
+  Let $G$ be a lie group.
+  And $rho: G -> Aut(V)$ some represenration of $G$ over $FF = RR "or" CC$.
+  Then  the Character of $rho$ is
+  $
+    chi_V: G to FF \
+    g mapsto tr (rho (g))
+  $
+]
+#example[
+  $G = S^1$, with represenration $U_n$.
+  then:
+  $
+    chi_(U_n): S^1 to CC \
+    t = e^(i theta) mapsto t^n
+  $
+]
+
+#proposition[
+  Given a lie group $G$,
+  then a $V$ represenration of $G$.
+  Then,
+  #enum(
+    enum.item[
+      $chi_V$ is a smooth function
+    ],
+    enum.item[
+      $chi_V (e) = dim V$
+    ],
+    enum.item[
+      $chi_V (h^(-1) g h)  = chi_V (g)$
+    ],
+    enum.item[
+      $chi_(V directSum W) = chi_V + chi_W$
+    ],
+    enum.item[
+      $chi_(V tensor W) = chi_V chi_W$
+    ],
+    enum.item[
+      $chi_(V^*) (g) = chi_V (g^(-1))$.
+      Moreover if $V$ is orthogonal or unitary,
+      we have $chi_(V^*) (g) = overline(chi_V (g))$.
+    ]
+  )
+]
+
+#example[
+  Let $G = S U (2)$.
+  $V_n$ irreducible representatiions of $S U(2)$.
+  subgroup
+  $
+    U(1) subset S U(2) \
+    e^(i theta) mapsto mat(e^(i theta), 0;0, e^(-i theta))
+  $
+
+  $V_n$ as represenration of $U(1)$:
+  we have $V_n iso U_n directSum U_(n-2) directSum ... directSum U_(2-n) directSum U_n$.
+
+  Thus $chi_(V_n) (t) = t^n + ... + t^(-n)$, forall $t in U(1)$.
+  Since all matrix in $S U(2)$ are diagonalisable, we can easily compute the Character.
+]
+
+#definition[
+  $V$ a represenration of $G$, $V^G$ is the fixed space.
+]
+
+#proposition[
+  Given a $G$ compact lie group.
+  $
+    V^G = {integral_G rho(g) w | w in V}
+  $
+]
+#remark[
+  This similar to the finite case, as the integral is similar to the averge of sum over $G$.
+]
+#proof[
+  Let $W = {integral_G rho(g) w | w in V}$.
+
+  To prove that $W subset V^G$.
+  Take $h in G, w in V$.
+  we have 
+  $
+    rho(g) (integral_G rho(g) w) = integral_G rho(h) rho(h) w\
+    =integral_G rho(h g) = integral_G rho(g) w "          "("by" integral_G "is left invariant")
+  $
+
+  To prove that $V^G subset W$.
+  Take $v in V^G$.
+  Then
+  $
+    integral_G rho(g) v = v
+  $
+]
+
+#lemma[
+  $G$ compact.
+  Then $dim V^G = integral_G chi_V (g)$
+]
+#proof[
+  Consider the averge map:
+  $
+    p: V to V^G\
+    w mapsto integral_G rho(g) w
+  $
+
+  By the previous proposition, the map is projection.
+  And by linear algebra
+  $
+    dim V^G = tr (p) = tr (w mapsto integral_G rho(g) w) \
+    = integral_G tr( w mapsto rho(g) w) = integral_G chi_V (g)
+  $
+]
+#definition[
+  $V, W$ represenration of $G$.
+  $
+    Hom_G (V, W) = {G"-invariant hom" V to W}
+    = Hom(V, W)^G = (V^* tensor W)^G
+  $
+]
+
+#theorem[
+  $G$ represenration $V, W$.
+  then ther is a natural inner product
+  $
+    chevron.l chi_V, chi_W chevron.r = integral_G overline(chi_V (g)) chi_W (g)
+    = dim Hom_G (V, W)
+  $
+]
+#proof[
+  $
+    dim Hom_G (V, W) = dim (V^* tensor W)^G 
+    = integral_G chi_(V^* tensor W) (g) \
+    = integral_G chi_(V^*) (g) chi_W (g)
+    = integral_G overline(chi_(V) (g)) chi_W (g)
+  $
+
+  The last step is because $G$ is compact, then $V$ is unitary or orthogonal.
+]
+
+#corollary[
+  $G$ compact. $V, W$ irreducible represenration of $G$.
+  Then if $V neq W$, then $chevron.l chi_V, chi_W chevron.r = 0$.
+  If $FF = CC$, then $chevron.l chi_V, chi_V chevron.r = 1$,
+  if $FF = RR$, then $chevron.l chi_V, chi_V chevron.r ge 1$.
+]
+#remark[
+  This is often refer to the orthogonality of Characters.
+]
+#proof[
+  Use the last theorem together with Schur's Lemma.
+]
+
+Since every finite group is a compact lie group by consider it as a discrete topology space,
+then the theory is a complete generalisation of the represenration theory of finite group.
+
+#theorem[
+  $G$ compact, $V, W$ represenration.
+  Then $chi_V = chi_W$ implies $V iso W$.
+  When $FF = CC$.
+]
+#proof[
+  If $V$ and $W$ are irreducible, then this theorem
+  is just a consequence of the last corrolary.
+
+  In general this follow from the fact that all represenration of compact lie group
+  are completely reducible.
+  $
+    V iso directSum.big_i V_i^(directSum n_i)
+  $
+  where $V_i$ is not isomorphic to $V_j$ if $i neq j$.
+
+  If we allow some of the $n_i$, and $m_i$  to be $0$,
+  we also have:
+  $
+    W iso directSum.big_i V_i^(directSum m_i)
+  $
+
+  To prove that $V iso W$, we only need to prove that $n_i = m_i$.
+
+  For $FF = CC$,
+  then $n_i = innerProduct(chi_V, chi_(v_i))$.
+  If $chi_V = chi_W$, then $n_i = m_i$.
+]
+// TODO check the case for FF = RR.
+
+#definition[
+  $V$ unitary or orthogonal represenration of $G$.
+  Then, pick ${v_1, ..., v_n}$ unitary or orthonomal basis of $V$.
+  Define #highlightIndex[matrix coefficients] of $V$.
+  $
+    rho_(i,j)^V: G to FF\
+    g mapsto innerProduct(rho(g) v_i, v_j)
+  $
+]
+#remark[
+  This is similar to the represenration matrix of finite group.
+]
+#theorem[
+  All matrix coefficients $rho_(i,j)^V$ for all $i,j$ and for all $V$
+  irreducible rep of $G$ are orthogonal.
+]
+This statement is like saying this map is injective:
+$
+  directSum.big _(V "irreducible rep of" G \/ "iso") V tensor V^* to L^2 (G) \
+  v_i tensor v_j^* mapsto rho_(i,j)^V 
+$
+#theorem(title: [Peter-Weyl Theorem])[
+  the above map is a iso
+]
+#example[
+  $G = S^1$. Then all irreducible represenration are $U_n$,
+  and this correspondent to fourier seriers in $L^2 (S^1)$.
 ]
