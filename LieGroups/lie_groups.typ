@@ -1032,7 +1032,7 @@ things become nice again.
       $chi_V (e) = dim V$
     ],
     enum.item[
-      $chi_V (h^(-1) g h)  = chi_V (g)$
+      $chi_V (h^(-1) g h) = chi_V (g)$
     ],
     enum.item[
       $chi_(V directSum W) = chi_V + chi_W$
@@ -1044,7 +1044,7 @@ things become nice again.
       $chi_(V^*) (g) = chi_V (g^(-1))$.
       Moreover if $V$ is orthogonal or unitary,
       we have $chi_(V^*) (g) = overline(chi_V (g))$.
-    ]
+    ],
   )
 ]
 
@@ -1054,7 +1054,7 @@ things become nice again.
   subgroup
   $
     U(1) subset S U(2) \
-    e^(i theta) mapsto mat(e^(i theta), 0;0, e^(-i theta))
+    e^(i theta) mapsto mat(e^(i theta), 0; 0, e^(-i theta))
   $
 
   $V_n$ as represenration of $U(1)$:
@@ -1082,7 +1082,7 @@ things become nice again.
 
   To prove that $W subset V^G$.
   Take $h in G, w in V$.
-  we have 
+  we have
   $
     rho(g) (integral_G rho(g) w) = integral_G rho(h) rho(h) w\
     =integral_G rho(h g) = integral_G rho(g) w "          "("by" integral_G "is left invariant")
@@ -1111,7 +1111,7 @@ things become nice again.
   And by linear algebra
   $
     dim V^G = tr (p) = tr (w mapsto integral_G rho(g) w) \
-    = integral_G tr( w mapsto rho(g) w) = integral_G chi_V (g)
+    = integral_G tr(w mapsto rho(g) w) = integral_G chi_V (g)
   $
 ]
 #definition[
@@ -1132,7 +1132,7 @@ things become nice again.
 ]
 #proof[
   $
-    dim Hom_G (V, W) = dim (V^* tensor W)^G 
+    dim Hom_G (V, W) = dim (V^* tensor W)^G
     = integral_G chi_(V^* tensor W) (g) \
     = integral_G chi_(V^*) (g) chi_W (g)
     = integral_G overline(chi_(V) (g)) chi_W (g)
@@ -1205,8 +1205,8 @@ then the theory is a complete generalisation of the represenration theory of fin
 ]
 This statement is like saying this map is injective:
 $
-  directSum.big _(V "irreducible rep of" G \/ "iso") V tensor V^* to L^2 (G) \
-  v_i tensor v_j^* mapsto rho_(i,j)^V 
+  directSum.big_(V "irreducible rep of" G \/ "iso") V tensor V^* to L^2 (G) \
+  v_i tensor v_j^* mapsto rho_(i,j)^V
 $
 #theorem(title: [Peter-Weyl Theorem])[
   the above map is a iso
@@ -1214,4 +1214,238 @@ $
 #example[
   $G = S^1$. Then all irreducible represenration are $U_n$,
   and this correspondent to fourier seriers in $L^2 (S^1)$.
+]
+
+== Maximal Tori
+
+For this section, $G$ will always be a compact connected lie group.
+#example[
+  $T^n = (S^1)^n$ is a compact connected lie group.
+]
+
+#definition[
+  For any $G$ compact connected lie group,
+  a torus in $G$ is a subgroup $T subset G$,
+  which is isomorphic to some $T^n$.
+
+  A maximal torus is a torus $T subset G$,
+  s.t. for all $T' subset G$ torus, s.t. $T subset T'$, then $T = T'$.
+]
+
+#example[
+  $G = U(n)$.
+  $
+    T = mat(
+      e^(i theta_1);
+      , dots.down;
+      , , e^(i theta_n)
+    )
+  $
+
+  Exercise: check this is a mximal torus. Hint: all matrix that commute with a diagonal matrix with distinct entries must be a diagonal matrix.
+]
+#example[
+  $G = S U(n)$.
+  $
+    T = mat(
+      e^(i theta_1);
+      , dots.down;
+      , , e^(i theta_n)
+    ),
+    e^(i theta_1) dots e^(i theta_n) = 1
+  $
+
+  is a maximal torus of $S U(n)$.
+]
+
+#lemma[
+  Let $T$ be a torus in $G$. Then:
+  #enum(
+    enum.item[
+      $T$ is am embedded lie subgroup.
+    ],
+    enum.item[
+      $exists T' subset G$ maximal torus s.t. $T subset T'$
+    ],
+    enum.item[
+      If $T$ is maximal, then $g T g^(-1)$ is also a maximal torus.
+    ],
+    enum.item[
+      $T$ is a maximal torus iff $T$ is a "compact" maximal conncetd abelian subgroup of $G$.
+
+      // TODO check if compact is needed
+    ],
+  )
+]
+#proof[
+  #enum(
+    enum.item[
+      $T$ must be compact, thus $T$ closed in $G$,
+      and by previous thm, $T$ is a embedded lie subgroup.
+
+      // TOOD ref theorem
+    ],
+    enum.item[
+      If $T$ is maximal, we are done.
+
+      If $T$ is not maximal.
+      then $exists T'$ torus, $T subset T'$, $T neq T'$.
+      We then prove that $dim T' > dim T$.
+
+      Recall that connected lie subgroups is 1-1 correspondence with lie subalgebra.
+      thus $lie(T) subset.neq lie(T')$. But lie algebra is vector space,
+      thus $dim lie(T) < dim lie(T')$,
+      and thus $dim T' > dim T$.
+
+      Then by induction, we get a maximal torus, since the dimension of $G$
+      is limited.
+    ],
+    enum.item[
+      Problem sheet.
+    ],
+    enum.item[
+      Problem sheet.
+    ],
+  )
+]
+
+#example[
+  $G = "SO"(2n)$.
+  $
+    T = {
+      mat(
+        R_1;
+        , dots.down;
+        , , R_n;
+      )
+      bar
+      R_i in "SO"(2)
+    }
+  $
+  and will be a maximla torus.
+
+  Also if $G = "SO"(2n+1)$
+  $
+    T = {
+      mat(
+        R_1;
+        , dots.down;
+        , , R_n;
+        , , , 1;
+      )
+      bar
+      R_i in "SO"(2)
+    }
+  $
+  will be a maximal torus of $"SO"(2n+1)$.
+]
+
+#definition[
+  The Weyl group of a maximal torus $T$ in $G$ is:
+  $
+    W = N_G (T) \/ T
+  $
+  where $N_G (T)$ is the normalizer of $T$ in $G$.
+  And $T$ is a normal subgroup of $N_G (T)$.
+]
+#remark[
+  We will see that all maximal torus will be conjugated.
+  So $W$ up to isomorphism will only depend on $G$.
+  And we call "The Weyl group of $G$".
+]
+#example[
+  $G = "SU"(2)$.
+  $
+    T = {mat(
+      e^(i theta),0;
+      0, e^(-i theta);
+    )}
+  $
+  what is $W$.
+
+  Take $g in G$, s.t. $g T g^(-1) = T$.
+
+  Since the conjugation preserve eigenvalues.
+  Thus $g$ permutes diagonal elements.
+
+  If the permutation is trivial, then $g$ commute with every $t in T$ implies $g in T$.
+
+  If $g$ is the only non-trivial permutation, since permutation of two elements
+  only have $2$ elements.
+  
+  Conclusion: $W = ZZ \/ 2 ZZ$.
+
+  Exercise: $G = S U(n)$. Then $W = S_n$ the symmetric group.
+]
+
+#proposition[
+  $W$ is finite.
+]
+#proof[
+  Let $N_0$ be the connected component of the identity in $N_G (T)$.
+  Then $N_G (T) / N_0$ is discrete and finite, since $G$ is a compact lie group.
+
+  We assert that $N_0 = T$.
+  Since $T$ is connected, $T subset N_0$.
+
+  Goal $N_0 subset T$.
+
+  $N_0$ acts by conjugation on $T$,
+  so $N_0$ acts on $lie(T)$ by $Ad$ the adjoint action.
+  And these two actions are compatible with
+  $
+    exp: lie(T) -> T
+  $
+  So $N_0$ acting on $lie (T)$ preseres $ker exp iso ZZ^n$.
+  Since $N_0$ connected, and $ZZ^n$ discrete implies this action is trivial.
+
+  So $N_0$ acting on $T$ acts trivially.
+  That means for all $g in N_0$ and $t in T$, we have $g t = t g$.
+
+  If $exists g in N_0$, $g notin T$,
+  then we could define $T'$ as a lie subgroup of $G$ generated by $T$
+  and a $1$-parameter subgroup passing through $g$.
+  And we can check that $T'$ is a closed connected abelian subgroup,
+  by the classification of abelian lie group, this contradicts the maximality of $T$.
+]
+
+#theorem[
+  $G$ be a compact connected lie group:
+  #enum(
+    enum.item[
+      If $T subset G$ maximal torus,
+      then $G = {g t g^(-1) | g in G, t in T}$.
+
+      If $G$ is the unitary group, then this statement is just the spectral theorem.
+      If $G$ is a lie group with underlying set a matrix, then this statement is like a diagonalisable statement.
+    ],
+    enum.item[
+      If $T$ and $T'$ are two maximal tori in $G$.
+      Then $exists g in G$ s.t. $T' = g T g^(-1)$.
+    ]
+  )
+]
+#proof[
+  (1) => (2).
+  #definition[
+    $T$ torus in $G$. $t in T$ is a geneator of $T$
+    if the closure of ${t^n | n in ZZ}$ is $T$.
+  ]
+  #example[
+    If $T = S^1$, and $t = e^(i theta 2 pi)$,
+    then $t$ is a generator iff $theta notin QQ$. 
+  ]
+  Excercise, for any torus, we can find a generator.
+  And the some continuety property if it apply to the generater, then it applies to the whole torus.
+
+  Take $T, T'$ two maximawl tori.
+  Take $t'$ a generator.
+  Then by $(1)$, there exists $g in G, t in T$, s.t. $t'  = g t g^(-1) in g T g^(-1)$.
+  And $(t')^n in g T g^(-1)$.
+  And
+  $
+   T' = overline({t^n | n in ZZ}) subset g T g^(-1)
+  $
+
+  Since $T'$ and $g T g^(-1)$ are both maximal tori, we have $T' = g T g^(-1)$.
 ]
