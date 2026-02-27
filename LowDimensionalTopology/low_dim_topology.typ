@@ -11,7 +11,7 @@
     s.t.
     #enum(
         enum.item[
-            $forall x in M$ has an open neighborhood $U$ of $x$,
+            $forall x in M$ has an open neighbourhood $U$ of $x$,
             that is homeomorphic to an open subset of $RR^n$.
         ],
         enum.item[
@@ -36,22 +36,24 @@
     which requires the transition maps between charts to be smooth.
 ]
 
+// TODO manifold with boundary, and the definition of boundary
+
 #definition(title: [Closed Manifolds])[
     A topological manifold $M$ is called closed if it is compact and $partial M = emptyset$.
 ]
 
 #definition(title: [Submanifolds])[
     Let $M$ be a $n$-dimensional topological manifold.
-    $N subseteq M$ is a #highlightIndex[submanifold] if it is a manifold with the subspace
+    $N subset M$ is a #highlightIndex[submanifold] if it is a manifold with the subspace
     topology.
 
-    $N$ is a #highlightIndex[locally flat submannifold] if for each $x in N$,
-    there exists a neighborhood $U$ of $x$ in $M$,
+    $N$ is a #highlightIndex[locally flat sub manifold] if for each $x in N$,
+    there exists a neighbourhood $U$ of $x$ in $M$,
     s.t. $(U, U inter N) iso (RR^n, RR^k)$ for some $k le n$.
 ]
 
 #example[
-    $K subseteq S^3$ connected locally flat $1$-dimensional submanifold is a #highlightIndex[knot].
+    $K subset S^3$ connected locally flat $1$-dimensional submanifold is a #highlightIndex[knot].
 
     $K$ is a #highlightIndex[trivial knot] if $(S^3, K) iso (S^3, S^1)$.
 ]
@@ -80,7 +82,7 @@
     Let $M_1, M_2$ be two $n$-dimensional closed topological manifolds.
     The #highlightIndex[connected sum] $M_1 \# M_2$ is defined as follows:
 
-    Choose two embedded $n$-balls $B_1 subseteq M_1$, $B_2 subseteq M_2$,
+    Choose two embedded $n$-balls $B_1 subset M_1$, $B_2 subset M_2$,
     then define
     $
         M_1 \# M_2 := (M_1 setminus int(B_1)) union_(partial B_1 iso partial B_2) (M_2 setminus int(B_2))
@@ -126,7 +128,7 @@ $N_g = RR P^2 \# RR P^2 \# ... \# RR P^2$
     A #highlightIndex[fibre bundle] consists of a continuous surjection $pi: E to B$,
     where $E$ is the #highlightIndex[total space], $B$ is the #highlightIndex[base space],
     and together with a topological space $F$ is the #highlightIndex[fibre],
-    s.t. for each $b in B$, there exists an open neighborhood $U$ of $b$,
+    s.t. for each $b in B$, there exists an open neighbourhood $U$ of $b$,
     and a homeomorphism $h: pi^{-1}(U) iso U times F$ called a #highlightIndex[local trivialization],
     that the following diagram commutes:
     #align(center, commutative-diagram(
