@@ -119,7 +119,7 @@
   $#X^*$
 ]]
 #let cotangentSpace(x, X) = $T^*_(#x) #X$
-#let exntensionByZero(phi) = $#phi^circ$
+#let extensionByZero(phi) = $#phi^circ$
 #let algebraicInteger = $AA$
 #let setminus = $\\$
 #let coker = $op("coker")$
@@ -132,6 +132,7 @@
 #let ad = $op("ad")$
 #let SL = $op("SL")$
 #let Aut = $op("Aut")$
+#let rank = $op("rank")$
 
 // a set of dictionary for completion
 abelian

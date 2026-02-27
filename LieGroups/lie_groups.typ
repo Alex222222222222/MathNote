@@ -24,7 +24,7 @@ Recall that a vector field $X$ on a manifold $M$ is a smooth section of the tang
 We denote the set of vector fields on $M$ by $C^infinity (T M)$ here.
 
 If $f: M -> N$ is a diffeomorphisms between manifolds $M$ and $N$, then for any vector field $X$ on $M$, we can define a vector field $f_* X$ on $N$.
-This is called the pushforward of $X$ by $f$.
+This is called the push forward of $X$ by $f$.
 
 #definition[
   Let $G$ be a lie group.
@@ -65,7 +65,7 @@ the integral curve of $X$ starting at $p$ is a unique smooth curve $alpha_p: (-e
 such that $alpha_p (0) = p$ and $d/ (d t) alpha_p (t) = X_(alpha_p (t))$ for all $t in (-epsilon, epsilon)$.
 The existence and uniqueness check the Manifolds notes.
 
-A flow of X: $forall p in X$, $exists epsilon > 0$, $exists U$ open neighborhood of $p$,
+A flow of X: $forall p in X$, $exists epsilon > 0$, $exists U$ open neighbourhood of $p$,
 such that $forall t in (-epsilon, epsilon)$, we have $phi_t: U -> M, x mapsto alpha_p (t)$, where $alpha_p$ is the integral curve of $X$ starting at $p$.
 Then $phi$ is called the flow of $X$.
 
@@ -79,7 +79,7 @@ Then $phi$ is called the flow of $X$.
 ]
 
 #definition[
-  A lie algebra is a vector psace $V$
+  A lie algebra is a vector space $V$
   endowed with a map $[-,-]: V times V to V$ s.t.
   #enum(
     enum.item[
@@ -170,7 +170,7 @@ Any lie group have a natural Representation on its own lie algebra, called the A
   $
 
   where $C_g: G to G, x mapsto g x g^{-1}$ is the conjugation by $g$,
-  and $(C_g)_*$ is the pushforward of $C_g$.
+  and $(C_g)_*$ is the push forward of $C_g$.
 ]
 #remark[
   If $G$ is commutative, then $Ad$ is the trivial Representation.
@@ -292,7 +292,7 @@ And $ad$ is also a lie algebra homomorphism.
   $F$ is open:
 
   Take $g in F$, s.t. $g = v_1^plus.minus v_2^plus.minus ... v_k^plus.minus$.
-  Consider $L_g (V)$ is a open neighborhood of $g$.
+  Consider $L_g (V)$ is a open neighbourhood of $g$.
   For any $h in L_g (V)$, we have $h = g v$ for some $v in V$.
   Thus $h = v_1^plus.minus v_2^plus.minus ... v_k^plus.minus v$.
   So $h in F$.
@@ -300,7 +300,7 @@ And $ad$ is also a lie algebra homomorphism.
 
   $F$ is closed:
 
-  Take $g in overline(F)$. Consider $L_g (V)$ is an open neighborhood of $g$.
+  Take $g in overline(F)$. Consider $L_g (V)$ is an open neighbourhood of $g$.
   As $g$ is in the closure of $F$, then there exists $h in F inter L_g (V)$.
   So $h = g v$ for some $v in V$.
   Thus $g = h v^(-1)$.
@@ -310,12 +310,12 @@ And $ad$ is also a lie algebra homomorphism.
 #proposition[
   Let $G$ and $H$ be lie groups.
   Assume that $G$ is connected,
-  then if $f_1, f_2: G to H$ both be lie grouo hom,
+  then if $f_1, f_2: G to H$ both be lie group hom,
   s.t. $(d f_1)_e = (d f_2)_e$. Then $f_1 = f_2$.
 ]
 #proof[
   Since $exp: g to G$ is a local diffeomorphism around $e$,
-  then there exists an open set $U$ in $g$, $V$ open neighborhood of $e$ in $G$,
+  then there exists an open set $U$ in $g$, $V$ open neighbourhood of $e$ in $G$,
   s.t. $exp: U to V$ is a diffeomorphism.
 
   Then for any $g in V$,
@@ -358,7 +358,7 @@ And $ad$ is also a lie algebra homomorphism.
   (1) implies (2):
   $exp$ is a local diffeomorphism around $e$.
   So there exists an open set $U$ in $g$,
-  $V$ open neighborhood of $e$ in $G$,
+  $V$ open neighbourhood of $e$ in $G$,
   s.t. $exp: U to V$ is a diffeomorphism.
   For any $v in V$, exists $X in U$ s.t. $v = exp (X)$.
   Then for any $g_1, g_2 in V$,
@@ -413,7 +413,7 @@ And $ad$ is also a lie algebra homomorphism.
 
 #definition[
   A lie subgroup of $G$ is a subgroup $H subseteq G$,
-  such that $H$ has a lie grou pstructure and the inlcusion $H -> G$ is a lie group hom.
+  such that $H$ has a lie group structure and the inclusion $H -> G$ is a lie group hom.
 ]
 #remark[
   The topology on $H$ may not induced by the subspace topology of $G$.
@@ -431,7 +431,7 @@ And $ad$ is also a lie algebra homomorphism.
 ]
 
 #definition[
-  A lie subgroup $H subset G$ is called embedded if the inlcusion map $H to G$ is an embedding of manifolds.
+  A lie subgroup $H subset G$ is called embedded if the inclusion map $H to G$ is an embedding of manifolds.
 ]
 
 #theorem[
@@ -447,7 +447,7 @@ And $ad$ is also a lie algebra homomorphism.
 #proof[
   $=>$ is easy. From manifold theory, we know that $H subset G$ is locally closed.
   We proof that if $p in overline(H)$, then $p in H$.
-  There exists an nonempty open neighborhood of $e$ that $U subset G$ s.t. $H inter U = overline(H) inter U$.
+  There exists an non-empty open neighbourhood of $e$ that $U subset G$ s.t. $H inter U = overline(H) inter U$.
 
   And we know that $U^(-1)$ is still open in $G$.
   And thus $L_y (U^(-1))$ open in G containing $y$.
@@ -459,9 +459,9 @@ And $ad$ is also a lie algebra homomorphism.
   <=. It is enough to show that $H$ is embedded in $G$ near $e$. Then we can perform left translation.
 
   We know $exp: T_e G -> G$ is a locally diffeomorphism around $0$.
-  Then take a small open neighborhood $V$ of $0$ in $T_e G$,
+  Then take a small open neighbourhood $V$ of $0$ in $T_e G$,
   s.t. $exp: V to exp(V)$ is a diffeomorphism onto its image.
-  Consider $U = exp (V)$ is an open neighborhood of $e$ in $G$.
+  Consider $U = exp (V)$ is an open neighbourhood of $e$ in $G$.
   Also consider $log: U -> V$ to be the local inverse of $exp: V to U$.
 
   Consider $S = {X in T_e G bar exp(t X) in H, forall t in RR}$.
@@ -522,7 +522,7 @@ And $ad$ is also a lie algebra homomorphism.
 #proof[
   existence of $F$ is clear.
 
-  Goal: constant $F^(-1)$. start wirth $cal(h) subset cal(g)$ be a lie subalgebra.
+  Goal: constant $F^(-1)$. start with $cal(h) subset cal(g)$ be a lie subalgebra.
   Let $Y_1,..., Y_m$ be left left-invariant vector field on $G$,
   and form a basis of $cal(h)$.
   $
@@ -557,7 +557,7 @@ And $ad$ is also a lie algebra homomorphism.
 
 things that could not be detected at the level of lie algebra.
 
-$G$ lie group. $G_0$: connnected component of $e in G$.
+$G$ lie group. $G_0$: connected component of $e in G$.
 
 #lemma[
   $G_0$ is a normal embedded lie subgroup of $G$.
@@ -570,7 +570,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
 ]
 
 #example[
-  Fix $p, q$ integer subch that $p + q = n$.
+  Fix $p, q$ integer such that $p + q = n$.
   And $I_(p,q) = mat(
     + I_q, ;
     , - I_q
@@ -582,17 +582,17 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
   In this case $S O(p,q)$ is not connected. and $pi_0 (S O (p,q)) = ZZ \/ 2ZZ$
 ]
 
-== Convering
+== Covering
 
 #definition[
-  A smoth map $f: M -> N$ between manifolds is a #highlightIndex[Convering]
+  A smooth map $f: M -> N$ between manifolds is a #highlightIndex[Covering]
   if $f$ is surjective and $forall q in N$, $exists U subset N$ open s.t. $q in U$
   and $f^(-1) (U) = union.sq.big_i V_i$ where $V_i$ open in $M$,
   and $f bar_(V_i): V_i to V$ is a diffeomorphism.
 ]
 #remark[
   If $M,N$ compact manifold, $f: M to N$ smooth surjective map. s.t.
-  $d f_p$ is am iso every point. Then $f: M to N$ is a Convering,
+  $d f_p$ is am iso every point. Then $f: M to N$ is a Covering,
   and $forall q in N$, $f^(-1) (q)$ finite.
   If $N$ connected, $abs(f^(-1) (q))$ is independent of $q$ and is called degree of $f$.
 ]
@@ -608,7 +608,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
 ]
 
 #theorem[
-  $pi: G to H$ be lie group hom. Asumme that $H$ is connected.
+  $pi: G to H$ be lie group hom. Assume that $H$ is connected.
   Then $pi$ is a covering $d pi_e$ is an iso.
 ]
 #proof[
@@ -623,10 +623,10 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
 
   Consider the map $f: G times G to G, (g_1, g_2) mapsto g_1 g_2^(-1)$.
   $f^(-1) (W)$ open in $G times G$ containing $(e,e)$.
-  By the product topology, there exists $V$ open neighborhood of $e$ in $G$.
+  By the product topology, there exists $V$ open neighbourhood of $e$ in $G$.
   s.t. $V times V subset f^(-1) (W)$,
   we can also assume that $V subset W$.
-  So $pi(V)$ open in $H$ since $pi$ is a local diffeo.
+  So $pi(V)$ open in $H$ since $pi$ is a local diffeomorphism.
 
   $pi^(-1) (pi (V)) = union.big_(k in ker pi) L_k (V)$.
 
@@ -635,7 +635,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
   If $g_1 in L_k(V) inter V$.
   $g_1 in V$ and $g_1 = k g_2$, $g_2 in V$.
   So $g_1 g_2^(-1) = k in W$.
-  Since $pi bar_W$ is diffeo, thus $g_1 g_2^(-1) = e$, and $k = e$.
+  Since $pi bar_W$ is diffeomorphism, thus $g_1 g_2^(-1) = e$, and $k = e$.
 ]
 
 #corollary[
@@ -651,7 +651,7 @@ Then $G / G_0 iso pi_0 (G)$, and it is a group since it $G$ is a group.
 ]
 
 
-Rcall that:
+Recall that:
 #theorem[
   For any connected manifold $M$, there is a simply connected manifold $tilde(M)$
   admitting a covering map $pi: tilde(M) to M$,
@@ -664,7 +664,7 @@ Rcall that:
     }
   $
 
-  Where $e$ is a preferred a basepoint.
+  Where $e$ is a preferred a base point.
   And $pi([gamma]) = gamma(1)$
 ]
 
@@ -688,7 +688,7 @@ And then $pi$ become a lie group hom.
   for $n ge 3$, $G = S O (n)$, we have $pi_1 (S O(n)) = ZZ \/ 2 ZZ$, and $tilde(G) = "Spin"(G)$, the spin group.
 ]
 #remark[
-  The universla cover have the universal property, that if $G, H$ be lie group.
+  The universal cover have the universal property, that if $G, H$ be lie group.
   And $H xarrow(f) G$, be a lie group hom and covering.
   Then there exists a $tilde(G) xarrow(F) H$ s.t.
   $
@@ -716,7 +716,7 @@ And then $pi$ become a lie group hom.
 ]
 #remark[
   Note that 2 in general will not be true, consider the universal cover $RR to S^1$,
-  the lie algerba will be the same, as the covering is a local diffeomorphism.
+  the lie algebra will be the same, as the covering is a local diffeomorphism.
   Lift a lie group to its universal covering is like ignore the local property,
   what we have is only the global property.
 ]
@@ -727,7 +727,7 @@ And then $pi$ become a lie group hom.
 
   Given a $F: cal(g) to cal(h)$ be a lie algebra hom.
   Let $k = {(X, F(X)) bar X in cal(g)} subset cal(g) directSum cal(h)$.
-  $F$ is a lie algerba hom, implies that $k$ be a lie subalgebra of $cal(g) directSum cal(h) iso lie (G times H)$.
+  $F$ is a lie algebra hom, implies that $k$ be a lie subalgebra of $cal(g) directSum cal(h) iso lie (G times H)$.
   Then there exists a $K subset G times H$, s.t. $lie (K) = k$.
 
   TODO finish the proof
@@ -736,7 +736,7 @@ And then $pi$ become a lie group hom.
 Mention without proof:
 #theorem(title: [Ado's Theorem])[
   Let $cal(g)$ be a finite dimensional lie algebra over $RR$.
-  Then $exists$ an injective lie algerba hom from $cal(g) to lie(GL(N, RR))$ for some $N$.
+  Then $exists$ an injective lie algebra hom from $cal(g) to lie(GL(N, RR))$ for some $N$.
   Then there will exists a connected lie group $G subset GL(N, RR)$, s.t. $cal(g) = lie (G)$.
 ]
 #remark[
@@ -755,104 +755,104 @@ Mention without proof:
 == Representation Theory of Compact Lie Groups
 
 #definition[
-  A representatiion of a lie group $G$ on a finite dim vector space $V$
+  A representation of a lie group $G$ on a finite dim vector space $V$
   is a lie group hom $rho: G to Aut(V)$.
 ]
 #remark[
-  if we have $rho$ a representatiion of $G$.
+  if we have $rho$ a representation of $G$.
   Then exists an action $phi$ of $G$ on functions on $V$:
   $
     phi(g) (f) = f circ rho(g^(-1))
   $
 ]
 #remark[
-  If $V$ is a real vector space, then the representatiion is a real representatiion,
-  and if $V$ is a complex vector space, then the representatiion is a complex representatiion.
+  If $V$ is a real vector space, then the representation is a real representation,
+  and if $V$ is a complex vector space, then the representation is a complex representation.
 
-  As complex number is algebraic closed, it a lot of times is simpler then the real represenration theory.
+  As complex number is algebraic closed, it a lot of times is simpler then the real representation theory.
 ]
 
 #example[
-  $G = U(1) = S^1$, for every $n in ZZ$, there is a representatiion $U_n$ of $G$ on $CC$:
+  $G = U(1) = S^1$, for every $n in ZZ$, there is a representation $U_n$ of $G$ on $CC$:
   $rho_n (e^(i theta)) (z) = e^(i n theta) z$.
 ]
 #example[
   $G = S U(2)$.
   $V_n = CC^(n+1) = "Span"(z_1^n, z_1^(n-1)z_2, ..., z_1 z_2^(n-1), z_2^n) subset "functions on" CC$.
 
-  Theore is a obvious representatiion $S U(2) to Aut(CC^2)$.
+  There is a obvious representation $S U(2) to Aut(CC^2)$.
   And by above discussion, $S U(2)$ act on the functions on $C^2$, and is invariant on $V_n$,
-  thus become a representatiion on $V_n$.
+  thus become a representation on $V_n$.
 ]
 #remark[
-  $rho$ representatiion of $G$ on $V$.
+  $rho$ representation of $G$ on $V$.
   Then:
   $
     rho: G to Aut(V) \
-    d rho_e: cal(g) to End(V) "lie algerba hom"
+    d rho_e: cal(g) to End(V) "lie algebra hom"
   $
-  we called lie alegra representatiion of $cal(g)$.
+  we called lie algebra representation of $cal(g)$.
 ]
 
 #lemma[
   If $G$ os a simply connected lie group.
-  Then $forall sigma: cal(g) to End(V)$ is a lie alegra hom.
-  Then $exists rho: G to Aut(V)$ be a lie group representatiion, s.t. $d rho_e = sigma$.
+  Then $forall sigma: cal(g) to End(V)$ is a lie algebra hom.
+  Then $exists rho: G to Aut(V)$ be a lie group representation, s.t. $d rho_e = sigma$.
 ]
 #lemma[
-  if we have representatiion $rho_v, rho_w$ representatiions of $G$ on $V$ and $W$,
+  if we have representation $rho_v, rho_w$ representations of $G$ on $V$ and $W$,
   then we can build $rho_v directSum rho_w$ on $V directSum W$.
   also $tensor$, dual space, and $Hom$.
-  This is similar for representatiion of finite group.
+  This is similar for representation of finite group.
 ]
 
 #definition[
-  If we have $rho$ representatiion of $G$ on $V$ s.t. $V neq {0}$.
+  If we have $rho$ representation of $G$ on $V$ s.t. $V neq {0}$.
   #enum(
     enum.item[
-      $V$ is irreducilbe if forall $W subset V$ $G$-invariant subspace then $W = {0}$ or $W = V$
+      $V$ is irreducible if forall $W subset V$ $G$-invariant subspace then $W = {0}$ or $W = V$
     ],
     enum.item[
-      $V$ is reducible if it is not irreducilbe.
+      $V$ is reducible if it is not irreducible.
     ],
     enum.item[
-      $V$ is completely reducilbe if $V$ is a directSum of irreducilbe representatiion.
+      $V$ is completely reducible if $V$ is a directSum of irreducible representation.
     ],
   )
 ]
 #remark[
-  For finite group representatiion, we can always found a irreducilbe decomposition, but for lie group,
+  For finite group representation, we can always found a irreducible decomposition, but for lie group,
   this is not true.
   For instance $rho(t) = mat(1, t; 0, 1)$, where $rho: RR to GL(2, RR)$ is reducible but not completely reducible.
 ]
 
 #example[
-  $1$-dimensional represenration are irreducilbe.
+  $1$-dimensional representation are irreducible.
 ]
 #example[
-  $V_n$, $(n+1)$-dim represenration of $S U(2)$, and this represenration are irreducilbe.
+  $V_n$, $(n+1)$-dim representation of $S U(2)$, and this representation are irreducible.
 ]
 #example[
-  tensor product of irreducilbe is not irreducilbe in general.
+  tensor product of irreducible is not irreducible in general.
 ]
 #example[
-  A irreducilbe represenration might become reducible for a subgroup.
+  A irreducible representation might become reducible for a subgroup.
   $U(1) subset S U (2), e^(i theta) mapsto mat(e^(i theta), 0; 0, e^(-i theta))$.
-  $V_n$ as a represenration of $U(1)$ is completely reducible.
+  $V_n$ as a representation of $U(1)$ is completely reducible.
   $
     V_n iso U_n directSum U_(n-2) directSum ... directSum U_(-n)
   $
 ]
 
 #theorem(title: [Schur's Lemma])[
-  $V, W$ irreducilbe represenration of $G$.
+  $V, W$ irreducible representation of $G$.
   If $f: V to W$ $G$-invariant hom. Then
   #enum(
     enum.item[
       Either $f = 0$ or $f$ is an isomorphism.
     ],
     enum.item[
-      If $V$ are complex represenration,
+      If $V$ are complex representation,
       and if $f: V -> V$ $G$-invariant,
       then $f = lambda id$ for some $lambda in CC$.
     ],
@@ -862,10 +862,10 @@ Mention without proof:
   #enum(
     enum.item[
       $f: V to W$, then $ker f subset V$, is a $G$-invariant subspace.
-      By $V$ irreducilbe, we have $ker f = 0$ or $ker f = V$.
+      By $V$ irreducible, we have $ker f = 0$ or $ker f = V$.
       If $ker f = V$, then $f = 0$, we are done.
       If $ker f = 0$, then $f$ is injective.
-      Consider $Img f subset W$, again by $W$ irreducilbe,
+      Consider $Img f subset W$, again by $W$ irreducible,
       we have $Img f = W$ or $Img f = 0$.
       If $Img f = W$, then it is surjective.
       If $Img f = 0$, then it is $0$.
@@ -880,7 +880,7 @@ Mention without proof:
 ]
 
 #lemma[
-  If $G$ os an abelian lie group, and if $V$ is a reducible complex represenration.
+  If $G$ os an abelian lie group, and if $V$ is a reducible complex representation.
   Then $dim V = 1$.
 ]
 #proof[
@@ -895,39 +895,39 @@ Mention without proof:
   Consider $v in V setminus {0}$. Then $forall g in G$,
   $rho(g) v = lambda_g v$.
   So the line $CC v$ is $G$-invariant.
-  As $V$ is irreducilbe, so $V= CC v$, and $V$ is one-dimensional.
+  As $V$ is irreducible, so $V= CC v$, and $V$ is one-dimensional.
 ]
 
-A analogue for real represenration is:
+A analogue for real representation is:
 
 #lemma[
-  Let $G$ be an abelian compact connnected lie group.
-  Let $V$ be a real irreducilbe represenration, then:
-  $V = RR$ a trivial represenration.
-  or $V= RR^2$ a standard represenration of $U(1) = S O (2)$, which is the action by rotation.
+  Let $G$ be an abelian compact connected lie group.
+  Let $V$ be a real irreducible representation, then:
+  $V = RR$ a trivial representation.
+  or $V= RR^2$ a standard representation of $U(1) = S O (2)$, which is the action by rotation.
 ]
 #remark[
   By classification of abelian lie group,
   we have compact connected lie group is just $T^n$, for some $n$.
 ]
 
-For finite represenration theory, then every represenration is completely reducible,
+For finite representation theory, then every representation is completely reducible,
 but this cannot be true for general lie group, but for compact lie group,
 things become nice again.
 
 #theorem[
-  If $G$ is a compact lie group, then every represenration (real or complex)
+  If $G$ is a compact lie group, then every representation (real or complex)
   is completely reducible.
 ]
 #proof[
   Sketch of proof:
 
-  The proof kind of iminitae the proof fore finite group.
+  The proof kind of imitate the proof fore finite group.
   What we do is to cook up a $G$-invariant inner product,
-  and the represenration split as a represenration and its orthogonal represenration.
+  and the representation split as a representation and its orthogonal representation.
 
   #definition[
-    $V$ represenration of $G$, $rho: G to Aut(V)$.
+    $V$ representation of $G$, $rho: G to Aut(V)$.
     An inner product $< -, - >$ is $G$-invariant if $forall g in G$,
     and $forall , v in V$,
     we have
@@ -942,13 +942,13 @@ things become nice again.
   ]
 
   #proposition[
-    If $V$ admit a $G$-invariant inner product, then $V$ is completly reducible.
+    If $V$ admit a $G$-invariant inner product, then $V$ is completely reducible.
   ]
   #proof[
     Induction on $dim V$.
     $dim V = 1$, done.
 
-    $dim V > 1$, if $V$ irreducilbe, done.
+    $dim V > 1$, if $V$ irreducible, done.
     If $V$ reducible, then exists $G$-invariant subspace, $W subset V$,
     s.t. $W neq V$ and $W neq 0$.
     Consider $V = W directSum W^perp$,
@@ -956,10 +956,10 @@ things become nice again.
     we have $W^perp$ is also $G$-invariant, and we can then apply the induction hypothesis.
   ]
 
-  Then, we cook up a $G$-invariant inner product for compact lie group represenration $V$.
+  Then, we cook up a $G$-invariant inner product for compact lie group representation $V$.
 
   Recall: If $G$ if $G$ is finite, pick any inner product $chevron.l -,- chevron.r$ on $V$,
-  to modify into $G$-invariant, we deine a new inner product:
+  to modify into $G$-invariant, we define a new inner product:
   $chevron.l u,v chevron.r_G = 1/ (abs(G)) sum_(g in G) chevron.l rho(g) u, rho(g) v chevron.r$.
 
   For compact lie group, we will do this by a integration.
@@ -992,7 +992,7 @@ things become nice again.
       ],
     )
 
-    This is called the Haur mearsure.
+    This is called the Haur measure.
   ]
 
   We pick any inner product $chevron.l -,- chevron.r$ on $V$.
@@ -1000,11 +1000,11 @@ things become nice again.
   And we could check this is a $G$-invariant inner product, and we are done,
 ]
 
-=== Characters of represenration of lie group
+=== Characters of representation of lie group
 
 #definition[
   Let $G$ be a lie group.
-  And $rho: G -> Aut(V)$ some represenration of $G$ over $FF = RR "or" CC$.
+  And $rho: G -> Aut(V)$ some representation of $G$ over $FF = RR "or" CC$.
   Then  the Character of $rho$ is
   $
     chi_V: G to FF \
@@ -1012,7 +1012,7 @@ things become nice again.
   $
 ]
 #example[
-  $G = S^1$, with represenration $U_n$.
+  $G = S^1$, with representation $U_n$.
   then:
   $
     chi_(U_n): S^1 to CC \
@@ -1022,7 +1022,7 @@ things become nice again.
 
 #proposition[
   Given a lie group $G$,
-  then a $V$ represenration of $G$.
+  then a $V$ representation of $G$.
   Then,
   #enum(
     enum.item[
@@ -1050,14 +1050,14 @@ things become nice again.
 
 #example[
   Let $G = S U (2)$.
-  $V_n$ irreducible representatiions of $S U(2)$.
+  $V_n$ irreducible representations of $S U(2)$.
   subgroup
   $
     U(1) subset S U(2) \
     e^(i theta) mapsto mat(e^(i theta), 0; 0, e^(-i theta))
   $
 
-  $V_n$ as represenration of $U(1)$:
+  $V_n$ as representation of $U(1)$:
   we have $V_n iso U_n directSum U_(n-2) directSum ... directSum U_(2-n) directSum U_n$.
 
   Thus $chi_(V_n) (t) = t^n + ... + t^(-n)$, forall $t in U(1)$.
@@ -1065,7 +1065,7 @@ things become nice again.
 ]
 
 #definition[
-  $V$ a represenration of $G$, $V^G$ is the fixed space.
+  $V$ a representation of $G$, $V^G$ is the fixed space.
 ]
 
 #proposition[
@@ -1075,7 +1075,7 @@ things become nice again.
   $
 ]
 #remark[
-  This similar to the finite case, as the integral is similar to the averge of sum over $G$.
+  This similar to the finite case, as the integral is similar to the average of sum over $G$.
 ]
 #proof[
   Let $W = {integral_G rho(g) w | w in V}$.
@@ -1101,7 +1101,7 @@ things become nice again.
   Then $dim V^G = integral_G chi_V (g)$
 ]
 #proof[
-  Consider the averge map:
+  Consider the average map:
   $
     p: V to V^G\
     w mapsto integral_G rho(g) w
@@ -1115,7 +1115,7 @@ things become nice again.
   $
 ]
 #definition[
-  $V, W$ represenration of $G$.
+  $V, W$ representation of $G$.
   $
     Hom_G (V, W) = {G"-invariant hom" V to W}
     = Hom(V, W)^G = (V^* tensor W)^G
@@ -1123,8 +1123,8 @@ things become nice again.
 ]
 
 #theorem[
-  $G$ represenration $V, W$.
-  then ther is a natural inner product
+  $G$ representation $V, W$.
+  then there is a natural inner product
   $
     chevron.l chi_V, chi_W chevron.r = integral_G overline(chi_V (g)) chi_W (g)
     = dim Hom_G (V, W)
@@ -1142,7 +1142,7 @@ things become nice again.
 ]
 
 #corollary[
-  $G$ compact. $V, W$ irreducible represenration of $G$.
+  $G$ compact. $V, W$ irreducible representation of $G$.
   Then if $V neq W$, then $chevron.l chi_V, chi_W chevron.r = 0$.
   If $FF = CC$, then $chevron.l chi_V, chi_V chevron.r = 1$,
   if $FF = RR$, then $chevron.l chi_V, chi_V chevron.r ge 1$.
@@ -1155,18 +1155,18 @@ things become nice again.
 ]
 
 Since every finite group is a compact lie group by consider it as a discrete topology space,
-then the theory is a complete generalisation of the represenration theory of finite group.
+then the theory is a complete generalisation of the representation theory of finite group.
 
 #theorem[
-  $G$ compact, $V, W$ represenration.
+  $G$ compact, $V, W$ representation.
   Then $chi_V = chi_W$ implies $V iso W$.
   When $FF = CC$.
 ]
 #proof[
   If $V$ and $W$ are irreducible, then this theorem
-  is just a consequence of the last corrolary.
+  is just a consequence of the last corollary.
 
-  In general this follow from the fact that all represenration of compact lie group
+  In general this follow from the fact that all representation of compact lie group
   are completely reducible.
   $
     V iso directSum.big_i V_i^(directSum n_i)
@@ -1188,8 +1188,8 @@ then the theory is a complete generalisation of the represenration theory of fin
 // TODO check the case for FF = RR.
 
 #definition[
-  $V$ unitary or orthogonal represenration of $G$.
-  Then, pick ${v_1, ..., v_n}$ unitary or orthonomal basis of $V$.
+  $V$ unitary or orthogonal representation of $G$.
+  Then, pick ${v_1, ..., v_n}$ unitary or orthonormal basis of $V$.
   Define #highlightIndex[matrix coefficients] of $V$.
   $
     rho_(i,j)^V: G to FF\
@@ -1197,7 +1197,7 @@ then the theory is a complete generalisation of the represenration theory of fin
   $
 ]
 #remark[
-  This is similar to the represenration matrix of finite group.
+  This is similar to the representation matrix of finite group.
 ]
 #theorem[
   All matrix coefficients $rho_(i,j)^V$ for all $i,j$ and for all $V$
@@ -1212,8 +1212,8 @@ $
   the above map is a iso
 ]
 #example[
-  $G = S^1$. Then all irreducible represenration are $U_n$,
-  and this correspondent to fourier seriers in $L^2 (S^1)$.
+  $G = S^1$. Then all irreducible representation are $U_n$,
+  and this correspondent to Fourier series in $L^2 (S^1)$.
 ]
 
 == Maximal Tori
@@ -1242,7 +1242,7 @@ For this section, $G$ will always be a compact connected lie group.
     )
   $
 
-  Exercise: check this is a mximal torus. Hint: all matrix that commute with a diagonal matrix with distinct entries must be a diagonal matrix.
+  Exercise: check this is a maximal torus. Hint: all matrix that commute with a diagonal matrix with distinct entries must be a diagonal matrix.
 ]
 #example[
   $G = S U(n)$.
@@ -1271,7 +1271,7 @@ For this section, $G$ will always be a compact connected lie group.
       If $T$ is maximal, then $g T g^(-1)$ is also a maximal torus.
     ],
     enum.item[
-      $T$ is a maximal torus iff $T$ is a "compact" maximal conncetd abelian subgroup of $G$.
+      $T$ is a maximal torus iff $T$ is a "compact" maximal connected abelian subgroup of $G$.
 
       // TODO check if compact is needed
     ],
@@ -1283,7 +1283,7 @@ For this section, $G$ will always be a compact connected lie group.
       $T$ must be compact, thus $T$ closed in $G$,
       and by previous thm, $T$ is a embedded lie subgroup.
 
-      // TOOD ref theorem
+      // TODO ref theorem
     ],
     enum.item[
       If $T$ is maximal, we are done.
@@ -1322,7 +1322,7 @@ For this section, $G$ will always be a compact connected lie group.
       R_i in "SO"(2)
     }
   $
-  and will be a maximla torus.
+  and will be a maximal torus.
 
   Also if $G = "SO"(2n+1)$
   $
@@ -1396,7 +1396,7 @@ For this section, $G$ will always be a compact connected lie group.
   $
     exp: lie(T) -> T
   $
-  So $N_0$ acting on $lie (T)$ preseres $ker exp iso ZZ^n$.
+  So $N_0$ acting on $lie (T)$ preserves $ker exp iso ZZ^n$.
   Since $N_0$ connected, and $ZZ^n$ discrete implies this action is trivial.
 
   So $N_0$ acting on $T$ acts trivially.
@@ -1428,17 +1428,17 @@ For this section, $G$ will always be a compact connected lie group.
 #proof[
   (1) => (2).
   #definition[
-    $T$ torus in $G$. $t in T$ is a geneator of $T$
+    $T$ torus in $G$. $t in T$ is a generator of $T$
     if the closure of ${t^n | n in ZZ}$ is $T$.
   ]
   #example[
     If $T = S^1$, and $t = e^(i theta 2 pi)$,
     then $t$ is a generator iff $theta notin QQ$. 
   ]
-  Excercise, for any torus, we can find a generator.
-  And the some continuety property if it apply to the generater, then it applies to the whole torus.
+  Exercise, for any torus, we can find a generator.
+  And the some continuity property if it apply to the generator, then it applies to the whole torus.
 
-  Take $T, T'$ two maximawl tori.
+  Take $T, T'$ two maximal tori.
   Take $t'$ a generator.
   Then by $(1)$, there exists $g in G, t in T$, s.t. $t'  = g t g^(-1) in g T g^(-1)$.
   And $(t')^n in g T g^(-1)$.
@@ -1448,4 +1448,165 @@ For this section, $G$ will always be a compact connected lie group.
   $
 
   Since $T'$ and $g T g^(-1)$ are both maximal tori, we have $T' = g T g^(-1)$.
+]
+
+#proof[
+  Sketch of proof of (1).
+
+  First, given a maximal torus $T$, construct
+  $
+    tilde(F): G times T to G \
+    (g, s) mapsto g^(-1) s g
+  $
+
+  Goal, prove that $tilde(F)$ is surjective.
+
+  Claim, induced map
+  $
+    F: G \/ T times T to G,
+    G \/ T = {g T bar g in G}
+  $
+  new Goal: $F$ is surjective,.
+
+  claim:
+  $G \/ T$ is naturally a compact manifold,
+  fix $innerProduct(-,-)$ an inner product
+  on $frak(g)$,
+  s.t. $Ad$ representation of $G$ on $frak(g)$ is orthogonal over
+  $innerProduct(-,-)$.
+
+  Then $frak(g) = frak(t) directSum frak(t)^perp$, where $frak(t) = lie (T)$.
+  
+  Claim:
+  $
+    T_(e T) (G/ T) iso frak(t)^perp
+  $
+
+  $F: G\/ T times T to G$ is a smooth map between compact manifold of same dimension.
+
+  Second step:
+  $G, T, G\/ T$ are all orientable.
+
+  Step 3:
+  We want to understand the fibre of $F$.
+  Take $t in T$ be a generator.
+  Then this implies that
+  $abs(F^(-1)(t)) = abs(W)$, where $W$ is the Weyl group.
+
+  So $(g T, s) in F^(-1)(t))$, then $g^(-1) s g = t$,
+  $s = g t g^(-1)$
+  so $s^n = g t^n g^(-1)$.
+  Implies $t^n in g^(-1) T g$,
+  implies $T subset g^(-1) T g$,
+  then $T = g^(-1) T g$,
+  thus $g in W$.
+
+  Step 4:
+
+  Take $t in T$ generator.
+  We have $t$ a regular value of $F$.
+  And for all $p in F^(-1) (t)$.
+  Then $sign det(d F_p)$ is independent of $p$.
+
+  By a result of differential geometry:
+  If we have a map $F: M -> N$ be maps between compact manifold,
+  and 
+  $
+    deg(F) = sum_(p in F^(-1) (t)) sign det (d F_p)
+  $
+  where $t$ is regular value.
+  In particular, if $deg F neq 0$, then $F$ is surjective.
+]
+
+#corollary[
+  If $G$ is a compact connected lie group,
+  then $exp: frak(g) to G$ is surjective.
+]
+#proof[
+  Let $T$ be a maximal torus,
+  and for $g in G$, then by previous theorem,
+  we have $g = h^(-1) t h$, where $t in T$, and $h in G$.
+
+  Also $exp: frak(t) to T$ is surjective, by the knowledge of the manifold $T^n$.
+  take $t = exp(s)$, where $s in frak(t)$.
+  Then $g = h^(-1) exp(s) h = exp(Ad_h (s))$.
+]
+
+== Sections
+
+#definition[
+  let $G$ be compact connected lie group.
+Let rank of $G$ be the $dim T$,
+for $T subset G$ a maximal torus.
+]
+
+#example[
+  $rank U(n) = n$,
+
+  $dim U(n) \/ T = n^2 - n = n(n-1)$ always even.
+]
+
+#proposition[
+  $dim G \/ T$ is always even.
+]
+#proof[
+  $G$ acts on $frak(g)$ via $Ad$.
+  Then we have $T$ act on $frak(t)$ via $Ad bar _T$.
+
+  Take $frak(t) subset frak(g)$ a invariant subspace,
+  since $T$ abelian, $T$ must act trivially on $frak(t)$.
+
+  Since $frak(g) = frak(t) directSum frak(t)^perp$
+  so $T$ acts on $frak(t)^perp$,
+  where $T$ as a compact connected abelian group,
+  must be a torus.
+
+  Then $frak(t)^perp$ as a representation of $T$.
+  Then $frak(t)^perp iso RR^m directSum directSum.B g_n$,
+  where $g_n$ are $2$-dim irreducible representation of $T$.
+  $T to S^1 = S O (2)$.
+
+  For the $RR^m$ part,
+  if $x in frak(t)^perp$
+  is invariant under $Ad bar _T$,
+  then $exp(s x)$ commute with $T$,
+  contradicts the maximality of $T$.
+  So $dim frak(t)^perp$ is even.
+]
+
+In general $G$ lie group, $T subset G$ maxi torus,
+then as a representation of $T$,
+$
+  frak(g) iso frak(t) directSum directSum.B g_a
+$
+
+where $g_a$ 2-dim irreducible representation of $T$.
+
+$theta_a: frak(t) to RR$ linear so $theta_a in frak(t)^*$,
+
+#definition[
+  The elements $plus.minus theta_a$ in $frak(t)^*$ are the roots of $G$.
+]
+
+#example[
+  $G = U(n)$,
+  $T$ the diagonal matrices.
+  Roots: $plus.minus (x_j - x_k), j < k$.
+]
+
+#definition[
+  Root hyperplane:
+  $
+    ker theta_a = {
+      (x_1,...,x_n) in t bar theta_a (x_1,...,x_n) = 0
+    }
+  $
+]
+
+Weyl group $W = N_G (T) \/ T$ finite group.
+
+$W$ natural acts on $frak(t)$.
+
+#theorem[
+  $W$ is the group generated by orthogonal reflections respect to roots hyperplane.
 ]
