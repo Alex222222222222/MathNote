@@ -133,6 +133,7 @@
 #let SL = $op("SL")$
 #let Aut = $op("Aut")$
 #let rank = $op("rank")$
+#let SU = $op("SU")$
 
 // a set of dictionary for completion
 abelian
