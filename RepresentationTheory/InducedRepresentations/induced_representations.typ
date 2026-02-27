@@ -60,7 +60,7 @@
   and let $V$ be a $k G$-module.
   Then $V$ is also a $k H$-module
   by restricting the action of $k G$
-  to its subring $k H$.
+  to its sub ring $k H$.
   We denote the resulting $k H$-module
   $restrictionKGModule(H, G, V)$.
   #index(
@@ -264,7 +264,7 @@ calculation, which does not depend on the choice of coset representatives.
   Let $H$ be a subgroup of the finite group $G$.
   For each $phi: H -> CC$, define its #highlightIndex[extension by zero]
   to $G$ to be the
-  function $exntensionByZero(phi): G -> CC$
+  function $extensionByZero(phi): G -> CC$
   which agrees with $phi$ on $H$ and which is zero on $G setminus H$.
 ]
 #theorem[
@@ -274,7 +274,7 @@ calculation, which does not depend on the choice of coset representatives.
   we have
   $
     (inducedKGModule(H, G, chi_W))(g) = 1/abs(H) sum_(x in G)
-    exntensionByZero(chi_W) (x^(-1)g x).
+    extensionByZero(chi_W) (x^(-1)g x).
   $
 ]
 #proof[
@@ -291,7 +291,7 @@ calculation, which does not depend on the choice of coset representatives.
   Define
   $
     & inducedKGModule(H, G, "")  & : & classFunctionSpace(H) -> classFunctionSpace(G) \
-    & inducedKGModule(H, G, phi) & : & g mapsto 1/abs(H) sum_(x in G) exntensionByZero(chi_W) (x^(-1)g x),
+    & inducedKGModule(H, G, phi) & : & g mapsto 1/abs(H) sum_(x in G) extensionByZero(chi_W) (x^(-1)g x),
                                        forall phi in classFunctionSpace(H), g in G
   $
 
