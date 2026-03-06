@@ -992,7 +992,7 @@ things become nice again.
       ],
     )
 
-    This is called the Haur measure.
+    This is called the Haar measure.
   ]
 
   We pick any inner product $chevron.l -,- chevron.r$ on $V$.
@@ -1698,4 +1698,142 @@ $W$ natural acts on $frak(t)$.
     chi_V mapsto chi_V bar_T
   $
   is a iso.
+]
+
+== Weyl Integration formula
+
+#theorem[
+  Forall $f in Cl(G)$:
+  $
+    integral_G f =
+    1/abs(W) integral_T
+    det((Ad(t^(-1))-I) bar _(frak(t)^perp)) f(t)
+  $
+  where $frak(t) = lie(T)$,
+  and $frak(t)^perp$ is the orthogonal component for $Ad$-invariant inner product.
+]
+#remark[
+  We know that $frak(t)^perp$ as a representation
+  can be expressed as a direct sum in terms
+  of irreducible rep corresponding to the roots.
+  And $frak(t)^perp = directSum_a g_a$
+  by multiplication by $e^(2 pi i theta_a)$,
+  and
+  $
+    det((Ad(t^(-1))-I) bar _(frak(t)^perp))
+    = product_a (e^(-2pi i theta)-1)(e^(2pi i theta)-1)
+    = product 2 (1 - cos (2pi theta_a))
+  $ 
+]
+#example[
+  Take $G = SU(2)$, and the maximal torus be
+  $
+    T = {
+      mat(e^(2 pi i x),0;0,e^(-2 pi i x))
+    }
+  $
+
+  And $W = ZZ \/ 2 ZZ$,
+  and the roots are $plus.minus theta_a = plus.minus 2 x$.
+  Take $f in Cl(SU(2)))$
+  and
+  $
+    integral_(SU(2)) = 1/2 integral_0^1 2 (1-cos(4 pi x)) f (e^(2 pi i x)) d x \
+    = 1/2 integral_0^1 4 sin^2 (2pi x) f (e^(2 pi i x)) d x \
+    = 1/2 integral_0^1 4 (e^(2 pi i x) - e^(-2 pi i x))^2/2 f (e^(2 pi i x)) d x \
+  $
+  change of variable $t = e^(2 pi i x)$,
+  we have
+  $
+    = -1/2 integral_(S^1) (t - t^(-1))^2 f (t) 1/(2pi i) (d t) / t
+  $
+
+  Now take $f = chi_(V_m) overline(chi_(V_n))$,
+  where $V_m$ and $V_n$ are standard irreducible representation of $SU(2)$.
+  $
+    integral_(SU(2)) f = innerProduct(chi_(V_m), chi_(V_n))
+  $
+  by orthogonal of irreducible characters, we have it equals to $delta_(i,j)$.
+
+  On the other hand
+  $
+    chi_(V_m) = t^(-m) + t^(-m +2 ) + ...+ t^m
+    = (1-t^(2m+2))/(t^m (1-t^2))
+  $
+  So
+  $
+    integral_(SU(2)) f= -1/2 integral_(S^1)
+    (1-t^2)^2 (1-t^(2m+2))/(t^m (1-t^2)) (1-t^(2n+2))/(t^n (1-t^2))
+    1/ (2pi i) (d t)/t^3 \
+    = -1/2 integral_(S^1) ((1-t^(2m+2))(1-t^(2n+2)))/t^(m+n+3) 1/(2 pi i) (d t) \
+    = -1/2 "Res"[1/t^(m+n+3) - t^(m-n-1) - t^(n-m -1) + t^(m+n+1)]
+  $
+  where $"Res"$ here means the residue in the complex analysis.
+]
+
+== Simple Lie Groups
+
+Let $G$ be a n-dim lie group.
+We know that $frak(g) iso RR^n$.
+
+#definition[
+  Killing form.
+  A symmetric bilinear form on $frak(g)$.
+  $
+    forall X, Y in frak(g), (X,Y):= tr(ad(X) ad(Y))
+  $
+  Note, we can check that it is $Ad$ invariant, and symmetric bilinear.
+  And this only depend on the lie algebra, since $ad(X)$ only depend on the lie bracket.
+]
+
+#lemma[
+  If $G$ is compact, then the Killing form is semi negative definite.
+  
+  $(X, X) le 0, forall X$
+
+  $(X,X) = 0$ iff $ad (X) = 0$ iff $X in Z(frak(g))$
+]
+
+#example[
+  If $G = "SO"(n)$, then $Z(frak(g)) =0$, then the killing form is negative definite.
+
+  If $G = U(n)$, then $Z(frak(g)) = RR$
+
+  If $G = SU(n)$, then $Z(frak(g)) = 0$.
+
+  If $G= SL(2, RR)$, is not compact, and killing form has mixed signature.
+]
+
+#definition[
+  $frak(g)$ lie algebra,
+  A subspace $frak(h) subset frak(g)$ is an ideal,
+  if $forall X in frak(g), Y in frak(h)$, then $[X,Y] in frak(h)$.
+]
+#definition[
+  $frak(g)$ is simple if $frak(g)$ is non-abelian
+  amd $forall frak(h) subset frak(g)$ ideal,
+  then either $frak(h) = 0$ ot $frak(h) = frak(g)$.
+
+  $frak(g)$ semi-simple if $frak(g) = directSum.B_i frak(g)_i$
+  is a direct sum of simple lie algebra.
+]
+
+#definition[
+  If $G$ is a connected lie group,
+  $G$ is simple, if $G$ is non-abelian,
+  and for every $H subset G$
+  a normal connected lie subgroup,
+  then either $H = 0$ or $H = G$.
+
+  $G$ is semi-simple,
+  if its lie algebra is semi simple.
+]
+#remark[
+  The notation of simple in the lie group sense is not the same as simple in group sense.
+  For instance $SU(n)$ have Center $ZZ \/ n ZZ$.
+  Which is not simple in the normal group sense,
+  but it is actually simple in the lie group sense.
+]
+#lemma[
+  $G$ is simple iff its lie algebra is simple.
 ]
