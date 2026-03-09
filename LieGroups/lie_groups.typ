@@ -1784,6 +1784,9 @@ We know that $frak(g) iso RR^n$.
   $
   Note, we can check that it is $Ad$ invariant, and symmetric bilinear.
   And this only depend on the lie algebra, since $ad(X)$ only depend on the lie bracket.
+
+  We say that the killing form is non-degenerate,
+  if forall $X in frak(g)$, there exists $Y$ s.t. $(X,Y) neq 0$.
 ]
 
 #lemma[
@@ -1837,3 +1840,128 @@ We know that $frak(g) iso RR^n$.
 #lemma[
   $G$ is simple iff its lie algebra is simple.
 ]
+#proof[
+  Direct consequence of a result in problem sheet 3.
+]
+#remark[
+  $G$ semi-simple does not imply that $G$ is a product of simple lie group.
+]
+#example[
+  #let su = $frak(s)frak(u)$
+  $SU(n)$. $Z(SU(n)) = ZZ \/ n ZZ$.
+
+  And
+  $
+    Z(SU(n)) to SU(n) times SU(n)\
+    g mapsto (g,g)
+  $
+
+  Let $G = SU(n) times SU(n) \/  Z(SU(n)) $.
+  and $lie(G) = su(n) directSum su(n)$.
+
+  Since $su(n)$ is semi-simple,
+  but $G$ is not a product of simple group.
+]
+But if $G$ is simply connected, then it is true that semi-simple lie group
+is a direct sum of simple lie group.
+Because the lie algebra of a lie group know all the info of lie group
+if $G$ is simply connected.
+
+#theorem[
+  $frak(g)$ is semi-simple iff its killing form
+  is non-degenerate.
+]
+#corollary[
+  If $frak(g)$ is a lie-alegra of a connected compact lie group,
+  then $frak(g)$ is semi-simple iff $Z(frak(g)) = 0$.
+]
+#proof[
+  a corollary of some lemma before.
+]
+
+#example[
+  $U(n)$, then $Z(lie(U(n))) = RR$, then $U(n)$ is not semi-simple.
+
+  $SU(n)$, the centre of $lie(SU(n))$ is a finite group,
+  so the center of $lie(SU(n))$ is trivial.
+  Moreover, $SU(n)$ is simple.
+
+  Similar $"SO"(n)$ is also simple.
+
+  $SL(n, RR)$ is also simple even if it is not compact.
+]
+
+Next state classification result for compact, connected, simply connected,
+and simple lie group.
+
+Note if a lie group is not simply connected, we can pass to its universal cover
+without changing the lie algebra.
+And if $G$ is simply connected, and if it is semi-simple, then it is a product
+of simple lie group.
+
+#theorem(title: [Killing Cartan classification])[
+  A compact simply connected simple lie group
+  is exactly one of the following:
+  #enum(
+    enum.item[
+      $"Sp"(n) = {A in GL(n, HH) bar overline(A)^T A = I}$, $n ge 1$,
+      $dim = n (2 n + 1)$,
+      $rank = n$.
+    ],
+    enum.item[
+      $SU(n)$, $n ge n$, $n ge 3$, $dim = n^2 -1, rank = n-1$
+    ],
+    enum.item[
+      $"Spin"(n)$ universal cover of $"SO"(n)$, $n ge 7$, $dim = n(n-1) /2$.
+      Rank depend if $n$ is odd or even.
+    ],
+    enum.item[
+      Exceptional cases:
+      - $G_2, dim = 14, rank 2$
+      - $F_4, dim = 52, rank 4$
+      - $E_6, dim = 78, rank 6$
+      - $E_7, dim = 133, rank 7$
+      - $E_8, dim = 248, rank 8$
+    ]
+  )
+]
+#remark[
+  $"Spin"(3) = SU(2) = "Sp"(1)$ already included in the first case.
+
+  $"Spin"(4)$, actually is not simple it is isomorphic to $SU(2) times SU(2)$.
+
+  $"Spin"(5) = "Sp" (2)$
+
+  $"Spin"(6) = SU(4)$
+]
+
+There is a similar classification for lie algebras.
+
+classification via Dynkin diagrams:
+$
+  A_n dot -> dot -> ... dot n "vertices" SU(n+1)\
+  B_n dot -> dot -> ... dot ==> dot n "vertices" "Spin"(2n+1)\
+  C_n dot -> dot -> ... dot <== dot n "vertices" "Sp"(2n+1)\
+  D_n\
+  G_2\
+  F_4 dot -> dot => dot -> dot n\
+  E_6\
+  E_7\
+  E_8
+$
+
+Exceptional groups are related to the existence of octonions:
+$
+  OO: "product structure on" RR^8 = "Span"{1, e_1, ..., e_7}\
+  e_i^2 = -1
+$
+
+Facts: $F_4$ isometry group of a compact $16$-dim reimannion manifold = $OO P^2$.
+$W_(F_4)$: the symmetric group of the 24 cells a regular polyhedron in $RR^4$.
+$|W_(F_4)| = 1152$.
+
+$abs(W_(E_6)) = 51840$
+
+$abs(W_(E_7)) = 290340$
+
+$abs(W_(E_6)) = 2^14 times 3^5 times 5^2 times 7$
